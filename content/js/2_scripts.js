@@ -11,6 +11,8 @@ document.getElementById('Topmail-footer').onclick=function(){window.open('https:
 /* Payeer */
 document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 document.getElementById('Payeer-footer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+/* GitHub */
+document.getElementById('GitHub').onclick=function(){window.open('https://github.com', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");

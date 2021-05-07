@@ -11,7 +11,6 @@ document.getElementById('Topmail-footer').onclick=function(){window.open('https:
 /* Payeer */
 document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 document.getElementById('Payeer-footer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
-
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");

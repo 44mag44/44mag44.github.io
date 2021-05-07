@@ -9,10 +9,9 @@ document.getElementById('Question-footer').onclick=function(){window.open('https
 /* Top mail */
 document.getElementById('Topmail-footer').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 /* Payeer */
-document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
-document.getElementById('Payeer-footer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
-/* GitHub */
-document.getElementById('GitHub').onclick=function(){window.open('https://github.com', '_blank');};
+document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/?partner=4184305', '_blank');};
+document.getElementById('Payeer-footer').onclick=function(){window.open('https://payeer.com/?partner=4184305', '_blank');};
+
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");
