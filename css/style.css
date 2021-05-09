@@ -69,10 +69,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .malloc-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
 .malloc-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
 .malloc-bar{width:100%;overflow:hidden}.malloc-center .malloc-bar{display:inline-block;width:auto}
-.malloc-bar .malloc-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.malloc-bar .malloc-bar-item{padding:6px 12px;float:left;width:auto;border:none;display:block;outline:0}
 .malloc-bar .malloc-dropdown-hover,.malloc-bar .malloc-dropdown-click{position:static;float:left}
 .malloc-bar .malloc-button{white-space:normal}
-.malloc-bar-block .malloc-bar-item{width:100%;display:block;padding:10px 20px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.malloc-bar-block .malloc-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
 .malloc-bar-block.malloc-center .malloc-bar-item{text-align:center}.malloc-block{display:block;width:100%}
 .malloc-responsive{display:block;overflow-x:auto}
 .malloc-container:after,.malloc-container:before,.malloc-panel:after,.malloc-panel:before,.malloc-row:after,.malloc-row:before,.malloc-row-padding:after,.malloc-row-padding:before,
@@ -127,7 +127,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .malloc-greyscale-max,.malloc-grayscale-max,.malloc-hover-greyscale:hover,.malloc-hover-grayscale:hover{filter:grayscale(100%)}
 .malloc-greyscale,.malloc-grayscale{filter:grayscale(75%)}.malloc-greyscale-min,.malloc-grayscale-min{filter:grayscale(50%)}
 .malloc-sepia{filter:sepia(75%)}.malloc-sepia-max,.malloc-hover-sepia:hover{filter:sepia(100%)}.malloc-sepia-min{filter:sepia(50%)}
-.malloc-tiny{font-size:10px!important}.malloc-small{font-size:12px!important}.malloc-medium{font-size:15px!important}.malloc-large{font-size:18px!important}
+.malloc-tiny{font-size:10px!important}.malloc-small{font-size:12px!important}.malloc-medium{font-size:14px!important}.malloc-large{font-size:18px!important}
 .malloc-xlarge{font-size:24px!important}.malloc-xxlarge{font-size:36px!important}.malloc-xxxlarge{font-size:48px!important}.malloc-jumbo{font-size:64px!important}
 .malloc-left-align{text-align:left!important}.malloc-right-align{text-align:right!important}.malloc-justify{text-align:justify!important}.malloc-center{text-align:center!important}
 .malloc-border-0{border:0!important}.malloc-border{border:1px solid #ccc!important}
