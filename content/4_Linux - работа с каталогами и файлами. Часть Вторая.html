@@ -11,14 +11,11 @@
 	<body lang="ru-RU" class="malloc-post"/>
 		<noscript/><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"/></noscript>
 		<!-- Navbar -->
-		<div class="malloc-top"/>
-			<div class="malloc-bar malloc-theme-main malloc-left-align malloc-large malloc-card"/>	
-				<!-- Top bar -->	
-				<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white"/>главная</a>
-				<a href="../articles-1.html" class="malloc-bar-item malloc-button malloc-hover-white"/>статьи</a>
-				<a href="../about.html" class="malloc-bar-item malloc-button malloc-hover-white"/>донат</a>
-			</div>
-		</div>
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card"/>
+			<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>главная</a>
+			<a href="../articles-1.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>статьи</a>
+			<a href="../about.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>донат</a>
+		</nav>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
 		<div class="malloc-main malloc-auto" style="margin-left:150px"/><!-- main{ -->
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
@@ -27,35 +24,140 @@
 					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto malloc-cursive" style="border-radius:5px;">Linux - работа с каталогами и файлами. Часть Вторая</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
+						В этой статье мы рассмотрим - история команд, права доступа, документация и список задач.<br/>
+						Темы всем извесны, но я должен все же о них рассказать.<br/>
 					</p>
 					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/4.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"/></div>
-					<!-- Подзаголовок 0 -->
+					<!-- Подзаголовок 1 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">blablablablablabla</h2>
+						<h2 class="malloc-text-teal">Автодописывание имен файлов</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding-small"/>
 								<li/>
-									blabla<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>blabla</code><br/>
-								</li>
-								<br/>
-								<li/>
-									blabla<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>blabla</code><br/>
+									Командные интерпретаторы умеют дописывать имена файлов.Эта возможность задействеутся нажатием клавиши "Tab"<br/>
+									Начав писать имя файла (команды, каталога), мы можем нажать "Tab", и если на диске есть один файлб имя которого начинается с букв уже введенных нами, то его имя интерпретатор допишет за нас.<br/><br/>
+									Если же подходящих файлов больше одного, при нажатии на клавищу "Tab" ничего видимого не произойдет, но вы можете тут же нажать на неё второй раз, и интерпретатор выдаст нам полный список файлов, подходящих к нашему случаю.<br/>
+									В целом эта возможность способна сэкономить нам больше половины нажатий на клавиши.
 								</li>
 							</div>
 						</ul>
-						<hr/>
-						<!-- Видео 1 -->
-						<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"/><!-- для ПК -->
-							<object style="width:560px; height:315px;" data="s://www.youtube.com/embed/b7bANfoZvq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
-							</object>
-						</div>
-						<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"/><!-- для мобильников -->
-							<object style="width:250px; height:180px;" data="tps://www.youtube.com/embed/b7bANfoZvq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
-							</object>
-						</div>
+					</p>
+					<hr/>
+					<!-- Подзаголовок 2 -->
+					<p class="malloc-padding-small"/>
+						<h2 class="malloc-text-teal">История команд</h2>
+						<ul class="malloc-ul"/>
+							<div class="malloc-padding-small"/>
+								<li/>
+									Интерпретатор помнит историю введенных нами команд, причем при завершении сеанса работы он эту историю сохроняет в специальном файле, так что вы можете воспользоваться своими командами при следующем включении компьютера.<br/><br/>
+									Просмотреть историю можно командой "history":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>history</code><br/><br/>
+									Так же её же удобно использовать с "less":<br/>
+									Каждая введенная вами команда стоит под номером; мы можем повторить любую команду из старых команд, зная её номер, используя восклицательный знак:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>!1000</code><br/>
+									Два восклицательных знака обозначают последнюю введенную команду:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>!!</code>
+								</li>
+							</div>
+						</ul>
+					</p>
+					<hr/>
+					<!-- Подзаголовок 2 -->
+					<p class="malloc-padding-small"/>
+						<h2 class="malloc-text-teal">Список задач</h2>
+						<ul class="malloc-ul"/>
+							<div class="malloc-padding-small"/>
+								<li/>
+									Увидеть список процессов, выполняющиеся в настоящий момент и их текущие номера, можно посмотреть при помощи "ps":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ps</code><br/>
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"ps ax" - выдаст список всех существующих процессов<br/>
+										"ps axu" - выдаст список всех существующих процессов и их владельцев
+									</p>
+								</li>
+								<li/>
+									Бывает, что процесс завис. И обычными способами закрыть его не получается.<br/>
+									На помощь придет команда "kill -9", после которой, нужно вписать номер процесса, который хотим уничтожить:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>kill -9 2142</code><br/><br/>
+									Можно использовать для поиска зависшей программы команду "pidof" и далее название зависшей программы:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>pidof vlc</code><br/>
+									Будет выдан номер процесса и далее с помощью "kill -9" уничтожаем процесс.
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"kill -KILL" - эвквивалент "kill -9"
+									</p>
+								</li>
+							</div>
+						</ul>
+					</p>
+					<hr/>
+					<!-- Подзаголовок 3 -->
+					<p class="malloc-padding-small"/>
+						<h2 class="malloc-text-teal">Права доступа к файлам</h2>
+						<ul class="malloc-ul"/>
+							<div class="malloc-padding-small"/>
+								<li/>
+									Чтобы узнать права доступа к файлу можно воспользоваться "ls" с флагом "-l", после ввести нужный файл или каталог:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls -l file</code><br/>
+									Слева мы увидим, что то вроде - "-rw-rw-r--", "-rwxrwxrwx", "drwxr-xr-x".<br/>
+									Эта группа символов показывает тип файла.<br/>
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"ls" - список содержимого каталога<br/>
+										"-l" - использовать формат длинного списка.<br/>
+										"-" - в начале означает обычный файл<br/>
+										"d" - в начале означает каталог<br/>
+										"r" - чтение<br/>
+										"w" - запись<br/>
+										"x" - исполнение
+									</p>
+								</li>
+								<li/>
+									Права доступа к файлу или каталогу может задавать только суперпользователь (рут,root, администратор, админ).<br/>
+									Так как группа из трех бит соответствует ровно одной цифре восмиричной системы счисления, общепринятой является практика записи слова, прав доступа к файлу, в виде восьмиричного числа, обычно трехзначного (766).<br/><br/>
+									Обычно первая цифра, означает права для владельца - user.<br/>
+									Вторая, права для группы - group.<br/>
+									Третья, права для всех остальных пользователей - other.
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"1" - исполнение<br/>
+										"2" - запись<br/>
+										"3" - запись + исполнение<br/>
+										"4" - чтение<br/>
+										"5" - чтение + исполнение<br/>
+										"6" - чтение + запись<br/>
+										"0" - все запрещено<br/>
+										"7" - все разрещено
+									</p>
+								</li>
+								<li/>
+									Изменим права доступа при помощи "chmod":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod -700 file</code><br/>
+									Теперь этот файл может читать, записывать, испольнять только владелец файла.<br/><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod -644 file</code><br/>
+									"user" чтение и запись, "group" и "other" только чтение.<br/><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod +x file</code><br/>
+									Права на исполнение для всех.
+								</li>
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"+" - Дать права всем. Например на исполнение "+x"<br/>
+										"-" - Забрать права у всех. Например на исполнение "-x" 
+									</p>
+							</div>
+						</ul>
+					</p>
+					<hr/>
+					<!-- Подзаголовок 4 -->
+					<p class="malloc-padding-small"/>
+						<h2 class="malloc-text-teal">brbr</h2>
+						<ul class="malloc-ul"/>
+							<div class="malloc-padding-small"/>
+								<li/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>brbrbr</code><br/>
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"br" - brbrbr<br/>
+									</p>
+								</li>
+							</div>
+						</ul>
 					</p>
 					<hr/>
 					<!-- Заключение -->

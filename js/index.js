@@ -8,9 +8,7 @@ document.getElementById('Telegram').onclick=function(){window.open('https://msng
 document.getElementById('Telegram-footer').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
 /* Donat */
-document.getElementById('Donat').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
-document.getElementById('Dream').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
-document.getElementById('Question').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
+document.getElementById('Donat').onclick=function(){window.open('about.html', '_self');};
 document.getElementById('Donat-footer').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};

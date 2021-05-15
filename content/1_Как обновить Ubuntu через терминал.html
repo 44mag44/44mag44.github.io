@@ -11,14 +11,11 @@
 	<body lang="ru-RU" class="malloc-post"/>
 		<noscript/><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"/></noscript>
 		<!-- Navbar -->
-		<div class="malloc-top"/>
-			<div class="malloc-bar malloc-theme-main malloc-left-align malloc-large malloc-card"/>	
-				<!-- Top bar -->	
-				<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white"/>главная</a>
-				<a href="../articles-1.html" class="malloc-bar-item malloc-button malloc-hover-white"/>статьи</a>
-				<a href="../about.html" class="malloc-bar-item malloc-button malloc-hover-white"/>донат</a>
-			</div>
-		</div>
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card"/>
+			<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>главная</a>
+			<a href="../articles-1.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>статьи</a>
+			<a href="../about.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>донат</a>
+		</nav>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
 		<div class="malloc-main malloc-auto" style="margin-left:150px"/><!-- main{ -->
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
@@ -39,7 +36,7 @@
 								<div class="malloc-text-blue"/>Шаг 0</div>
 								<li/>
 									Для начала откроем терминал:<br/>
-									&quot;Ctrl+Alt+T&quot; или &quot;ПКМ, открыть Терминал&quot;(англ. - Open in Terminal).<br/>
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (англ. - Open in Terminal).<br/>
 									Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
 								</li>
 								<br/>
@@ -48,10 +45,10 @@
 									В терминале пишем это:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt update</code><br/>
 									Невидно пароля при вводе? Это нормально. Это одно из средств защиты Ubuntu.<br/>
-									Введите пароль и нажмите &quot;Enter&quot;.<br/>
+									Введите пароль и нажмите "Enter".<br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;sudo&quot; - это права суперпользователя (root).<br/>						
-										&quot;apt update&quot; - обновить список доступных пакетов .<br/>
+										"sudo" - это права суперпользователя (root).<br/>						
+										"apt update" - обновить список доступных пакетов .<br/>
 									</p>
 								</li>
 								<br/>
@@ -59,10 +56,10 @@
 								<li/>
 									Загружаем обновления на компьютер:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt upgrade -y</code><br/>
-									Нажмите &quot;Enter&quot;(вводим пароль, если спросил):<br/>
+									Нажмите "Enter"(вводим пароль, если спросил):<br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;apt upgrade&quot; - обновить систему, установив/обновив пакеты<br/>
-		 								&quot;-y&quot; - этот ключ нужен для согласия на последующие действия.
+										"apt upgrade" - обновить систему, установив/обновив пакеты<br/>
+		 								"-y" - этот ключ нужен для согласия на последующие действия.
 									</p>
 								</li>
 							</div>
@@ -75,13 +72,13 @@
 						<div class="malloc-padding-16"/></div>
 						<h2 class="malloc-text-teal">Что дальше</h2>
 						А теперь немного упростим себе задачу. Сделаем так, что бы все команды, которые были описаны выше, выполнялись за одну команду. 	Этот способ сэкономит нам немного времени и немного расширит наш кругозор.<br/>
-						Мы создадим исполняемый файл &quot;sysup.sh&quot;.&#42;<br/>
+						Мы создадим исполняемый файл "sysup.sh".&#42;<br/>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding"/>
 								<div class="malloc-text-blue"/>Шаг 0.</div>
 								<li/>
 									Для начала откроем терминал:<br/>
-									&quot;Ctrl+Alt+T&quot; или &quot;ПКМ, открыть Терминал&quot;(англ. - Open in Terminal).<br/>
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br/>
 									Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
 								</li>
 								<br/>
@@ -91,7 +88,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir system_update</code><br/>
 									Директория нужна, что бы хранить там файл(ы).
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;mkdir&quot; - это команда для создания новых директорий (каталогов).<br/>						
+										"mkdir" - это команда для создания новых директорий (каталогов).<br/>						
 									</p>
 								</li>
 								<br/>
@@ -100,9 +97,9 @@
 									Теперь, зайдем в папку и создадим там файл:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd system_update && touch sysup.sh</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;cd&quot; - нужна для перемещения по директориям.<br/>
-										&quot;&&&quot; -  с помощью 'И' мы можем выполнить несколько команд попорядку.<br/>
-		 								&quot;touch&quot; - создание пустого файла.
+										"cd" - нужна для перемещения по директориям.<br/>
+										"&&" -  с помощью 'И' мы можем выполнить несколько команд попорядку.<br/>
+		 								"touch" - создание пустого файла.
 									</p>
 								</li>
 								<div class="malloc-text-blue"/>Шаг 3</div>
@@ -111,16 +108,16 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo 'sudo apt update && sudo apt upgrade -y' > sysup.sh</code><br/>
 									На первый взгляд команда кажеться сложной, но приглядевшись вы поймете, что все намного проще, чем кажется.
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;echo&quot; - в данном случае используется для записи строки в файл sysup.sh<br/>
+										"echo" - в данном случае используется для записи строки в файл sysup.sh<br/>
 									</p>
 								</li>
 								<br/>
 								<div class="malloc-text-blue"/>Шаг 4</div>
 								<li/>
-									Теперь дадим нашему файлу &quot;sysup.sh&quot; права на исполнение:<br/>
+									Теперь дадим нашему файлу "sysup.sh" права на исполнение:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod +x sysup.sh</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;chmod +x&quot; - позволяет задать параметры запуска файла на исполнение.<br/>
+										"chmod +x" - позволяет задать параметры запуска файла на исполнение.<br/>
 									</p>
 								</li>
 								<br/>
@@ -151,7 +148,7 @@
 						<h2 class="malloc-text-teal">Заключение</h2>
 						Мы рассмотрели обновление операционной системы Ubuntu, через терминал.<br/>
 						Конечно можно поместить хоть двадцать, сто, тысячу команд в этот файл и все будет исполняться по порядку. Все зависит от вашей цели.<br/><br/>
-					Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
+						Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
 					</p>
 					<div class="malloc-text-green malloc-padding-12" title="Спасибо за статью"/><!-- для ПК -->
 						<object title="На книги" class="malloc-ad-desktop" data="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=%D0%9D%D0%B0%20%D0%BC%D0%B5%D1%87%D1%82%D1%83&targets-hint=&default-sum=49&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&hint=%D0%94%D0%B5%D1%80%D0%B6%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D1%83%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D0%BE%20%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B0&successURL=&quickpay=shop&account=410015474057891" width="500" height="221" allowtransparency="true" scrolling="no"/>

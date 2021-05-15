@@ -11,14 +11,11 @@
 	<body lang="ru-RU" class="malloc-post"/>
 		<noscript/><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"/></noscript>
 		<!-- Navbar -->
-		<div class="malloc-top"/>
-			<div class="malloc-bar malloc-theme-main malloc-left-align malloc-large malloc-card"/>	
-				<!-- Top bar -->	
-				<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white"/>главная</a>
-				<a href="../articles-1.html" class="malloc-bar-item malloc-button malloc-hover-white"/>статьи</a>
-				<a href="../about.html" class="malloc-bar-item malloc-button malloc-hover-white"/>донат</a>
-			</div>
-		</div>
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card"/>
+			<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>главная</a>
+			<a href="../articles-1.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>статьи</a>
+			<a href="../about.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;"/>донат</a>
+		</nav>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
 		<div class="malloc-main malloc-auto" style="margin-left:150px"/><!-- main{ -->
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
@@ -41,7 +38,7 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Открываем терминал:<br/>
-									&quot;Ctrl+Alt+T&quot; или &quot;ПКМ, открыть Терминал&quot;(англ. - Open in Terminal).
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).
 								</li>
 								<br/>
 								<li/>
@@ -49,9 +46,9 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt update</code><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt install git</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;sudo&quot; - это права суперпользователя (root).<br/>						
-										&quot;apt update&quot; - обновить список доступных пакетов.<br/>
-										&quot;install git&quot; - установить Git.<br/>						
+										"sudo" - это права суперпользователя (root).<br/>						
+										"apt update" - обновить список доступных пакетов.<br/>
+										"install git" - установить Git.<br/>						
 									</p>
 								</li>
 							</div>
@@ -66,7 +63,7 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Открываем терминал:<br/>
-									&quot;Ctrl+Alt+T&quot; или &quot;ПКМ, открыть Терминал&quot;(англ. - Open in Terminal).<br/>
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br/>
 									В открывшемся окне Терминала, записываем команды, которые подробно описаны ниже.
 								</li>
 								<br/>
@@ -75,7 +72,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir Repo</code><br/>
 									Директория нужна, что бы хранить там файл(ы).
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;mkdir&quot; - это команда для создания новых директорий (папок).<br/>						
+										"mkdir" - это команда для создания новых директорий (папок).<br/>						
 									</p>
 								</li>
 								<br/>
@@ -83,16 +80,16 @@
 									Заходим в папку:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd Repo</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;cd&quot; - нужна для перемещения по директориям.<br/>
+										"cd" - нужна для перемещения по директориям.<br/>
 									</p>
 								</li>
 								<br/>
 								<li/>
-									В папке создаем файл &quot;README.md&quot; и записываем в него название нашего проекта.<br/>
+									В папке создаем файл "README.md" и записываем в него название нашего проекта.<br/>
 									Например: Test<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo '# Test' > README.md</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;echo&quot; - в данном случае используется для создания и записи строки в файл README.md
+										"echo" - в данном случае используется для создания и записи строки в файл README.md
 									</p>
 								</li>
 							</div>
@@ -105,7 +102,7 @@
 								</li>
 								<br/>
 								<li/>
-									Добавляем файл &quot;README.md&quot; в .git:<br/>
+									Добавляем файл "README.md" в .git:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git add README.md</code><br/>
 								</li>	
 								<li/>
@@ -136,12 +133,12 @@
 									Почти все готово. Осталось обновить внешние ссылки вместе со связанными объектами:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git push -u origin master</code><br/>
 									Вводим имя аккаунта и пароль.<a class="malloc-text-blue" style="text-decoration:none;"/>&#42;</a><br/>
-									Если вы все сделали правильно, то произойдет загрузка(upload) файла &quot;README.md&quot; на удаленный репозиторий GitHub.
+									Если вы все сделали правильно, то произойдет загрузка(upload) файла "README.md" на удаленный репозиторий GitHub.
 								</li>
 								<br/>
 								<li/>
 									Возвращаемся в браузер и обновляем страничку(перезагрузить F5).<br/>
-									Если появился файл &quot;README.md&quot; с надписью &quot;Test&quot;, то все было сделано верно.<br/>
+									Если появился файл "README.md" с надписью "Test", то все было сделано верно.<br/>
 									Если его нету, то не спишите отчаиваться. Посмотрите видео, которое находиться ниже.
 								</li>
 								<sub class="malloc-cursive malloc-text-blue"/>&#42; Вы можете сделать тоже самое, но через SSH. Данная тема выходит за рамки этой статьи.</sub>
@@ -162,7 +159,7 @@
 					<!-- Подзаголовок 2 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">&quot;push&quot; одной командой</h2>
+						<h2 class="malloc-text-teal">"push" одной командой</h2>
 						Мое решение нельзя назвать универсальным, но оно соответствует моим запросам.<br/>
 						Обычно, когда заливаю код на GitHub, использую три команды:<br/>
 						<code class="malloc-text-teal malloc-border malloc-bar-item"/>git add *</code><br/>
@@ -175,12 +172,12 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Для начала откроем терминал:<br/>
-									&quot;Ctrl+Alt+T&quot; или &quot;ПКМ, открыть Терминал&quot;(англ. - Open in Terminal).<br/>
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br/>
 									Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
 								</li>
 								<br/>
 								<li/>
-									Создадим директорию (папку) - &quot;Push&quot;:<br/>
+									Создадим директорию (папку) - "Push":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir Push</code><br/>
 								</li>
 								<br/>
@@ -193,7 +190,7 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 1</div>
 							<div class="malloc-padding-small"/>
 								<li/>
-									Создадим и запишем в файл &quot;git-push.sh&quot; команды, которые нужны для push:<br/>
+									Создадим и запишем в файл "git-push.sh" команды, которые нужны для push:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo 'git add * && git commit -m " - " && git push -u origin master' > git-push.sh</code><br/>
 									На первый взгляд команда кажеться сложной. Но приглядевшись, вы поймете, что все намного проще, чем кажется.
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
@@ -201,10 +198,10 @@
 									</p>
 								</li>
 								<li/>
-									Дадим нашему файлу &quot;git-push.sh&quot; права на исполнение:<br/>
+									Дадим нашему файлу "git-push.sh" права на исполнение:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod +x git-push.sh</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										&quot;chmod +x&quot; - позволяет задать параметры запуска файла на исполнение.<br/>
+										"chmod +x" - позволяет задать параметры запуска файла на исполнение.<br/>
 									</p>
 								</li>
 							</div>
@@ -212,11 +209,11 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 2</div>
 							<div class="malloc-padding-small"/>
 								<li/>
-									Выходим из директории &quot;Push&quot; и переходим в директорию &quot;Repo&quot;:<br/>
+									Выходим из директории "Push" и переходим в директорию "Repo":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd ../Repo</code><br/>
 								</li>
 								<li/>
-									Созданим любой файл и запишем в него например &quot;Hello, World!&quot;:<br/>
+									Созданим любой файл и запишем в него например "Hello, World!":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo 'Hello, World!' > File</code><br/>
 								</li>
 							</div>
@@ -225,7 +222,7 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Теперь загрузим файл на GitHub.<br/>
-									Для этого нужно зайти в папку &quot;Push&quot; и запустить скрипт &quot;git-push.sh&quot;:<br/>
+									Для этого нужно зайти в папку "Push" и запустить скрипт "git-push.sh":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>./../Push/git-push.sh</code><br/>
 								</li>
 							</div>
@@ -234,7 +231,7 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Возвращаемся в браузер и обновляем страничку(перезагрузить F5).<br/>
-									Если появился файл &quot;File&quot; с надписью &quot;Hello, World!&quot;, то все было сделано верно.<br/>
+									Если появился файл "File" с надписью "Hello, World!", то все было сделано верно.<br/>
 									Если его нету, то не спишите отчаиваться. Посмотрите видео, которое находиться ниже.<br/>
 								</li>
 							</div>
