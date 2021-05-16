@@ -9,3 +9,5 @@ user:~$ cmd5 2>&1 | cmd6
 
 	Права доступа к файлам
 	man, info, less
+
+
