@@ -166,13 +166,37 @@
 					<hr/>
 					<!-- Подзаголовок 4 -->
 					<p class="malloc-padding-small"/>
-						<h2 class="malloc-text-teal">brbr</h2>
+						<h2 class="malloc-text-teal">Документация</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding-small"/>
 								<li/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>brbrbr</code><br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>man</div>
+									Ручной пейджер системы.<br/>
+									Каждый аргумент страницы, передаваемый в man, обычно является именем программы, утилиты или функции.<br/>
+									Затем будет найдена и отображена справочная страница, связанная с каждым из этих аргументов:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man touch</code><br/>
+									Мы увидим документацию по "touch".<br/><br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove</code><br/>
+									Мы увидим документацию по "remove".<br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"br" - brbrbr<br/>
+										"man" - интерфейс к системным справочным руководствам<br/>
+									</p>
+								</li>
+								<li/>
+									Иногда мы хотим узнать о конкретной функции, а "man" находит совсем не то, что искали.<br/>
+									Дело в том, что есть несколько разделов и поиск проиходит по всем этим разделам, но по умолчанию, будет выведено отображение только первой найденной страницы, даже, если страница есть в нескольких разделах.<br/><br/>
+									Подробнее о "man" можно узнать здесь:
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man man</code><br/>
+									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"1" - исполняемые программы или команды оболочки<br/>
+										"2" - системные вызовы (функции, предоставляемые ядром)<br/>
+										"3" - библиотечные вызовы (функции в программных библиотеках)<br/>
+										"4" - специальных файла (обычно находятся в "dev")<br/>
+										"5" - форматы файлов и соглашения, например "etc" "passwd"<br/>
+										"6" - игры<br/>
+										"7" - разное (включая пакеты макросов и соглашения), например man(7), groff (7).<br/>
+										"8" - команды системного администрирования (обычно только для root).<br/>
+										"9" - подпрограммы ядра [нестандартные].
 									</p>
 								</li>
 							</div>
