@@ -1,4 +1,6 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Руководство */
+document.getElementById('Man').onclick=function(){window.open('https://www.gnu.org/software/coreutils/manual/coreutils.pdf', '_blank');};
 /* Cоцсети */
 document.getElementById('Telegram-footer').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
@@ -6,7 +8,7 @@ document.getElementById('Youtube-footer').onclick=function(){window.open('https:
 document.getElementById('Donat-footer').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
-/* Top mail */
+/* Top site mail */
 document.getElementById('Topmail-footer').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 /* Payeer */
 document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};

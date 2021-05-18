@@ -78,13 +78,16 @@
 								</li>
 								<li/>
 									Бывает, что процесс завис. И обычными способами закрыть его не получается.<br/>
-									На помощь придет команда "kill -9", после которой, нужно вписать номер процесса, который хотим уничтожить:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>kill -9 2142</code><br/><br/>
-									Можно использовать для поиска зависшей программы команду "pidof" и далее название зависшей программы:<br/>
+									На помощь придет команда "kill -9", после которой, нужно вписать номер процесса.<br/>
+									Для поиска зависшей программы команду "pidof" и далее название зависшей программы:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>pidof vlc</code><br/>
-									Будет выдан номер процесса и далее с помощью "kill -9" уничтожаем процесс.
+									Будет выдан номер процесса и далее с помощью "kill -9" уничтожаем процесс.<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>kill -9 2142</code><br/><br/><br/>
+									Зависшую программу можно завершить и так:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>killall vlc</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"kill -KILL" - эвквивалент "kill -9"
+										"killall" - убить все процессы по имени программы
 									</p>
 								</li>
 							</div>
@@ -150,7 +153,6 @@
 										"-" - Забрать права у всех. Например на исполнение "-x" 
 									</p>
 								<li/>
-									На случай, если вдруг были испорчены права доступа в домашнем каталоге:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod -R u+rwX,go=rX ~</code><br/>
 									Эта команда устанавливает в нашем домашнем каталоге и всех её подкаталогах для всех файлов права для владельца на чтение и запись.<br/>
 									Для каталогов, а также файлов, для которых исполнение разрешено хоть кому-то, владельцу назначается также права на исполнение.<br/>
@@ -169,36 +171,61 @@
 						<h2 class="malloc-text-teal">Документация</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding-small"/>
+								<div class="malloc-text-blue" style="font-size:18px;"/>man</div>
 								<li/>
-							<div class="malloc-text-blue" style="font-size:18px;"/>man</div>
 									Ручной пейджер системы.<br/>
-									Каждый аргумент страницы, передаваемый в man, обычно является именем программы, утилиты или функции.<br/>
-									Затем будет найдена и отображена справочная страница, связанная с каждым из этих аргументов:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man touch</code><br/>
-									Мы увидим документацию по "touch".<br/><br/>
- 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove</code><br/>
-									Мы увидим документацию по "remove".<br/>
+									Каждый аргумент передаваемый в man, обычно является именем программы, утилитой или функцией:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove</code><br/>
+									Мы увидим документацию по "remove".<br/><br/>
+									Для удобства можно использовать "more". Используйте "Enter" для просмотра:
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove | more</code><br/>
+									Или "less".<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove | less</code><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"man" - интерфейс к системным справочным руководствам<br/>
+										"more" - это фильтр для постраничного просмотра текста по одному экрану за раз<br/>
+										"less" -  похожа на программу more, но имеет гораздо больше возможностей<br/>
 									</p>
 								</li>
 								<li/>
 									Иногда мы хотим узнать о конкретной функции, а "man" находит совсем не то, что искали.<br/>
-									Дело в том, что есть несколько разделов и поиск проиходит по всем этим разделам, но по умолчанию, будет выведено отображение только первой найденной страницы, даже, если страница есть в нескольких разделах.<br/><br/>
-									Подробнее о "man" можно узнать здесь:
- 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man man</code><br/>
+									Дело в том, что есть несколько разделов и поиск проиходит по всем этим разделам:<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man time.1</code><br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man time.2</code><br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man time.3</code><br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man time.7</code><br/><br/>
+									Но по умолчанию, будет выведено отображение только первой найденной страницы, даже, если страница есть в нескольких разделах:<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man time</code><br/><br/>
+									Подробнее о "man" можно узнать здесь:<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man man</code><br/><br/>
 									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"1" - исполняемые программы или команды оболочки<br/>
 										"2" - системные вызовы (функции, предоставляемые ядром)<br/>
 										"3" - библиотечные вызовы (функции в программных библиотеках)<br/>
-										"4" - специальных файла (обычно находятся в "dev")<br/>
-										"5" - форматы файлов и соглашения, например "etc" "passwd"<br/>
+										"4" - специальных файла (обычно находятся в /dev)<br/>
+										"5" - форматы файлов и соглашения, например /etc/passwd<br/>
 										"6" - игры<br/>
-										"7" - разное (включая пакеты макросов и соглашения), например man(7), groff (7).<br/>
+										"7" - разное (включая пакеты макросов и соглашения), например man.7, 'groff(7)'.<br/>
 										"8" - команды системного администрирования (обычно только для root).<br/>
 										"9" - подпрограммы ядра [нестандартные].
 									</p>
 								</li>
+								<div class="malloc-text-blue" style="font-size:18px;"/>info</div>
+								<li/>
+									Похож на "man". Умеет читать гиперссылки:<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>info time | less</code><br/><br/>
+								</li>
+								<div class="malloc-text-blue" style="font-size:18px;"/>help</div>
+								<li/>
+									Отображает краткую сводку встроенных команд.<br/>
+									Если указан шаблон, выдает подробную справку по всем командам, соответствующим шаблону, в противном случае распечатывается список разделов справки.<br/>
+									Посмотрим на "cd":<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>help cd | less</code><br/>
+									Или так:<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd --help | less</code><br/><br/>
+									Узнать о "help" побольше, можно так:<br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>help --help</code><br/>
+								</li>								
 							</div>
 						</ul>
 					</p>
@@ -207,7 +234,7 @@
 					<p class="malloc-padding-small"/>
 					<h2 class="malloc-text-teal">Заключение</h2>
 					blabla<br/><br/>
-
+					Подробную информацию о всех командах, вызовах, форматах и т.д. можно узнать <a id="Man"  class="malloc-hover-grey" style="border-radius:5px; text-decoration:underline;"/>здесь</a><br/><br/>
 					Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
 					</p>
 					<div class="malloc-text-green malloc-padding-12" title="Спасибо за статью"/><!-- для ПК -->
