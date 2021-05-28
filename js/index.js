@@ -5,17 +5,24 @@ document.getElementById('malloc.ru').onclick=function(){window.open('https://mal
 document.getElementById('articles').onclick=function(){window.open('articles-1.html', '_self');};
 /* Cоцсети */
 document.getElementById('Telegram').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
-document.getElementById('Telegram-footer').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
-document.getElementById('Youtube-footer').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
-/* Donat */
+/* Донат */
 document.getElementById('Donat').onclick=function(){window.open('about.html', '_self');};
-document.getElementById('Donat-footer').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
-document.getElementById('Dream-footer').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
-document.getElementById('Question-footer').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
-/* Top mail */
-document.getElementById('Topmail-footer').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
-/* Payeer */
-document.getElementById('Payeer-footer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+/* Footer desktop*/
+document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
+document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
+document.getElementById('Question-footer-d').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
+document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
+document.getElementById('Youtube-footer-d').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
+document.getElementById('Topmail-footer-d').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
+document.getElementById('Payeer-footer-d').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+/* Footer mobile*/
+document.getElementById('Donat-footer-m').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
+document.getElementById('Dream-footer-m').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
+document.getElementById('Question-footer-m').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
+document.getElementById('Telegram-footer-m').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
+document.getElementById('Youtube-footer-m').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
+document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
+document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 /* null */
 /* 	document.getElementById('#null').onclick=function(){window.open('null', '_blank');};
 */
