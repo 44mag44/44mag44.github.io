@@ -21,7 +21,7 @@
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"/><!-- { -->
-					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto malloc-cursive" style="border-radius:5px;">Linux - работа с каталогами и файлами. Часть Вторая</h1>
+					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Linux - работа с каталогами и файлами. Часть Вторая</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
 						В статье описаны следующие темы: автодописывание имен, история команд, список задач, права доступа к файлам, документация.<br/>
@@ -69,7 +69,7 @@
 									Можно перенаправить поток в файл:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>history > history.txt</code><br/>
 									Открыв файл, вы увидете историю команд.				
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"history" - библиотека истории GNU<br/>
 										"less" - испльзуется для просмотра 
 									</p>
@@ -100,8 +100,8 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Увидеть список процессов, выполняющиеся в настоящий момент и их текущие номера, можно посмотреть при помощи "ps":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ps</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ps</code>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"ps ax" - выдаст список всех существующих процессов<br/>
 										"ps axu" - выдаст список всех существующих процессов и их владельцев
 									</p>
@@ -115,8 +115,8 @@
 									И далее с помощью "kill -9" уничтожаем процесс.<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>kill -9 2142</code><br/><br/>
 									Зависшую программу можно завершить и так:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>killall vlc</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>killall vlc</code>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"kill -KILL" - эвквивалент "kill -9"<br/>
 										"killall" - убить все процессы по имени программы
 									</p>
@@ -143,8 +143,8 @@
 									Чтобы узнать права доступа к файлу можно воспользоваться "ls" с флагом "-l", после ввести нужный файл или каталог:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls -l file</code><br/>
 									Слева мы увидим, что то вроде - "-rw-rw-r--", "-rwxrwxrwx", "drwxr-xr-x".<br/>
-									Эта группа символов показывает тип файла.<br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									Эта группа символов показывает тип файла.
+									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"ls" - список содержимого каталога<br/>
 										"-l" - использовать формат длинного списка.<br/>
 										"-" - в начале означает обычный файл<br/>
@@ -159,7 +159,7 @@
 									Обычно первая цифра, означает права для владельца - user.<br/>
 									Вторая, права для группы - group.<br/>
 									Третья, права для всех остальных пользователей - other.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"1" - исполнение<br/>
 										"2" - запись<br/>
 										"3" - запись + исполнение<br/>
@@ -178,7 +178,7 @@
 									"user" чтение и запись, "group" и "other" только чтение.<br/><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod +x file</code><br/>
 									Права на исполнение для всех.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"chmod" - изменить биты режима файла<br/>
 										"+" - Дать права всем. Например на исполнение "+x"<br/>
 										"-" - Забрать права у всех. Например на исполнение "-x" 
@@ -198,7 +198,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod -R u+rwX,go=rX ~</code><br/><br/>
 									Для каталогов, а также файлов, для которых исполнение разрешено хоть кому-то, владельцу назначается также права на исполнение.<br/>
 									Для "group" и "other" устанавливаются права на чтение, для исполняемых файлов и каталогов, также права на исполнение, а все остальные права убираются. 
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"R" - смена прав доступа ко всем файлам во всех подкаталоках заданного каталога.<br/>
 										"X" - установка/снятие бита исполнениятолько для каталогов, также для тех файлов, на которые хотя бы у кого-нибудь есть права исполнения.
 									</p>
@@ -230,8 +230,8 @@
 									Для просмотра, можно использовать "more" или "less":<br/>
  									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove | more</code><br/>
 									Или "less".<br/>
- 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove | less</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man remove | less</code>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"man" - интерфейс к системным справочным руководствам<br/>
 										"more" - это фильтр для постраничного просмотра текста по одному экрану за раз<br/>
 									</p>
@@ -246,8 +246,8 @@
 									Но по умолчанию, будет выведено отображение только первой найденной страницы, даже, если страница есть в нескольких разделах:<br/>
  									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man time</code><br/><br/>
 									Подробнее о "man" можно узнать здесь:<br/>
- 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man man</code><br/><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>man man</code><br/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"1" - исполняемые программы или команды оболочки<br/>
 										"2" - системные вызовы (функции, предоставляемые ядром)<br/>
 										"3" - библиотечные вызовы (функции в программных библиотеках)<br/>
@@ -263,7 +263,7 @@
 								<li/>
 									Позволяет просматривать страницы, связанных между собой гиперссылками.<br/>
 									То есть, документы в формате "info" представляют собой гипертекст, а сама команда это браузер гипертекста, работающий в текстовом режиме:<br/>
- 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>info time | less</code><br/><br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>info time | less</code>
 								</li>
 								<div class="malloc-text-blue" style="font-size:18px;"/>help</div>
 								<li/>
@@ -274,7 +274,7 @@
 									Или так:<br/>
  									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd --help | less</code><br/><br/>
 									Узнать о "help", можно так:<br/>
- 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>help --help</code><br/>
+ 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>help --help</code>
 								</li>								
 							</div>
 						</ul>

@@ -21,7 +21,7 @@
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"/><!-- { -->
-					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto malloc-cursive" style="border-radius:5px;">Linux - работа с каталогами и файлами. Часть Первая</h1>
+					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Linux - работа с каталогами и файлами. Часть Первая</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
 						Логически файл представляет собой место для хранения данных.<br/>
@@ -45,7 +45,7 @@
 									Увидем следующее: <b/>/home/USER</b><br/>
 									На месте "USER" будет стоять <b/>текущее имя пользователя</b>.<br/>
 									Например: <b/>/home/mag</b>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"pwd" - вывести имя текущего / рабочего каталога	
 									</p>
 								</li>
@@ -60,7 +60,7 @@
 								<li/>
 									Чтобы узнать, что находиться или лежит в каталоге, введем команду:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"ls" - список содержимого каталога
 									</p>
 								</li>
@@ -76,19 +76,19 @@
 									Чтобы создать каталог, введем команду:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir test</code><br/>
 									Мы создали при помощи команды "mkdir" каталог "test"
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"mkdir" - это команда для создания новых директорий (каталогов)	
 									</p>
 								</li>
 								<br/>
 								<li/>
 									Чтобы перемещаться между каталогами ипользуйте команду "cd".<br/>
-									Вход в каталог:		
+									Вход в каталог:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd test</code><br/>
-									Выход из каталога:		
+									Выход из каталога:<br/>	
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd ../</code><br/>
 									Теперь снова зайдем в каталог "test". В ней и будем выполнять все операции, которые описаны в статье.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"cd" - перемещение по каталогом<br/>	
 										"../" - подняться на один уровень
 									</p>
@@ -99,7 +99,7 @@
 									Выглядит это так:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir -p ./myDir/{music,video,pictures}</code><br/>
 									Мы создали каталог "myDir" и в нем создали три подкаталога - "music", "video", "pictures".
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"-p, --parents" - позволяет создавать каталоги в родительском каталоге	
 									</p>
 								</li>
@@ -111,7 +111,7 @@
 									Посмотрим, что находиться в ней:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls myDir/</code><br/>
 									Мы видим, что там есть три каталога - "music", "video", "pictures".
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"ls" - утилита Unix, которая печатает в стандартный вывод содержимое каталогов
 									</p>
 								</li>
@@ -133,7 +133,7 @@
 									2. Удалим пустой каталог "pictures":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rmdir myDir/pictures</code><br/>
 									Каталог "pictures" удален.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"rmdir" - удалить пустые каталоги
 									</p>
 								</li>
@@ -143,7 +143,7 @@
 									Чтобы удалить каталог "myDir" и вложенные в него подкаталоги, введем слудующее:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rm -r myDir</code><br/>
 									Каталог "myDir" и все его подкаталоги удалены.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"rm" - удалить файлы или каталоги<br/>
 										"-r, -R, --recursive" - рекурсивно удалять каталоги и их содержимое
 									</p>
@@ -162,7 +162,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>touch first</code><br/>
 									Второй при помощи ">":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>> second</code>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"touch" - может использоваться для создания пустых файлов<br/>
 										">" - направить стандартный поток вывода в файл. Если файл не существует, он будет создан, если существует, то перезаписан сверху
 									</p>
@@ -175,7 +175,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>touch file-4 file-5 file-6</code><br/>
 									Или так:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>touch file-{7..12}</code>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"{}" - фигруные скобки нужны для создания нескольких файлов. Между началои и канцом поледовательности ставиться две точки
 									</p>
 								</li>
@@ -196,7 +196,7 @@
 									Удалить файлы имеющих различие в определенной месте:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rm file-1?</code><br/>
 									Удалены файлы: "file-10", "file-11", "file-12".
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"?" - означает любой один символ	
 									</p>
 								</li>
@@ -205,7 +205,7 @@
 									Чтобы удалить все файлы начинающие на символ "f":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rm f*</code><br/>
 									В данном случае, удалены файлы "file-1", "file-2", ... , "file-5", "first".
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"*" - означает любой символ в любом количестве
 									</p>
 								</li>
@@ -218,7 +218,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>tree</code><br/>
 									Удалим их, наблюдая происходящее:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rm -v *a</code>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"tree" - вывести содержимое каталогов в древовидном формате<br/>
 										"-v" - показывает на экран процесс выполнения
 									</p>
@@ -249,7 +249,7 @@
 									В него скопируем файл "second":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cp second MyCopyDir/</code>
 									Файл "second" скопирован в каталог "MyCopyDir".
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"cp" - копировать файл(ы) и каталог(и)	
 									</p>
 								</li>
@@ -266,7 +266,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cp -i second MyCopyDir/</code><br/>
 									Если 'y'(да), то файл "second" в каталоге "MyCopyDir", замениться на новый.<br/>
 									Если 'n'(нет), то файл "second" в каталоге "MyCopyDir", останется без изменения.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
  										"-n, --no-clobber" - не перезаписывать существующий файл <br/>
 										"-i, --interactive" - запрашивать перед записью
 									</p>
@@ -278,7 +278,7 @@
 									Копирование нескольких файлов. Для мониторига добавим ключ "-v":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cp -i -v main.c second MyCopyDir</code><br/>
 									Будет вопрос по поводу файла "second", а вот файл "main.c" скопируется в каталог без проблем.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"cp" - копировать файл(ы) и каталог(и)
 									</p>
 								</li>
@@ -294,7 +294,7 @@
 									Делаем копию каталога "MyCopyDir":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cp -r -v MyCopyDir NewDir</code><br/>
 									В одном и тоже каталоге все имена файлов и каталогов должны быть уникальными, поэтому каталог создается с новым именем.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
  										"-r, -R, --recursive" - рекурсивное копировани каталогов. Обязателен при копировании каталогов имеющих подкаталоги и/или файлы
 									</p>
 								</li>
@@ -305,7 +305,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir /home/mag/test-2</code><br/>
 									Теперь копируем всё содержимое каталога "test" в каталог "test-2":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cp -rv . ~/test-2</code>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
  										"." - точка указывает на текущий каталог
 									</p>
 								</li>
@@ -322,7 +322,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mv -v second readme.txt</code><br/>
 									Переименовываем каталог "MyCopyDir" в "etc":<br/>		
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mv -v MyCopyDir etc</code>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
  										"mv" - переименовывает/перемещает фаилы и каталоги
 									</p>
 								</li>

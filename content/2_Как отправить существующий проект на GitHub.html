@@ -21,7 +21,7 @@
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"/><!-- { -->
-					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto malloc-cursive" style="border-radius:5px;">Как отправить существующий проект на GitHub</h1>
+					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto  " style="border-radius:5px;">Как отправить существующий проект на GitHub</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
 						Создаем локальный репозиторий git и отправляем его на удаленный репозиторий GitHub.<br/>
@@ -46,10 +46,10 @@
 									В терминале пишем:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt update</code><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt install git</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"sudo" - это права суперпользователя (root).<br/>						
 										"apt update" - обновить список доступных пакетов.<br/>
-										"install git" - установить Git.<br/>						
+										"install git" - установить Git.				
 									</p>
 								</li>
 							</div>
@@ -72,16 +72,16 @@
 									Создаем директорию (папку) - Repo:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir Repo</code><br/>
 									Директория нужна, что бы хранить там файл(ы).
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"mkdir" - это команда для создания новых директорий (папок).<br/>						
+									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"mkdir" - это команда для создания новых директорий (папок).						
 									</p>
 								</li>
 								<br/>
 								<li/>
 									Заходим в папку:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd Repo</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"cd" - нужна для перемещения по директориям.<br/>
+									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
+										"cd" - нужна для перемещения по директориям.
 									</p>
 								</li>
 								<br/>
@@ -89,7 +89,7 @@
 									В папке создаем файл "README.md" и записываем в него название нашего проекта.<br/>
 									Например: Test<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo '# Test' > README.md</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"echo" - в данном случае используется для создания и записи строки в файл README.md
 									</p>
 								</li>
@@ -99,23 +99,23 @@
 							<div class="malloc-padding-small"/>
 								<li/>
 									Теперь создадим локальный репозиторий .git:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git init</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git init</code>
 								</li>
 								<br/>
 								<li/>
 									Добавляем файл "README.md" в .git:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git add README.md</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git add README.md</code>
 								</li>	
 								<li/>
 									Метка о внесенных изменениях:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git commit -m "first commit"</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>git commit -m "first commit"</code>
 								</li>	
 							</div>
 							<br/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 2</div>
 							<div class="malloc-padding-small"/>
 								<li/>
-									Заходим в свой аккаунт на <a id="GitHub" class="malloc-hover-black" style="text-decoration:underline;"/>GitHub</a> и создаем новый репозиторий: Test<br/>
+									Заходим в свой аккаунт на <a id="GitHub" class="malloc-hover-black" style="text-decoration:underline;"/>GitHub</a> и создаем новый репозиторий: Test
 								</li>
 							</div>
 							<br/>
@@ -142,7 +142,7 @@
 									Если появился файл "README.md" с надписью "Test", то все было сделано верно.<br/>
 									Если его нету, то не спишите отчаиваться. Посмотрите видео, которое находиться ниже.
 								</li>
-								<sub class="malloc-cursive malloc-text-blue"/>&#42; Вы можете сделать тоже самое, но через SSH. Данная тема выходит за рамки этой статьи.</sub>
+								<sub class="  malloc-text-blue"/>&#42; Вы можете сделать тоже самое, но через SSH. Данная тема выходит за рамки этой статьи.</sub>
 							</div>
 						</ul>
 						<!-- Видео 0 -->
@@ -194,14 +194,14 @@
 									Создадим и запишем в файл "git-push.sh" команды, которые нужны для push:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo 'git add * && git commit -m " - " && git push -u origin master' > git-push.sh</code><br/>
 									На первый взгляд команда кажеться сложной. Но приглядевшись, вы поймете, что все намного проще, чем кажется.
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										Вы можете открыть файл(любым удобным для вас способом) и изменить/добавить команды.
 									</p>
 								</li>
 								<li/>
 									Дадим нашему файлу "git-push.sh" права на исполнение:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod +x git-push.sh</code><br/>
-									<p class="malloc-padding-small malloc-cursive malloc-border malloc-theme-l5" style="font-size:14px"/>
+									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"chmod +x" - позволяет задать параметры запуска файла на исполнение.<br/>
 									</p>
 								</li>

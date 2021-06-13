@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html/>
-	<title>Как обновить Ubuntu через терминал</title>
+	<title>Hello World на Си</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<meta name="description" content="Обновление Linux на примере дистрибутива Ubuntu. Обновление операционной системы показано через терминал. Используются команды update, а потом upgrade. В итоге делаем исполняемый файл, в котором будут храниться все наши команды. Подробнее..."/>
+	<meta name="description" content=" Подробнее..."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="../css/style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -21,126 +21,159 @@
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
 				<!-- Донат -->
 				<div class="malloc-threequarter malloc-padding"/><!-- { -->
-					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Как обновить Ubuntu через терминал</h1>
+					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Hello World на Си</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
-						Обновление операционной системы показано через терминал. Используются команды update, а потом upgrade. В итоге делаем исполняемый файл, в котором будут храниться все наши команды.<br/><br/>
-						Так же в статье присутствуют видео, в которых все показано на практике.
+						Из этой статьи вы узнаете как написать программу, которая будет выводить сообщение в терминал "Hello, world".<br/>
+						А писать мы будем на языке программирования С (си).<br/>
+						Тема далеко не нова, но все же у многих возникают трудности при написании этой программы.<br/><br/>
+						Те кто не знает про *nix и терминал, будет интересно почитать статью и/или расширить свой кругозор.<br/>
+						Для более полного восприятия статьи рекомендую просмотреть видео.<br/><br/>
+						Все действия протестированы и проверены на дистрибутиве Ubuntu.
 					</p>
-					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/1.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"/></div>
+					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"/></div>
 					<!-- Подзаголовок 0 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Обновляемся: update, upgrade</h2>
+						<h2 class="malloc-text-teal">Подготовка</h2>
 						<ul class="malloc-ul"/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 1</div>
 							<div class="malloc-padding"/>
-								<div class="malloc-text-blue"/>Шаг 0</div>
 								<li/>
-									Для начала откроем терминал:<br/>
-									"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (англ. - Open in Terminal).<br/>
-									Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
+									Открываем терминал:<br/>
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (англ. - Open in Terminal).
 								</li>
-								<br/>
-								<div class="malloc-text-blue"/>Шаг 1</div>
+							</div>
+							<br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 2</div>
+							<div class="malloc-padding"/>
 								<li/>
-									В терминале пишем это:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt update</code><br/>
-									Невидно пароля при вводе? Это нормально. Это одно из средств защиты Ubuntu.<br/>
-									Введите пароль и нажмите "Enter".<br/>
+									Создадим отдельный каталог (папка) для того, что бы нам не чего не мешало:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir prog</code><br/>
+									Теперь зайдем в него:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd prog</code>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"sudo" - это права суперпользователя (root).<br/>						
-										"apt update" - обновить список доступных пакетов .
-									</p>
+										"mkdir" - создать пустой каталог<br/>
+			 							"cd" - используется для перемещения по каталогам.
+									</p>									
 								</li>
-								<br/>
-								<div class="malloc-text-blue"/>Шаг 2</div>
+							</div>
+							<br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 3</div>
+							<div class="malloc-padding"/>
 								<li/>
-									Загружаем обновления на компьютер:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt upgrade -y</code><br/>
-									Нажмите "Enter"(вводим пароль, если спросил):<br/>
+									В этой папке создадим файл "hello.c":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>touch hello.c</code><br/>
+									Убидимся, что файл создался:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"apt upgrade" - обновить систему, установив/обновив пакеты<br/>
-		 								"-y" - этот ключ нужен для согласия на последующие действия.
-									</p>
+										"touch" - создать файл<br/>
+			 							"ls" - просмотр текущего каталога.
+									</p>		
+								</li>
+							</div>
+							<br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 4</div>
+							<div class="malloc-padding"/>
+								Теперь нужно открыть файл в любой текстовом редакторе.<br/>
+								К примеру открою наш файл "hello.c" в текстовом редакторе - gedit.
+								<li/>
+									Нажимаем "Ctrl+Shift+T".<br/>
+									Теперь вводим следующую команду:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gedit hello.c & exit</code>
 								</li>
 							</div>
 						</ul>
-					В конце статьи есть <a href="#Видео"/>видео</a>. В нем показываю все на практике.
 					</p>
-					<hr/>
 					<!-- Подзаголовок 1 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Что дальше</h2>
-						А теперь немного упростим себе задачу. Сделаем так, что бы все команды, которые были описаны выше, выполнялись за одну команду. 	Этот способ сэкономит нам немного времени и немного расширит наш кругозор.<br/>
-						Мы создадим исполняемый файл "sysup.sh".&#42;
+						<h2 class="malloc-text-teal">Пишем код</h2>
 						<ul class="malloc-ul"/>
+							Я напишу три примера вывода сообщения в терминал - Hello, world.<br/>
+							Сначала запишите первый пример и сразу переходите в пункт - Компиляция и запуск. <br/>
+							Рекомендую посмотреть видео на котором все показано на практике.
+							<div class="malloc-text-blue" style="font-size:18px;"/>Пример 1</div>
 							<div class="malloc-padding"/>
-								<div class="malloc-text-blue"/>Шаг 0.</div>
+								Пишите код строчка за строчкой:
 								<li/>
-									Для начала откроем терминал:<br/>
-									"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br/>
-									Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
+									Подключаем стандартную библиотеку ввода-вывода:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
+									Далее пишем функцию - main:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int main()</code><br/>
+									Обязательная открывающая скобка:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
+									Теперь пишем приветствие:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Hello, world");</code><br/>
+									Чтобы наша строка не слилась со строкой в терминале, добавим переход на красную строку:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\n");</code><br/>
+									Далее (по правилам) вернем целое число:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return 0;</code><br/>
+									Обязательная закрывающая скобка:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
-								<br/>
-								<div class="malloc-text-blue"/>Шаг 1</div>
+							</div>
+							<br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Пример 2</div>
+							<div class="malloc-padding"/>
+								Пишите код строчка за строчкой:
 								<li/>
-									Создадим директорию (папку) - system_update:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir system_update</code><br/>
-									Директория нужна, что бы хранить там файл(ы).
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"mkdir" - это команда для создания новых директорий (каталогов).						
-									</p>
+									Подключаем стандартную библиотеку ввода-вывода:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
+									Далее пишем функцию - main:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>void main()</code><br/>
+									Обязательная открывающая скобка:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
+									Теперь пишем приветствие:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Hello, world\n");</code><br/>
+									Обязательная закрывающая скобка:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
-								<br/>
-								<div class="malloc-text-blue"/>Шаг 2</div>
+							</div>
+							<br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Пример 3</div>
+							<div class="malloc-padding"/>
+								Пишите код строчка за строчкой:
 								<li/>
-									Теперь, зайдем в папку и создадим там файл:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd system_update && touch sysup.sh</code><br/>
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"cd" - нужна для перемещения по директориям.<br/>
-										"&&" -  с помощью 'И' мы можем выполнить несколько команд попорядку.<br/>
-		 								"touch" - создание пустого файла.
-									</p>
-								</li>
-								<div class="malloc-text-blue"/>Шаг 3</div>
-								<li/>
-									Запишем в наш файл команды, которые нужны для обновления системы:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>echo 'sudo apt update && sudo apt upgrade -y' > sysup.sh</code><br/>
-									На первый взгляд команда кажеться сложной, но приглядевшись вы поймете, что все намного проще, чем кажется.
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"echo" - в данном случае используется для записи строки в файл sysup.sh
-									</p>
-								</li>
-								<br/>
-								<div class="malloc-text-blue"/>Шаг 4</div>
-								<li/>
-									Теперь дадим нашему файлу "sysup.sh" права на исполнение:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>chmod +x sysup.sh</code><br/>
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										"chmod +x" - позволяет задать параметры запуска файла на исполнение.
-									</p>
-								</li>
-								<br/>
-								<div class="malloc-text-blue"/>Шаг 5</div>
-								<li/>
-									Все готово, теперь мы можем запустить файл и он выполнить сразу две команды за раз:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>./sysup.sh</code>
+									Подключаем стандартную библиотеку ввода-вывода:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
+									Пишем макрос - hello:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#define hello printf("Hello, world\n");</code><br/>
+									Далее пишем функцию - main:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>void main() { hello }</code>
 								</li>
 							</div>
 						</ul>
-						<sub/>&#42; Далее вытекает возможность сделать ярлык на рабочем столе. Но это выходит за рамки этой статьи.</sub><br/>
-						<sub/>&#42;&#42; На самом деле файл можно создать с любым расширением, но все же соблюдайте этикет.</sub>
-						<!-- Видео -->
-						<br id="Видео"><br/>
-						<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"/><!-- для ПК -->
-							<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/VoYLMjN2WJM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"/>
-							</object>
-						</div>
-						<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"/><!-- для мобильников -->
-							<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/VoYLMjN2WJM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"/>
-							</object>
-						</div>
+					</p>
+					<!-- Подзаголовок 3 -->
+					<p class="malloc-padding-small"/>
+						<div class="malloc-padding-16"/></div>
+						<h2 class="malloc-text-teal">Компиляция и запуск</h2>
+						<ul class="malloc-ul"/>
+							Чтобы совершить сборку нашего файла нам понадобиться - компилятор gcc.<br/>
+							Установим его:<br/>
+							<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt install gcc</code><br/>
+							Если он у вас уже есть, то хорошо, идем дальше.<br/><br/>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 1</div>
+							<div class="malloc-padding"/>
+								<li/>
+									Компиляция:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gcc hello.c</code><br/>
+									Посмотрим, что появилось в нашей папке:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code><br/>
+									В каталоге дожны лежать "a.out" и "hello.c". 
+								</li>
+							</div>
+							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 2</div>
+							<div class="malloc-padding"/>
+								<li/>
+									Теперь посмотрим на результат:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>./a.out</code><br/>
+									Если все сделано правильно, то увидим сообщение:<br/>
+									<code class="malloc-text-purple">Hello, world</code>
+								</li>
+							</div>
+						</ul>
 					</p>
 					<hr/>
 					<!-- Заключение -->
@@ -150,8 +183,9 @@
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding-small"/>
 								<li/>
-									Мы рассмотрели обновление операционной системы Ubuntu, через терминал.<br/>
-									Конечно можно поместить хоть двадцать, сто, тысячу команд в этот файл и все будет исполняться по порядку. Все зависит от вашей цели.<br/><br/>
+									В данной статье была расмотрена программа "Hello, world" на языке программирования С (си).<br/>
+									В статье приведены три примера, в которых можно увидеть, что одно и тоже сообщение выводится в терминал разными способами.<br/>
+									В итоге мы собрали нашу программу и запустили её на исполнение.<br/>	<br/>	
 									Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
 								</li>
 							</div>
@@ -256,7 +290,7 @@
 			</div>
 		</footer>
 		<!--JScript -->
-		<script src="js/1_scripts.js"/></script>
+		<script src="js/5_scripts.js"/></script>
 		<script src="../js/news.js"/></script>
 	</body>
 </html>

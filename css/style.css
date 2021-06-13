@@ -274,7 +274,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 @media (max-width:992px){.malloc-ad-desktop {display: none}}/* Для стационаров, ноутбуков */
 @media (min-width:992px){.malloc-ad-mobile {display: none}}/* Для мобильных устройств, нетбуков */
 /* Для NEWS */
-textarea{font-size:14px; overflow:auto; max-width:100%;min-width:100%; max-height:250px; min-height:250px;}
+textarea{font-size:14px; overflow:auto; max-width:75%;min-width:60%; min-height:200px;}
 /* Защита от копирования */
 .malloc-post code, blockquote {-webkit-user-select: text !important;-moz-user-select: text !important;-ms-user-select: text !important; user-select: text !important;}body {-webkit-user-select: none !important;-moz-user-select: -moz-none !important;-ms-user-select: none !important;user-select: none !important;}
 /* хлебные крошки */
