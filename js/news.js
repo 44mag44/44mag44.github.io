@@ -1,1 +1,1 @@
-document.getElementById("news").innerHTML = "Привет всем!<br><br>Добавлен подвал для мобильной версии.<br><br>Всем добра!";
+document.getElementById("news").innerHTML = "Всем привет!!!<br><br>Ура Ура! Встречаем новую статью - \"Hello world на Си\".<br><br>Так же не забываем подписываться на Youtube канал  - \"MallocRU\"<br><br>Всем отличного настроения! И до следующих новостей!";

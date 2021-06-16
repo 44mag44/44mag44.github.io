@@ -24,15 +24,14 @@
 					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Hello World на Си</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
-						Из этой статьи вы узнаете как написать программу, которая будет выводить сообщение в терминал "Hello, world".<br/>
-						А писать мы будем на языке программирования С (си).<br/>
+						Из этой статьи вы узнаете как написать программу, которая выводит сообщение "Hello, world".<br/>
+						В качестве языка программирования я выбрал - С (си).<br/>
 						Тема далеко не нова, но все же у многих возникают трудности при написании этой программы.<br/><br/>
-						Те кто не знает про *nix и терминал, будет интересно почитать статью и/или расширить свой кругозор.<br/>
-						Для более полного восприятия статьи рекомендую просмотреть видео.<br/><br/>
-						Все действия протестированы и проверены на дистрибутиве Ubuntu.
+						Все действия протестированы и проверены на дистрибутиве Ubuntu. <br/>
+						В статье присутстуют видео, в которых увидите все действия в живую.
 					</p>
-					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"/></div>
-					<!-- Подзаголовок 0 -->
+					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/5.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"/></div>
+					<!-- Подзаголовок 1 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
 						<h2 class="malloc-text-teal">Подготовка</h2>
@@ -41,20 +40,21 @@
 							<div class="malloc-padding"/>
 								<li/>
 									Открываем терминал:<br/>
-									"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (англ. - Open in Terminal).
+									"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
 								</li>
 							</div>
 							<br/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 2</div>
 							<div class="malloc-padding"/>
 								<li/>
-									Создадим отдельный каталог (папка) для того, что бы нам не чего не мешало:<br/>
+									Создадим отдельный каталог (папку):<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir prog</code><br/>
 									Теперь зайдем в него:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd prog</code>
+									Мы создали пустой каталог и зашли в него для того, чтобы ничего не мешало.<br/>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"mkdir" - создать пустой каталог<br/>
-			 							"cd" - используется для перемещения по каталогам.
+			 							"cd" - используется для перемещения по каталогам
 									</p>									
 								</li>
 							</div>
@@ -68,7 +68,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"touch" - создать файл<br/>
-			 							"ls" - просмотр текущего каталога.
+			 							"ls" - просмотр текущего каталога
 									</p>		
 								</li>
 							</div>
@@ -76,23 +76,33 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 4</div>
 							<div class="malloc-padding"/>
 								Теперь нужно открыть файл в любой текстовом редакторе.<br/>
-								К примеру открою наш файл "hello.c" в текстовом редакторе - gedit.
+								К примеру открою наш файл "hello.c" в текстовом редакторе - gedit.<br/>
 								<li/>
-									Нажимаем "Ctrl+Shift+T".<br/>
+									Нажимаем "Ctrl+Shift+T", для того, чтобы открыть новую вкаладку в терминале.<br/>
 									Теперь вводим следующую команду:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gedit hello.c & exit</code>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gedit hello.c & exit</code><br/>
+									Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
 								</li>
 							</div>
 						</ul>
 					</p>
-					<!-- Подзаголовок 1 -->
+					<!-- Видео 1 -->
+					<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"/><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/eGKRfdb4xzQ " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						</object>
+					</div>
+					<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"/><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/eGKRfdb4xzQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						</object>
+					</div>
+					<hr/>
+					<!-- Подзаголовок 2 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
 						<h2 class="malloc-text-teal">Пишем код</h2>
 						<ul class="malloc-ul"/>
 							Я напишу три примера вывода сообщения в терминал - Hello, world.<br/>
-							Сначала запишите первый пример и сразу переходите в пункт - Компиляция и запуск. <br/>
-							Рекомендую посмотреть видео на котором все показано на практике.
+							После каждого примера нужно запустить компиляцию.<br/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Пример 1</div>
 							<div class="malloc-padding"/>
 								Пишите код строчка за строчкой:
@@ -101,7 +111,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
 									Далее пишем функцию - main:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int main()</code><br/>
-									Обязательная открывающая скобка:<br/>
+									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
 									Теперь пишем приветствие:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Hello, world");</code><br/>
@@ -109,7 +119,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\n");</code><br/>
 									Далее (по правилам) вернем целое число:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return 0;</code><br/>
-									Обязательная закрывающая скобка:<br/>
+									Закрывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
 							</div>
@@ -122,11 +132,11 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
 									Далее пишем функцию - main:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>void main()</code><br/>
-									Обязательная открывающая скобка:<br/>
+									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
 									Теперь пишем приветствие:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Hello, world\n");</code><br/>
-									Обязательная закрывающая скобка:<br/>
+									Закрывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
 							</div>
@@ -150,7 +160,7 @@
 						<div class="malloc-padding-16"/></div>
 						<h2 class="malloc-text-teal">Компиляция и запуск</h2>
 						<ul class="malloc-ul"/>
-							Чтобы совершить сборку нашего файла нам понадобиться - компилятор gcc.<br/>
+							Чтобы совершить сборку программы нужен - "компилятор gcc".<br/>
 							Установим его:<br/>
 							<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt install gcc</code><br/>
 							Если он у вас уже есть, то хорошо, идем дальше.<br/><br/>
@@ -159,7 +169,7 @@
 								<li/>
 									Компиляция:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gcc hello.c</code><br/>
-									Посмотрим, что появилось в нашей папке:<br/>
+									Посмотрим, что появилось в нашем каталоге:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code><br/>
 									В каталоге дожны лежать "a.out" и "hello.c". 
 								</li>
@@ -175,6 +185,16 @@
 							</div>
 						</ul>
 					</p>
+					<hr/>
+					<!-- Видео 2 -->
+					<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"/><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/yqiRz--4slY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						</object>
+					</div>
+					<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"/><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/yqiRz--4slY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						</object>
+					</div>
 					<hr/>
 					<!-- Заключение -->
 					<p class="malloc-padding-small"/>
