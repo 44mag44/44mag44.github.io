@@ -5,12 +5,16 @@ document.getElementById('link-article-2').onclick=function(){window.open('conten
 document.getElementById('link-article-3').onclick=function(){window.open('content/3_Linux - работа с каталогами и файлами. Часть Первая.html', '_self');};
 document.getElementById('link-article-4').onclick=function(){window.open('content/4_Linux - работа с каталогами и файлами. Часть Вторая.html', '_self');};
 document.getElementById('link-article-5').onclick=function(){window.open('content/5_hello_world_на _си.html', '_self');};
+document.getElementById('link-article-6').onclick=function(){window.open('content/6_установка_ubuntu.html', '_self');};
+
 /* Статьи в sidebar */
 document.getElementById('sidebar-link-article-1').onclick=function(){window.open('content/1_Как обновить Ubuntu через терминал.html', '_self');};
 document.getElementById('sidebar-link-article-2').onclick=function(){window.open('content/2_Как отправить существующий проект на GitHub.html', '_self');};
 document.getElementById('sidebar-link-article-3').onclick=function(){window.open('content/3_Linux - работа с каталогами и файлами. Часть Первая.html', '_self');};
 document.getElementById('sidebar-link-article-4').onclick=function(){window.open('content/4_Linux - работа с каталогами и файлами. Часть Вторая.html', '_self');};
 document.getElementById('sidebar-link-article-5').onclick=function(){window.open('content/5_hello_world_на _си.html', '_self');};
+document.getElementById('sidebar-link-article-6').onclick=function(){window.open('content/6_установка_ubuntu.html', '_self');};
+
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
