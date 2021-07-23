@@ -2,11 +2,11 @@
 /* Ссылка malloc.ru */
 document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
 /* Статьи */
-document.getElementById('articles').onclick=function(){window.open('articles-1.html', '_self');};
+document.getElementById('articles').onclick=function(){window.open('stat\'i-1.html', '_self');};
 /* Cоцсети */
 document.getElementById('Telegram').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 /* Донат */
-document.getElementById('Donat').onclick=function(){window.open('about.html', '_self');};
+document.getElementById('Donat').onclick=function(){window.open('donat.html', '_self');};
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
