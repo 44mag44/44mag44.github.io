@@ -1,1 +1,1 @@
-document.getElementById("news").innerHTML = "Всем привет!!!<br><br>Ура Ура! Встречаем новую статью - \"Hello world на Си\".<br><br>Так же не забываем подписываться на Youtube канал  - \"MallocRU\"<br><br>Всем отличного настроения! И до следующих новостей!";
+document.getElementById("news").innerHTML = "Всем привет!<br><br>Важные изменения в имени страниц сайта:<br>Было -> malloc.ru/content/Статьи.html<br>Stalo -> malloc.ru/content/stat'i.html<br><br>Отпуск закончился. Начинаются работа на сайте!<br>Я очень соскучился, а вы?<br><br>Хорошего настроения и доброго дня!";
