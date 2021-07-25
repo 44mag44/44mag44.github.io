@@ -28,10 +28,8 @@
 						Каталог это место хранения файлов и подкаталогов.<br/>
 						Каталоги организуются в иерархическом порядке от корневого (/) до многочисленных подкаталогов отделяемых друг от друга символом /.<br/>
 						В этой статье покажу как создавать, удалять, копировать, перемещать, переименовывать каталоги, подкаталоги и файлы.<br/><br/>
-						Команды, предоставленные в статье, протестированы на Ubuntu.<br/>
-						Посмотреть как это происходит в реальности можно на видео, которые находиться в статье.<br/><br/>
 						Все действия протестированы и проверены на дистрибутиве Ubuntu. <br/>
-						В статье есть видео, в которых всё показано в живую.<br/>
+						В статье есть видео, в которых всё показано в примерах.<br/>
 						Приятного чтения и просмотра!<br/>
 					</p>
 					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/3.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"/></div>
@@ -89,7 +87,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd test</code><br/>
 									Выход из каталога:<br/>	
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd ../</code><br/>
-									Теперь снова зайдем в каталог "test". В ней и будем выполнять все операции, которые описаны в статье.
+									Теперь снова зайдем в каталог "test". В нем и будем выполнять все операции, которые описаны в статье.
 									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"cd" - перемещение по каталогом<br/>	
 										"../" - подняться на один уровень
@@ -110,7 +108,7 @@
 									Посмотрим, что находиться в каталоге "test":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code><br/>
 									Мы видим, что тут лежит каталог "myDir".<br/>
-									Посмотрим, что находиться в ней:<br/>
+									Посмотрим, что находиться в этом каталоге:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls myDir/</code><br/>
 									Мы видим, что там есть три каталога - "music", "video", "pictures".
 									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
@@ -130,7 +128,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd myDir</code><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rmdir music</code><br/>
 									Каталог "music" удален.<br/>
-									Возвращаемся в каталог "test"<br>
+									Возвращаемся в каталог "test":<br>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd ../</code><br/>		
 									2. Удалим пустой каталог "pictures":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rmdir myDir/pictures</code><br/>
@@ -197,7 +195,7 @@
 								<li/>
 									Удалить файлы имеющих различие в определенной месте:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>rm file-1?</code><br/>
-									Удалены файлы: "file-10", "file-11", "file-12".
+									Были удалены следующие файлы "file-10", "file-11", "file-12".
 									<p class="malloc-padding-small   malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"?" - означает любой один символ	
 									</p>
@@ -276,7 +274,7 @@
 								<br/>
 								<li/>
 									Создадим дополнительный файл:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>> main,c</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>> main.c</code><br/>
 									Копирование нескольких файлов. Для мониторига добавим ключ "-v":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cp -i -v main.c second MyCopyDir</code><br/>
 									Будет вопрос по поводу файла "second", а вот файл "main.c" скопируется в каталог без проблем.

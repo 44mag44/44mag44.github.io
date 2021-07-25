@@ -1,1 +1,1 @@
-document.getElementById("news").innerHTML = "Всем привет!<br><br>Важные изменения в имени страниц сайта:<br>Было -> malloc.ru/content/Статьи.html<br>Stalo -> malloc.ru/content/stat'i.html<br><br>Отпуск закончился. Начинаются работа на сайте!<br>Я очень соскучился, а вы?<br><br>Хорошего настроения и доброго дня!";
+document.getElementById("news").innerHTML = "MallocRu теперь и в Дзен.<br>Заходи, подписывайся, комментируй!<br><br>Давайте соберем большую тусовку!<br>А вот ссылка на Дзен: https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db<br><br>До следующих новостей!";
