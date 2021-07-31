@@ -1,1 +1,1 @@
-document.getElementById("news").innerHTML = "MallocRu теперь и в Дзен.<br>Заходи, подписывайся, комментируй!<br><br>Давайте соберем большую тусовку!<br>А вот ссылка на Дзен: https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db<br><br>До следующих новостей!";
+document.getElementById("news").innerHTML = "Всем привет!<br>Ходят слухи, что MallocRu, появился в Дзен!<br>А еще вышла новая статья!<br>\"Конвертер валют на си\"<br><br>До следующих новостей!";

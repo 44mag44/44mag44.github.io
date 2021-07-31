@@ -23,14 +23,14 @@
 				<div class="malloc-threequarter malloc-padding"/><!-- { -->
 					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Конвертер валют на си</h1>
 					<!-- Вступление -->
-					<p style="font-size: 14px" class="malloc-padding-small"/>
+					<p class="malloc-padding-small"/>
 						В этой статье мы напишем программу "Конвертер валют".<br/>
 						Она будет делать две операции, первая - это "из доллара в рубль", а вторая наоборт "из рубля в доллар".<br/><br/>
 						Это будут две фунции, которые будут запускаться из меню в функции main(). <br/>
 						Для простаты, я буду использовать только целочисленный тип <b/>"int"</b>.<br/>
 						Пишите код строчка за строчкой!<br/><br/>
 						Все действия протестированы и проверены на дистрибутиве Ubuntu.<br/>
-						В статье есть видео, в которых всё показано в живую.<br/>
+						В статье есть видео, в котором всё показано в живую.<br/>
 						Приятного чтения и просмотра!<br/>
 					</p>
 					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"/><img class="malloc-image" src="pictures/6.png" alt="screenshot" title="screenshot" style="border-radius:5px;"/></div>
@@ -83,7 +83,7 @@
 									Теперь нужно открыть файл в любой текстовом редакторе.<br/>
 									К примеру открою наш файл "main.c" в текстовом редакторе - gedit.<br/><br/>
 									Нажимаем "Ctrl+Shift+T", для того, чтобы открыть новую вкаладку в терминале.<br/>
-									Теперь вводим следующую команду:<br/>
+									Вводим следующую команду:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gedit main.c & exit</code><br/>
 									Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
 								</li>
@@ -128,7 +128,7 @@
 					<!-- Подзаголовок 3 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Компиляция и запуск</h2>
+						<h2 class="malloc-text-teal">Компиляция и запуск 1</h2>
 						<ul class="malloc-ul"/>
 							Чтобы совершить сборку программы нужен - "компилятор gcc".<br/>
 							Установим его:<br/>
@@ -165,8 +165,8 @@
 							Можно для неё создать отдельный файл, но мы просто закомментируем предыдущий код.<br/>
 							На первой строчке первым символом напишите вот такой знак <b/>/*</b>.<br/>
 							Вконце кода последним символом напишите <b/>*/</b>.
-							Теперь код обазначен как комментарии и не будет нам мешать.<br>
-							Отступите пару строчек вниз:
+							Теперь код обазначен как комментарий и не будет нам мешать.<br>
+							Отступите пару строчек вниз.
 							<li/>
 								Подключаем стандартную библиотеку ввода-вывода:<br/>
 								<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
@@ -196,7 +196,7 @@
 					<!-- Подзаголовок 5 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Компиляция и запуск</h2>
+						<h2 class="malloc-text-teal">Компиляция и запуск 2</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding"/>
 								<li/>
@@ -204,7 +204,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gcc -Wall -g main.c</code><br/>
 									Теперь посмотрим на результат:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>./a.out</code><br/>
-									Вводим кол-во долларов, например "500"<br/>
+									Вводим кол-во долларов, например "500".<br/><br/>
 									Вывод будет такой:<br/>
 									<b/>USD = 500</b><br/>
 									<b/>RUB = 37500</b>
@@ -263,6 +263,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>scanf("%d", &num);</code><br/>	<br/>								
 									Сделаем так, чтобы программа реагировала на ввод пользователя.<br/>
 									То есть, если введен пункт 2, то результат такой. Если введен не существующий пункт 7, то результат такой.<br/>
+									Для этого воспользуемся "switch":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>switch(num)</code><br/>
 									Открывающая скобка "switch":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>	
@@ -272,7 +273,7 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>case 2:	ith_usd_v_rub();	break;</code><br/>
 									Но, если введенного пункта меню не существует, то пишем исключение:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>default:</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\nЧто, то пошло не так =(\n\n");</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\nЧто то пошло не так =(\n\n");</code><br/>
 									Закрываем "switch":<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>};</code><br/>	
 									Возвращаем целое число:<br/>
@@ -287,11 +288,11 @@
 					<!-- Подзаголовок 5 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Компиляция и запуск</h2>
+						<h2 class="malloc-text-teal">Компиляция и запуск 3</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding"/>
 								<li/>
-									Собирем нашу программу:<br/>
+									Собирем нашу программу. Пишем в терминале:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gcc -Wall -g main.c</code><br/>
 									Теперь посмотрим на результат. Вводить будем поочередно - один, два и любое число:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>./a.out</code><br/>
@@ -319,7 +320,6 @@
 										Выберите номер операции:  7<br/><br/>
 
 										Что, то пошло не так =(<br/>
-
 									</p>	
 								</li>
 							</div>
@@ -392,11 +392,12 @@
 							<div id="Question-footer-d" class="malloc-hover-red" style="border-radius:5px;"/>Звдать вопрос</div>
 						</div>
 					</ul>
-					<!-- Соц. сети -->
+					<!-- Соцсети -->
 					<ul class="malloc-ul malloc-col"/><b/>Соцсети:</b>
 						<div class="malloc-padding-12"/>
 							<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;"/>Телеграм</div>
 							<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;"/>Youtube</div>
+							<div id="Zen-footer-d" class="malloc-hover-green" style="border-radius:5px;"/>Дзен</div>
 						</div>
 					</ul>
 					<!-- Допольнительно -->
@@ -426,11 +427,12 @@
 							<div id="Question-footer-m" class="malloc-hover-red" style="border-radius:5px;"/>Звдать вопрос</div>
 						</div>
 					</ul>
-					<!-- Соц. сети -->
-					<ul class="malloc-ul malloc-col"/><b/>Социальные сети:</b>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col"/><b/>Соцсети:</b>
 						<div class="malloc-padding-12"/>
 							<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;"/>Телеграм</div>
 							<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;"/>Youtube</div>
+							<div id="Zen-footer-m" class="malloc-hover-green" style="border-radius:5px;"/>Дзен</div>						
 						</div>
 					</ul>
 					<!-- Допольнительно -->
