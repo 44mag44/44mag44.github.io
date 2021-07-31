@@ -5,6 +5,8 @@ document.getElementById('malloc.ru').onclick=function(){window.open('https://mal
 document.getElementById('articles').onclick=function(){window.open('stat\'i-1.html', '_self');};
 /* Cоцсети */
 document.getElementById('Telegram').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
+document.getElementById('Youtube').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
+document.getElementById('Дзен').onclick=function(){window.open('https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db', '_blank');};
 /* Донат */
 document.getElementById('Donat').onclick=function(){window.open('donat.html', '_self');};
 /* Footer desktop*/
