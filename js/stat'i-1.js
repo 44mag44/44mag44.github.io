@@ -34,8 +34,8 @@ document.getElementById('Zen-footer-m').onclick=function(){window.open('https://
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 /* AD */
-document.getElementById('Seosprint-mobile').onclick=function(){window.open('https://seosprint.net/?ref=15060884', '_blank');};
-document.getElementById('Seosprint-desktop').onclick=function(){window.open('https://seosprint.net/?ref=15060884', '_blank');};
+document.getElementById('Crypto-mobile').onclick=function(){window.open('https://faucetcrypto.com/ref/1430908', '_blank');};
+document.getElementById('Crypto-desktop').onclick=function(){window.open('https://faucetcrypto.com/ref/1430908', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");

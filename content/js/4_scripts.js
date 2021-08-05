@@ -1,6 +1,6 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* предыдущая статья */
-document.getElementById('article-3').onclick=function(){window.open('3-linux-rabota-s-katalogami-i-faylami-chast\'-pervaya.html', '_self');};
+document.getElementById('article-3').onclick=function(){window.open('file:///home/mag/dev/lang/web/test/content/3-linux-rabota-s-katalogami-i-faylami-chast\'-pervaya.html', '_self');};
 /* Руководство */
 document.getElementById('Man').onclick=function(){window.open('https://www.gnu.org/software/coreutils/manual/coreutils.pdf', '_self');};
 /* Footer desktop*/
