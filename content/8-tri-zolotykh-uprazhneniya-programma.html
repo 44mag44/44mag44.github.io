@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html/>
-	<title>Три кита. Программа</title>
+	<title>Три золотых упражнения. Программа</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<meta name="description" content="Из этой статьи вы узнаете как создать программу, которая расчитывает количество приседаний, подтягиваний, скручиваний и отжиманий! Пошаговая инструкция поможет сосредоточиться на деталях, а видео инструкция поможет увидеть всю картину в целиком. Команды, предоставленные в статье, протестированы на Ubuntu. Подробнее..."/>
+	<meta name="description" content="Из этой статьи вы узнаете как создать программу, которая расчитывает количество приседаний, подтягиваний, отжиманий! Пошаговая инструкция поможет сосредоточиться на деталях, а видео инструкция поможет увидеть всю картину в целиком. Команды, предоставленные в статье, протестированы на Ubuntu. Подробнее..."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="../css/style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -21,12 +21,11 @@
 			<div class="malloc-row malloc-padding-64"/><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"/><!-- { -->
-					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Три кита. Программа</h1>
+					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Три золотых упражнения. Программа</h1>
 					<!-- Вступление -->
 					<p style="font-size: 14px" class="malloc-padding-small"/>
-						Из этой статьи вы узнаете как создать программу подсчитывающая количество приседаний, подтягиваний, отжиманий исходя из вашего возраста, веса, роста.<br/>
-						Программа создана для ознакомительных целей, хотя можно использовать и в других накинув GUI.<br/><br/>
-						В качестве языка программирования я выбрал - <b/>С</b> и <b/>С++</b>.<br/>
+						Из этой статьи вы узнаете как создать программу подсчитывающая количество приседаний, подтягиваний, отжиманий исходя из вашего возраста, веса, роста.<br/><br/>
+						В качестве языков программирования я выбрал - <b/>С</b> и <b/>С++</b>.<br/>
 						Все действия протестированы и проверены на дистрибутиве Ubuntu.<br/>
 						В статье есть видео, в которых всё показано в живую.<br/><br/>
 						Приятного чтения и просмотра!<br/>
@@ -35,23 +34,14 @@
 					<!-- Подзаголовок 1 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Формулы и план действий</h2>
+						<h2 class="malloc-text-teal">Формулы</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding-small"/>
 								<li/>
-									1.	Отжимания<d style="margin-left: 34px"/>= ("рост в см" + "вес в кг") / (("возраст" + 10) / 10)</d><br/>
-									2.	Подтягивания<d style="margin-left: 15px"/>= "рост в см" + "вес в кг" / "возраст"</d><br/>
+									1.	Отжимания<d style="margin-left: 34px"/>= ("рост" + "вес") / (("возраст" + 10) / 10)</d><br/>
+									2.	Подтягивания<d style="margin-left: 15px"/>= ("рост" + "вес") / "возраст"</d><br/>
 									3.	Приседания<d style="margin-left: 30px"/>= 120 - "возраст"</d>
 								</li>
-								<br/>
-								Теперь обдумаем, что и как будем делать:
-								<li/>
-									1. <d style="margin-left: 5px"/>У нас есть три формулы. Думаю стоит написать отдульные функций по каждой из них.<d/><br/>
-									<d style="margin-left:21px"/>Получиться три функции "Отжимания", "Подтягивания", "Приседания".<d/><br/>
-									2. <d style="margin-left: 5px"/>В функции main() сделаем меню. Будет запрос на ввод цифры от 1 до 3.<d/><br/>
-									<d style="margin-left: 21px"/>Цифра соответствует пункту в меню, а он в свою очередь прикреплен к функции.<d/>
-								</li>
-								Вот мы и накидали примерный план действий и теперь реализуем его.
 							</div>
 						</ul>
 					</p>
@@ -74,7 +64,7 @@
 									Создадим отдельный каталог (папку):<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir c-prog</code><br/>
 									Теперь зайдем в него:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd c-prog</code>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd c-prog</code><br/>
 									Мы создали пустой каталог и зашли в него для того, чтобы ничего не мешало.<br/>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"mkdir" - создать пустой каталог<br/>
@@ -113,7 +103,7 @@
 					<!-- Подзаголовок 3 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Пишем код</h2>
+						<h2 class="malloc-text-teal">Пишем код на Си</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Функция отжимания</div>
 							<div class="malloc-padding"/>
@@ -150,7 +140,7 @@
 									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
 									Дальше идет тот же <b/>код</b>, что и в функции <b/>otzhimaniya()</b>, но возвращаем теперь формулу для подтягиваний:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return result=(rost+ves)/((vozrast+10)/10);</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return result=(rost+ves)/vozrast;</code><br/>
 									Закрывающая скобка функции podtyagivaniya():<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
@@ -185,7 +175,7 @@
 									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
 									Пишем заголовок и меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\tТри кита.\n");</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\tТри золотых упражнения.\n");</code><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("1.  Отжимания\n");</code><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("2.  Подтягивания\n");</code><br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("3.  Приседания\n\n");</code><br/><br/>
@@ -269,18 +259,18 @@
 					<hr/>
 					<!-- Видео 1 -->
 					<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"/><!-- для ПК -->
-						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/VEPzGSshbkw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
 						</object>
 					</div>
 					<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"/><!-- для мобильников -->
-						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/VEPzGSshbkw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
 						</object>
 					</div>
 					<hr/>
 					<!-- Подзаголовок 5 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Подготовка для Си++</h2>
+						<h2 class="malloc-text-teal">Подготовка для С++</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 1</div>
 							<div class="malloc-padding"/>
@@ -294,9 +284,9 @@
 							<div class="malloc-padding"/>
 								<li/>
 									Создадим отдельный каталог (папку):<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir c-prog</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>mkdir cpp-prog</code><br/>
 									Теперь зайдем в него:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd c-prog</code>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cd cpp-prog</code><br/>
 									Мы создали пустой каталог и зашли в него для того, чтобы ничего не мешало.<br/>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
 										"mkdir" - создать пустой каталог<br/>
@@ -308,8 +298,8 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 3</div>
 							<div class="malloc-padding"/>
 								<li/>
-									В этой папке создадим файл "main.c":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>touch main.c</code><br/>
+									В этой папке создадим файл "main.cpp":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>touch main.cpp</code><br/>
 									Убидимся, что файл создался:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
@@ -322,11 +312,11 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 4</div>
 							<div class="malloc-padding"/>
 								Теперь нужно открыть файл в любой текстовом редакторе.<br/>
-								К примеру открою наш файл "main.c" в текстовом редакторе - gedit.<br/>
+								К примеру открою наш файл "main.cpp" в текстовом редакторе - gedit.<br/>
 								<li/>
 									Нажимаем "Ctrl+Shift+T", для того, чтобы открыть новую вкаладку в терминале.<br/>
 									Теперь вводим следующую команду:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gedit main.c & exit</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gedit main.cpp & exit</code><br/>
 									Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
 								</li>
 							</div>
@@ -335,31 +325,22 @@
 					<!-- Подзаголовок 6 -->
 					<p class="malloc-padding-small"/>
 						<div class="malloc-padding-16"/></div>
-						<h2 class="malloc-text-teal">Пишем код</h2>
+						<h2 class="malloc-text-teal">Пишем код на С++</h2>
 						<ul class="malloc-ul"/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Функция отжимания</div>
 							<div class="malloc-padding"/>
 								<li/>
 									Подключаем стандартную библиотеку ввода-вывода:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;stdio.h&gt;</code><br/>
-									Далее пишем функцию отжимания:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int otzhimaniya()</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>#include &lt;iostream&gt;</code><br/>
+									Подключаем пространство имен - "std":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>using namespace std;</code><br/>
+									Далее пишем функцию отжимания с тремя переменными - рост, вес, возраст:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int otzhimaniya (int rost, int ves, int vozrast)</code><br/>
 									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
-									Нам понадобиться четыре переменные.<br/>"Результат", "Рост", "Вес", "Возраст":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int result, rost, ves, vozrast;</code><br/><br/>
-									Записываем нуль в переменную "result":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>result = 0;</code><br/><br/>
-									Далее пишем приглашение на ввод:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Ваш рост (см): ");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>scanf("%d", &rost);</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Ваш вес (кг): ");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>scanf("%d", &ves);</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Ваш возраст: ");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>scanf("%d", &vozrast);</code><br/><br/>
-									Пишем формулу из условия для отжимания и сразу возвращаем результат переменной:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return result=(rost+ves)/((vozrast+10)/10);</code><br/>
-									Закрывающая скобка функции otzhimaniya():<br/>
+									Пишем формулу из условия для отжимания и возвращаем результат:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return (rost+ves)/((vozrast+10)/10);</code><br/>
+									Закрывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
 							</div>
@@ -367,13 +348,13 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Функция подтягивания</div>
 							<div class="malloc-padding"/>
 								<li/>
-									Отступаем вниз пару строк и пишем функцию подтягивания:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int podtyagivaniya()</code><br/>
+									Отступаем вниз пару строк и пишем функцию подтягивания с тремя переменными - рост, вес, возраст:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int podtyagivaniya (int rost, int ves, int vozrast)</code><br/>
 									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
-									Дальше идет тот же <b/>код</b>, что и в функции <b/>otzhimaniya()</b>, но возвращаем теперь формулу для подтягиваний:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return result=(rost+ves)/((vozrast+10)/10);</code><br/>
-									Закрывающая скобка функции podtyagivaniya():<br/>
+									Пишем формулу из условия для подтягивания и возвращаем результат:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return (rost+ves)/vozrast;</code><br/>
+									Закрывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
 							</div>
@@ -381,20 +362,13 @@
 							<div class="malloc-text-blue" style="font-size:18px;"/>Функция приседания</div>
 							<div class="malloc-padding"/>
 								<li/>
-									Отступаем вниз пару строк и пишем функцию приседания:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int prisedaniya()</code><br/>
+									Отступаем вниз пару строк и пишем функцию приседания с одной переменной - возраст:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int prisedaniya(int vozrast)</code><br/>
 									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
-									Нам понадобиться две переменные.<br/>"Результат", "Возраст":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int result, vozrast;</code><br/>
-									Записываем нуль в переменную "result":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>result = 0;</code><br/><br/>
-									Далее пишем приглашение на ввод:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Ваш возраст: ");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>scanf("%d", &vozrast);</code><br/><br/>
-									Пишем формулу из условия для приседания и сразу возвращаем результат переменной:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return result=120-vozrast;</code><br/>
-									Закрывающая скобка функции prisedaniya():<br/>
+									Пишем формулу из условия для приседания и возвращаем результат:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return 120-vozrast;</code><br/>
+									Закрывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code>										
 								</li>
 							</div>
@@ -406,31 +380,27 @@
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int main()</code><br/>
 									Открывающая скобка:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
-									Пишем заголовок и меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\tТри кита.\n");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("1.  Отжимания\n");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("2.  Подтягивания\n");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("3.  Приседания\n\n");</code><br/><br/>
-									Нам нужна переменная в которую будем записывать номер пункта меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int num;</code><br/><br|>
-									Пишем приглошения на выбор пункта меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("Выбор: ");</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>scanf("%d", &num);</code><br/><br/>
-									Теперь опишем "switch", чтобы он правильно реагировал на выбор пункта меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>switch(num)</code><br/>
-									Открывающая скобка "switch":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>{</code><br/>
-									Вывод для первого пункт меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>case 1: printf("Кол-во отжиманий = %d\n", otzhimaniya()); break;</code><br/>
-									Второго пункта меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>case 2: printf("Кол-во подтягиваний = %d\n", podtyagivaniya()); break;</code><br/>
-									Третьего пункта меню:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>case 3: printf("Кол-во приседаний = %d\n", prisedaniya()); break;</code><br/>
-									Пишем исключения для ввода:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>default:</code><br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>printf("\nчто то пошло не так =(\n");</code><br/>
-									Закрывающая скобка "switch":<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>}</code><br/><br/>
+									Нам понадобиться три переменные - рост, вес, возраст:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>int rost, ves, vozrast;</code><br/><br/>
+									Пишем заголовок:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "\tТри золотых упражнения.\n";</code><br/><br/>
+									Приглашенние на ввод "Рост":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "Рост: ";</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cin >> rost;</code><br/>
+									Приглашенние на ввод "Вес":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "Вес: ";</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cin >> ves;</code><br/>
+									Приглашенние на ввод "Возраст":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "Возраст: ";</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cin >> vozrast;</code><br/><br/>
+									Отступ между вводом и выводом в терминале:<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << endl;</code><br/>
+									Вывод на экран "Отжимания":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "Отжимания = " << otzhimaniya (rost, ves, vozrast) << endl;</code><br/>
+									"Подтягивания":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "Подтягивания = " << podtyagivaniya (rost, ves, vozrast) << endl;</code><br/>
+									"Приседания":<br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>cout << "Приседания = " << prisedaniya (vozrast) << endl;	</code><br/><br/>
 									Возвращаем целое число:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>return 0;</code><br/>	
 									Закрывающая скобка:<br/>
@@ -444,18 +414,18 @@
 						<div class="malloc-padding-16"/></div>
 						<h2 class="malloc-text-teal">Компиляция и запуск</h2>
 						<ul class="malloc-ul"/>
-							Чтобы совершить сборку программы нужен - <b/>"компилятор gcc"</b>.<br/>
+							Чтобы совершить сборку программы нужен - <b/>"компилятор g++"</b>.<br/>
 							Установим его:<br/>
-							<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt install gcc</code><br/>
+							<code class="malloc-text-teal malloc-border malloc-bar-item"/>sudo apt install g++</code><br/>
 							Если он у вас уже есть, то хорошо, идем дальше.<br/><br/>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 1</div>
 							<div class="malloc-padding"/>
 								<li/>
 									Компиляция:<br/>
-									<code class="malloc-text-teal malloc-border malloc-bar-item"/>gcc main.c</code><br/>
+									<code class="malloc-text-teal malloc-border malloc-bar-item"/>g++ main.cpp</code><br/>
 									Посмотрим, что появилось в нашем каталоге:<br/>
 									<code class="malloc-text-teal malloc-border malloc-bar-item"/>ls</code><br/>
-									В каталоге дожны лежать "a.out" и "main.c". 
+									В каталоге дожны лежать "a.out" и "main.cpp". 
 								</li>
 							</div>
 							<div class="malloc-text-blue" style="font-size:18px;"/>Шаг 2</div>
@@ -466,23 +436,20 @@
 									Если все сделано правильно, то увидим заголовок и меню и приглашение на ввод.<br/>
 									Выберем каждый пункт поочереди и посмотрим результат.<br/>
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										Выбор: 1<br/>
 										Ваш рост (см): 180<br/>
 										Ваш вес (кг): 92<br/>
-										Ваш возраст: 34<br/>
-										Кол-во отжиманий = 68
+										Ваш возраст: 34<br/><br/>
+										Кол-во отжимания = 68<br/>
+										Кол-во подтягивания = 8<br/>
+										Кол-во приседания = 86
 									</p>	
 									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										Выбор: 2<br/>
-										Ваш рост (см): 162<br/>
-										Ваш вес (кг): 58<br/>
-										Ваш возраст: 21<br/>
-										Кол-во подтягиваний = 10
-									</p>	
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px"/>
-										Выбор: 3<br/>
-										Ваш возраст: 45<br/>
-										Кол-во подтягиваний = 75
+										Ваш рост (см): 172<br/>
+										Ваш вес (кг): 65<br/>
+										Ваш возраст: 22<br/><br/>
+										Кол-во отжимания = 79<br/>
+										Кол-во подтягивания = 10<br/>
+										Кол-во приседания = 98
 									</p>	
 								</li>
 							</div>
@@ -491,11 +458,11 @@
 					<hr/>
 					<!-- Видео 2 -->
 					<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"/><!-- для ПК -->
-						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/9RvFKHWlKz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
 						</object>
 					</div>
 					<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"/><!-- для мобильников -->
-						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/9RvFKHWlKz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
 						</object>
 					</div>
 					<hr/>
@@ -506,9 +473,10 @@
 						<ul class="malloc-ul"/>
 							<div class="malloc-padding-small"/>
 								<li/>
-									В данной статье была расмотрена программа расчитывающая количество повторений в подтягиваниях, приседаниях, скручиваний на пресс, которые зависят от максимального количества отжиманий.<br/><br/>
-									Автор использовал для создания программы языки программирования С/С++.<br/><br/>
-									В итоге мы собрали нашу программу и запустили её на исполнение.<br/>	
+									В данной статье была расмотрена программа расчитывающая количество повторений в подтягиваниях, приседаниях, отжиманий, которые зависят от нашего возраста, веса и роста.<br/><br/>
+									Автор использовал для создания программы языки программирования С/С++.<br/>
+									Программа на Си отличается от программы на С++, но формулы остались неизменны.<br/><br/>
+									В итоге мы собрали наши программы и запустили их на исполнение.<br/>	
 									Скачать код можно тут: <a id="C" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;"/>C</a>,  <a id="CPP" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;"/>C++</a><br/><br/>
 									Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
 								</li>
@@ -616,7 +584,7 @@
 			</div>
 		</footer>
 		<!--JScript -->
-		<script src="js/7_scripts.js"/></script>
+		<script src="js/8_scripts.js"/></script>
 		<script src="../js/news.js"/></script>
 	</body>
 </html>
