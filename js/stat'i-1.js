@@ -8,6 +8,7 @@ document.getElementById('link-article-5').onclick=function(){window.open('conten
 document.getElementById('link-article-6').onclick=function(){window.open('content/6-converter-valyut-na-si.html', '_self');};
 document.getElementById('link-article-7').onclick=function(){window.open('content/7-otzhimaniya-v-otkaz-programma.html', '_self');};
 document.getElementById('link-article-8').onclick=function(){window.open('content/8-tri-zolotykh-uprazhneniya-programma.html', '_self');};
+document.getElementById('link-article-9').onclick=function(){window.open('content/9-raspredeleniye-maksimal\'nogo-kolichestva-povtoreniy-na-podkhody.html', '_self');};
 
 /* Статьи в sidebar */
 document.getElementById('sidebar-link-article-1').onclick=function(){window.open('content/1-kak-obnovit\'-ubuntu-cherez-terminal.html', '_self');};
@@ -18,7 +19,7 @@ document.getElementById('sidebar-link-article-5').onclick=function(){window.open
 document.getElementById('sidebar-link-article-6').onclick=function(){window.open('content/6-converter-valyut-na-si.html', '_self');};
 document.getElementById('sidebar-link-article-7').onclick=function(){window.open('content/7-otzhimaniya-v-otkaz-programma.html', '_self');};
 document.getElementById('sidebar-link-article-8').onclick=function(){window.open('content/8-tri-zolotykh-uprazhneniya-programma.html', '_self');};
-
+document.getElementById('sidebar-link-article-9').onclick=function(){window.open('content/9-raspredeleniye-maksimal\'nogo-kolichestva-povtoreniy-na-podkhody.html', '_self');};
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
