@@ -9,6 +9,7 @@ document.getElementById('link-article-6').onclick=function(){window.open('conten
 document.getElementById('link-article-7').onclick=function(){window.open('content/7-otzhimaniya-v-otkaz-programma.html', '_self');};
 document.getElementById('link-article-8').onclick=function(){window.open('content/8-tri-zolotykh-uprazhneniya-programma.html', '_self');};
 document.getElementById('link-article-9').onclick=function(){window.open('content/9-raspredeleniye-maksimal\'nogo-kolichestva-povtoreniy-na-podkhody.html', '_self');};
+document.getElementById('link-article-10').onclick=function(){window.open('content/10-yedinorog.html', '_self');};
 
 /* Статьи в sidebar */
 document.getElementById('sidebar-link-article-1').onclick=function(){window.open('content/1-kak-obnovit\'-ubuntu-cherez-terminal.html', '_self');};
@@ -20,13 +21,14 @@ document.getElementById('sidebar-link-article-6').onclick=function(){window.open
 document.getElementById('sidebar-link-article-7').onclick=function(){window.open('content/7-otzhimaniya-v-otkaz-programma.html', '_self');};
 document.getElementById('sidebar-link-article-8').onclick=function(){window.open('content/8-tri-zolotykh-uprazhneniya-programma.html', '_self');};
 document.getElementById('sidebar-link-article-9').onclick=function(){window.open('content/9-raspredeleniye-maksimal\'nogo-kolichestva-povtoreniy-na-podkhody.html', '_self');};
+document.getElementById('sidebar-link-article-10').onclick=function(){window.open('content/10-yedinorog.html', '_self');};
+
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer-d').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-d').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
-document.getElementById('Zen-footer-d').onclick=function(){window.open('https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db', '_blank');};
 document.getElementById('Topmail-footer-d').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-d').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 
@@ -36,13 +38,9 @@ document.getElementById('Dream-footer-m').onclick=function(){window.open('https:
 document.getElementById('Question-footer-m').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
 document.getElementById('Telegram-footer-m').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-m').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
-document.getElementById('Zen-footer-m').onclick=function(){window.open('https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db', '_blank');};
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 
-/* AD */
-document.getElementById('Crypto-mobile').onclick=function(){window.open('https://faucetcrypto.com/ref/1430908', '_blank');};
-document.getElementById('Crypto-desktop').onclick=function(){window.open('https://faucetcrypto.com/ref/1430908', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");

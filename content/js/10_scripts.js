@@ -1,17 +1,17 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* myDonat */
-document.getElementById('myDonat-sidebar').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
-/* myDream */
-document.getElementById('myDream-sidebar').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
-/* myQuestion  */
-document.getElementById('myQuestion-sidebar').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
-/* Book link */
-document.getElementById('Book-Ричард').onclick=function(){window.open('https://eksmo.ru/series/ballady-o-richarde-dlinnye-ruki-ID487/', '_blank');};
-document.getElementById('Book-C').onclick=function(){window.open('https://www.labirint.ru/books/512950/', '_blank');};
-document.getElementById('Book-Тоненбаума').onclick=function(){window.open('https://www.labirint.ru/search/%D0%AD%D0%BD%D0%B4%D1%80%D1%8E%20%D0%A2%D0%B0%D0%BD%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D0%BC/?stype=0&available=1&wait=1&preorder=1&paperbooks=1', '_blank');};
-/* null */
-/* 	document.getElementById('#null').onclick=function(){window.open('null', '_blank');};
-*/
+document.getElementById('a-1').onclick=function(){window.open('7-otzhimaniya-v-otkaz-programma.html', '_blank');};
+document.getElementById('a-2').onclick=function(){window.open('8-tri-zolotykh-uprazhneniya-programma.html', '_blank');};
+document.getElementById('a-3').onclick=function(){window.open('9-raspredeleniye-maksimal\'nogo-kolichestva-povtoreniy-na-podkhody.html', '_blank');};
+
+/* last code article - GitHub */
+document.getElementById('c-1').onclick=function(){window.open('https://github.com/code-malloc/7-file-1', '_blank');};
+document.getElementById('c-2').onclick=function(){window.open('https://github.com/code-malloc/8-c', '_blank');};
+document.getElementById('c-3').onclick=function(){window.open('https://github.com/code-malloc/9-c', '_blank');};
+
+/* GitHub /*/
+document.getElementById('lang-C').onclick=function(){window.open('https://github.com/code-malloc/10-c', '_blank');};
+document.getElementById('lang-CPP').onclick=function(){window.open('https://github.com/code-malloc/10-cpp', '_blank');};
+
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
@@ -28,6 +28,9 @@ document.getElementById('Telegram-footer-m').onclick=function(){window.open('htt
 document.getElementById('Youtube-footer-m').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+
+/* Payeer AD */
+document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");
@@ -45,6 +48,8 @@ function date()
 	return " " +day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()] + " " + d.getFullYear() + " ";
 }
 setInterval(function () {document.getElementById('mydate').innerHTML = date();}, 0);
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* time */		
 function zero_first_format(value)		
 {
@@ -63,15 +68,3 @@ function time()
 	return " "+hours+":"+minutes+":"+seconds+" ";
 };
 setInterval(function () {document.getElementById('mytime').innerHTML = time();});
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-// Rating Mail.ru counter
-var _tmr = window._tmr || (window._tmr = []);
-_tmr.push({id: "3211268", type: "pageView", start: (new Date()).getTime()});
-(function (d, w, id) {
-  if (d.getElementById(id)) return;
-  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-  ts.src = "https://top-fwz1.mail.ru/js/code.js";
-  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-})(document, window, "topmailru-code");

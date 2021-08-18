@@ -1,24 +1,27 @@
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* Footer desktop*/
+/* Footer desktop */
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer-d').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-d').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
-document.getElementById('Zen-footer-d').onclick=function(){window.open('https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db', '_blank');};
 document.getElementById('Topmail-footer-d').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-d').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
-/* Footer mobile*/
+
+/* Footer mobile */
 document.getElementById('Donat-footer-m').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-m').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer-m').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
 document.getElementById('Telegram-footer-m').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-m').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
-document.getElementById('Zen-footer-m').onclick=function(){window.open('https://zen.yandex.ru/id/60fad0ca18cba92a51cb54db', '_blank');};
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+
 /* Payeer AD */
 document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+
+/* GitHub */
+document.getElementById('C').onclick=function(){window.open('https://github.com/code-malloc/9-c', '_blank');};
+document.getElementById('CPP').onclick=function(){window.open('https://github.com/code-malloc/9-cpp', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");
@@ -56,6 +59,3 @@ function time()
 	return " "+hours+":"+minutes+":"+seconds+" ";
 };
 setInterval(function () {document.getElementById('mytime').innerHTML = time();});
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-document.getElementById('C').onclick=function(){window.open('https://github.com/code-malloc/8-c', '_blank');};
-document.getElementById('CPP').onclick=function(){window.open('https://github.com/code-malloc/8-cpp', '_blank');};
