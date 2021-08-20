@@ -5,10 +5,6 @@ document.getElementById('myDonat-sidebar').onclick=function(){window.open('https
 document.getElementById('myDream-sidebar').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 /* myQuestion  */
 document.getElementById('myQuestion-sidebar').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
-/* Book link */
-document.getElementById('Book-Ричард').onclick=function(){window.open('https://eksmo.ru/series/ballady-o-richarde-dlinnye-ruki-ID487/', '_blank');};
-document.getElementById('Book-C').onclick=function(){window.open('https://www.labirint.ru/books/512950/', '_blank');};
-document.getElementById('Book-Тоненбаума').onclick=function(){window.open('https://www.labirint.ru/search/%D0%AD%D0%BD%D0%B4%D1%80%D1%8E%20%D0%A2%D0%B0%D0%BD%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D0%BC/?stype=0&available=1&wait=1&preorder=1&paperbooks=1', '_blank');};
 /* null */
 /* 	document.getElementById('#null').onclick=function(){window.open('null', '_blank');};
 */

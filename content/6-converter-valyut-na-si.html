@@ -10,12 +10,6 @@
 	<!-- Body -->
 	<body lang="ru-RU" class="malloc-post">
 		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
-		<!-- Navbar -->
-		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
-			<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">главная</a>
-			<a href="../stat'i-1.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">статьи</a>
-			<a href="../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">донат</a>
-		</nav>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
 		<div class="malloc-main malloc-auto" style="margin-left:150px"><!-- main{ -->
 			<div class="malloc-row malloc-padding-64"><!-- text{ -->
@@ -33,69 +27,60 @@
 						В статье есть видео, в котором всё показано в живую.<br>
 						Приятного чтения и просмотра!<br>
 					</p>
-					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; hight:80.99999%"><img class="malloc-image" src="pictures/6.png" alt="screenshot" title="screenshot" style="border-radius:5px;"></div>
+					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; height:80.99999%"><img class="malloc-image" src="pictures/6.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
 					<!-- Подзаголовок 1 -->
-					<p class="malloc-padding-small">
-						<div class="malloc-padding-16"></div>
+					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Подготовка</h2>
 						<ul class="malloc-ul">
-							Для начала нам нужно создать каталог для нашей программы, а так же файл main.c для записи в него алгоритма.
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 1</div>
-							<div class="malloc-padding">
-								<li>
-									Открываем терминал:<br>
-									"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
-								</li>
-							</div>
-							<br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 2</div>
-							<div class="malloc-padding">
-								<li>
-									Создадим отдельный каталог (папку):<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir converter</code><br>
-									Теперь зайдем в него:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">cd converter</code><br>
-									Мы создали пустой каталог и зашли в него для того, чтобы ничего не мешало.<br>
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-										"mkdir" - создать пустой каталог<br>
-			 							"cd" - используется для перемещения по каталогам
-									</p>									
-								</li>
-							</div>
-							<br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 3</div>
-							<div class="malloc-padding">
-								<li>
-									В этой папке создадим файл "main.c":<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">touch main.c</code><br>
-									Убидимся, что файл создался:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code>
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-										"touch" - создать файл<br>
-			 							"ls" - просмотр текущего каталога
-									</p>		
-								</li>
-							</div>
-							<br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 4</div>
-							<div class="malloc-padding">
-								<li>
-									Теперь нужно открыть файл в любой текстовом редакторе.<br>
-									К примеру открою наш файл "main.c" в текстовом редакторе - gedit.<br><br>
-									Нажимаем "Ctrl+Shift+T", для того, чтобы открыть новую вкаладку в терминале.<br>
-									Вводим следующую команду:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">gedit main.c & exit</code><br>
-									Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
-								</li>
-							</div>
+							<li>
+								Для начала нам нужно создать каталог для нашей программы, а так же файл main.c для записи в него алгоритма.
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 1</li>
+							<li>
+								Открываем терминал:<br>
+								"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 2</li>
+							<li>
+								Создадим отдельный каталог (папку):<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir converter</code><br>
+								Теперь зайдем в него:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">cd converter</code><br>
+								Мы создали пустой каталог и зашли в него для того, чтобы ничего не мешало.<br>
+								<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									"mkdir" - создать пустой каталог<br>
+		 							"cd" - используется для перемещения по каталогам
+								</p>									
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 3</li>
+							<li>
+								В этой папке создадим файл "main.c":<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">touch main.c</code><br>
+								Убидимся, что файл создался:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code>
+								<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									"touch" - создать файл<br>
+			 						"ls" - просмотр текущего каталога
+								</p>		
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 4</li>
+							<li>
+								Теперь нужно открыть файл в любой текстовом редакторе.<br>
+								К примеру открою наш файл "main.c" в текстовом редакторе - gedit.<br><br>
+								Нажимаем "Ctrl+Shift+T", для того, чтобы открыть новую вкаладку в терминале.<br>
+								Вводим следующую команду:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">gedit main.c & exit</code><br>
+								Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
+							</li>
 						</ul>
-					</p>
+					</div>
 					<!-- Подзаголовок 2 -->
-					<p class="malloc-padding-small">
-						<div class="malloc-padding-16"></div>
+					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Из рубля в доллар</h2>
 						<ul class="malloc-ul">
-						Сейчас мы напишем программу, которая будет конвертировать рубль в доллар.<br>
+							<li>
+								Сейчас мы напишем программу, которая будет конвертировать рубль в доллар.
+							</li>
 							<li>
 								Подключаем стандартную библиотеку ввода-вывода:<br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -122,51 +107,49 @@
 								Закрываем функцию <b>"main"</b>:<br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>	
 							</li>
-						<br>
 						</ul>
-					</p>
+					</div>
 					<!-- Подзаголовок 3 -->
-					<p class="malloc-padding-small">
-						<div class="malloc-padding-16"></div>
+					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Компиляция и запуск 1</h2>
 						<ul class="malloc-ul">
-							Чтобы совершить сборку программы нужен - "компилятор gcc".<br>
-							Установим его:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install gcc</code><br>
-							Если он у вас уже есть, то хорошо, идем дальше.<br><br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 1</div>
-							<div class="malloc-padding">
-								<li>
-									Собирем нашу программу:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
-									Посмотрим, что появилось в нашем каталоге:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code><br>
-									В каталоге дожны лежать "a.out" и "main.c". 
-								</li>
-							</div>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 2</div>
-							<div class="malloc-padding">
-								<li>
-									Теперь посмотрим на результат:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
-									Вводим кол-во рублей, например "1000".<br>
-									Вывод будет такой:<br>
-									<b>RUB = 1000</b><br>
-									<b>USD = 13</b>
-								</li>
-							</div>
+							<li>
+								Чтобы совершить сборку программы нужен - "компилятор gcc".<br>
+								Установим его:<br/>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install gcc</code><br>
+								Если он у вас уже есть, то хорошо, идем дальше.
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 1</li>
+							<li>
+								Собирем нашу программу:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+								Посмотрим, что появилось в нашем каталоге:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code><br>
+								В каталоге дожны лежать "a.out" и "main.c". 
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 2</li>
+							<li>
+								Теперь посмотрим на результат:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+								Вводим кол-во рублей, например "1000".<br>
+								Вывод будет такой:<br>
+								<b>RUB = 1000</b><br>
+								<b>USD = 13</b>
+							</li>
 						</ul>
-					</p>
+					</div>
 					<!-- Подзаголовок 4 -->
-					<p class="malloc-padding-small">
+					<div class="malloc-padding-small">
 						<h2 class="malloc-text-teal">Из доллара в рубль</h2>
 						<ul class="malloc-ul">
-							Сейчас мы напишем программу, которая будет конвертировать доллар в рубль.<br>
-							Можно для неё создать отдельный файл, но мы просто закомментируем предыдущий код.<br>
-							На первой строчке первым символом напишите вот такой знак <b>/*</b>.<br>
-							Вконце кода последним символом напишите <b>*/</b>.
-							Теперь код обазначен как комментарий и не будет нам мешать.<br>
-							Отступите пару строчек вниз.
+							<li>
+								Сейчас мы напишем программу, которая будет конвертировать доллар в рубль.<br>
+								Можно для неё создать отдельный файл, но мы просто закомментируем предыдущий код.<br>
+								На первой строчке первым символом напишите вот такой знак <b>/*</b>.<br>
+								Вконце кода последним символом напишите <b>*/</b>.
+								Теперь код обазначен как комментарий и не будет нам мешать.<br>
+								Отступите пару строчек вниз.
+							</li>
 							<li>
 								Подключаем стандартную библиотеку ввода-вывода:<br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -192,173 +175,150 @@
 								<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>	
 							</li>
 						</ul>
-					</p>
+					</div>
 					<!-- Подзаголовок 5 -->
-					<p class="malloc-padding-small">
+					<div class="malloc-padding-small">
 						<div class="malloc-padding-16"></div>
 						<h2 class="malloc-text-teal">Компиляция и запуск 2</h2>
 						<ul class="malloc-ul">
-							<div class="malloc-padding">
-								<li>
-									Собирем нашу программу:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
-									Теперь посмотрим на результат:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
-									Вводим кол-во долларов, например "500".<br><br>
-									Вывод будет такой:<br>
-									<b>USD = 500</b><br>
-									<b>RUB = 37500</b>
-								</li>
-							</div>
+							<li>
+								Собирем нашу программу:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+								Теперь посмотрим на результат:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+								Вводим кол-во долларов, например "500".<br><br>
+								Вывод будет такой:<br>
+								<b>USD = 500</b><br>
+								<b>RUB = 37500</b>
+							</li>
 						</ul>
-					</p>
+					</div>
 					<!-- Подзаголовок 6 -->
-					<p class="malloc-padding-small">
-						<div class="malloc-padding-16"></div>
+					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Конвертер валют</h2>
 						<ul class="malloc-ul">
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 1</div>
-							<div class="malloc-padding">
-								<li>
-									Для начала переименуем наши функции.<br>
-									Ту, что закомментирована, назовем <b>ith_rub_v_usd</b>.<br>
-									Как это сделать?<br>
-									Вместо <b>int main()</b> пишем <b>int ith_rub_v_usd()</b>.<br>
-									Вторую переименовываем в <b>int ith_usd_v_rub()</b>.
-								</li>
-							</div>
-							<br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 2</div>
-							<div class="malloc-padding">
-								<li>
-									После первой функции, которая закомментирована, написана строчка:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
-									Удаляем её.
-								</li>
-							</div>
-							<br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 3</div>
-							<div class="malloc-padding">
-								<li>
-									Удаляем знаки <b>/*</b> и <b>*/</b>.
-								</li>
-							</div>
-							<br>
-							<div class="malloc-text-blue" style="font-size:18px;">Шаг 4</div>
-							<div class="malloc-padding">
-								Теперь нужно сделать так, чтобы можно было вызывать эти функции по отдельности в одной программе.<br>
-								<li>
-									В конце нашего кода, отступаем пару строк вниз и пишем:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
-									Открывающая скобка:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
-									Напишем меню нашей программы:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Конвертер валют\n");</code><br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">printf("1. Из рублей в доллары\n");</code><br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">printf("2. Из долларов в рубли\n");</code><br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Выберите номер операции: ");</code><br>
-									Cоздадим переменную и присвоим ей нуль, чтобы не хранила мусор:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">int num=0;</code><br>
-									Ожидаем записи нужного номера пункта меню:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">scanf("%d", &num);</code><br>	<br>								
-									Сделаем так, чтобы программа реагировала на ввод пользователя.<br>
-									То есть, если введен пункт 2, то результат такой. Если введен не существующий пункт 7, то результат такой.<br>
-									Для этого воспользуемся "switch":<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">switch(num)</code><br>
-									Открывающая скобка "switch":<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>	
-									Если введен пункт "1", то запускаем функцию "ith_rub_v_usd()":<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">case 1:	ith_rub_v_usd();	break;</code><br>
-									Если введен пункт "2", то запускаем функцию "ith_usd_v_rub()":<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">case 2:	ith_usd_v_rub();	break;</code><br>
-									Но, если введенного пункта меню не существует, то пишем исключение:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">default:</code><br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\nЧто то пошло не так =(\n\n");</code><br>
-									Закрываем "switch":<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">};</code><br>	
-									Возвращаем целое число:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
-									Закрываем функцию <b>"main"</b>:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>	
-								</li>
-							</div>
-							<br>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 1</li>
+							<li>
+								Для начала переименуем наши функции.<br>
+								Ту, что закомментирована, назовем <b>ith_rub_v_usd</b>.<br>
+								Как это сделать?<br>
+								Вместо <b>int main()</b> пишем <b>int ith_rub_v_usd()</b>.<br>
+								Вторую переименовываем в <b>int ith_usd_v_rub()</b>.
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 2</li>
+							<li>
+								После первой функции, которая закомментирована, написана строчка:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+								Удаляем её.
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 3</li>
+							<li>
+								Удаляем знаки <b>/*</b> и <b>*/</b>.
+							</li>
+							<li class="malloc-text-blue" style="font-size: 15px; margin-top: 40px">Шаг 4</li>
+							<li>
+								Теперь нужно сделать так, чтобы можно было вызывать эти функции по отдельности в одной программе.
+							</li>							
+							<li>
+								В конце нашего кода, отступаем пару строк вниз и пишем:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
+								Открывающая скобка:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+								Напишем меню нашей программы:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Конвертер валют\n");</code><br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("1. Из рублей в доллары\n");</code><br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("2. Из долларов в рубли\n");</code><br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Выберите номер операции: ");</code><br>
+								Cоздадим переменную и присвоим ей нуль, чтобы не хранила мусор:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">int num=0;</code><br>
+								Ожидаем записи нужного номера пункта меню:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">scanf("%d", &num);</code><br><br>								
+								Сделаем так, чтобы программа реагировала на ввод пользователя.<br>
+								То есть, если введен пункт 2, то результат такой. Если введен не существующий пункт 7, то результат такой.<br>
+								Для этого воспользуемся "switch":<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">switch(num)</code><br>
+								Открывающая скобка "switch":<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>	
+								Если введен пункт "1", то запускаем функцию "ith_rub_v_usd()":<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">case 1:	ith_rub_v_usd();	break;</code><br>
+								Если введен пункт "2", то запускаем функцию "ith_usd_v_rub()":<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">case 2:	ith_usd_v_rub();	break;</code><br>
+								Но, если введенного пункта меню не существует, то пишем исключение:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">default:</code><br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\nЧто то пошло не так =(\n\n");</code><br>
+								Закрываем "switch":<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">};</code><br>	
+								Возвращаем целое число:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+								Закрываем функцию <b>"main"</b>:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>	
+							</li>
 						</ul>
-					</p>
+					</div>
 					<!-- Подзаголовок 5 -->
-					<p class="malloc-padding-small">
-						<div class="malloc-padding-16"></div>
+					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Компиляция и запуск 3</h2>
 						<ul class="malloc-ul">
-							<div class="malloc-padding">
-								<li>
-									Собирем нашу программу. Пишем в терминале:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
-									Теперь посмотрим на результат. Вводить будем поочередно - один, два и любое число:<br>
-									<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-										Конвертация валют<br>
-										1. Из рублей в доллары<br>
-										2. Из долларов в рубли<br>
-										Выберите номер операции:  1<br>
-										RUB = 1799<br>
-										USD = 23
-									</p>	
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-										Конвертация валют<br>
-										1. Из рублей в доллары<br>
-										2. Из долларов в рубли<br>
-										Выберите номер операции:  2<br>
-										USD = 99<br>
-										RUB = 7425
-
-									</p>	
-									<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-										Конвертация валют<br>
-										1. Из рублей в доллары<br>
-										2. Из долларов в рубли<br>
-										Выберите номер операции:  7<br><br>
-
-										Что, то пошло не так =(<br>
-									</p>	
-								</li>
-							</div>
+							<li>
+								Собирем нашу программу. Пишем в терминале:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+								Теперь посмотрим на результат. Вводить будем поочередно - один, два и любое число:<br>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+								<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Конвертация валют<br>
+									1. Из рублей в доллары<br>
+									2. Из долларов в рубли<br>
+									Выберите номер операции:  1<br>
+									RUB = 1799<br>
+									USD = 23
+								</p>	
+								<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Конвертация валют<br>
+									1. Из рублей в доллары<br>
+									2. Из долларов в рубли<br>
+									Выберите номер операции:  2<br>
+									USD = 99<br>
+									RUB = 7425
+								</p>	
+								<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Конвертация валют<br>
+									1. Из рублей в доллары<br>
+									2. Из долларов в рубли<br>
+									Выберите номер операции:  7<br><br>
+									Что, то пошло не так =(<br>
+								</p>	
+							</li>
 						</ul>
-					</p>
-					<!-- Видео 1 -->
-					<div alt="Video-desktop" class="malloc-ad-desktop malloc-center"><!-- для ПК -->
-						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/AW4Nmmfg1jQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
-						</object>
 					</div>
-					<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
-						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/AW4Nmmfg1jQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
-						</object>
+					<!-- Видео 1 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/AW4Nmmfg1jQ"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/AW4Nmmfg1jQ"></object>
 					</div>
 					<hr>
 					<!-- Заключение -->
-					<p class="malloc-padding-small">
-						<div class="malloc-padding-16"></div>
+					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Заключение</h2>
 						<ul class="malloc-ul">
-							<div class="malloc-padding-small">
-								<li>
-									В данной статье мы увидели как выглядит один из вариантов написания программы - "Конвертер валют". Код рабочий и подходит для тренировки создания алгоритмов.<br><br>
-									Вот вам задание:<br>
-									1.  Перепишите программу, чтобы она брала запись о курсе валют из другого документа и передавала её переменной <b>value</b>.<br>
-									2.  Перепишите программу, чтобы она могла принимать на ввод и вывод вещественные числа - "float". Сейчас она принимает только "int".<br>
-									3.  Добавьте валюту "EURO".<br><br>
-									Думаю из заданий становиться понятно, что любую программу, можно расширить и сделать так, чтобы переменные принимали значения из вне и делали подсчет внутри программы и отправляли результат, например по почте.<br><br> 
-									Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
-								</li>
-							</div>
+							<li>
+								В данной статье мы увидели как выглядит один из вариантов написания программы - "Конвертер валют". Код рабочий и подходит для тренировки создания алгоритмов.<br><br>
+								Вот вам задание:<br>
+								1.  Перепишите программу, чтобы она брала запись о курсе валют из другого документа и передавала её переменной <b>value</b>.<br>
+								2.  Перепишите программу, чтобы она могла принимать на ввод и вывод вещественные числа - "float". Сейчас она принимает только "int".<br>
+								3.  Добавьте валюту "EURO".<br><br>
+								Думаю из заданий становиться понятно, что любую программу, можно расширить и сделать так, чтобы переменные принимали значения из вне и делали подсчет внутри программы и отправляли результат, например по почте.<br><br> 
+								Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
+							</li>
 						</ul>
-					</p>
+					</div>
 					<div class="malloc-text-green malloc-padding-12" title="Спасибо за статью"><!-- для ПК -->
-						<object title="На книги" class="malloc-ad-desktop" data="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=Собираю на книги&targets-hint=&default-sum=49&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&hint=%D0%94%D0%B5%D1%80%D0%B6%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D1%83%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D0%BE%20%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B0&successURL=&quickpay=shop&account=410015474057891" width="500" height="221" allowtransparency="true" scrolling="no">
+						<object title="На книги" class="malloc-ad-desktop" data="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=Собираю-на-книги&targets-hint=&default-sum=49&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&hint=%D0%94%D0%B5%D1%80%D0%B6%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D1%83%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D0%BE%20%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B0&successURL=&quickpay=shop&account=410015474057891" width="500" height="221" >
 						</object>
 					</div>
 					<div class="malloc-text-green malloc-padding-12 malloc-center" title="Спасибо за статью"><!-- для мобильников -->
-						<object title="На книги" class="malloc-ad-mobile" data="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=Собираю на книги&targets-hint=&default-sum=49&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&hint=%D0%94%D0%B5%D1%80%D0%B6%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D1%83%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D0%BE%20%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B0&successURL=&quickpay=shop&account=410015474057891" width="230" height="250" allowtransparency="true" scrolling="no">
+						<object title="На книги" class="malloc-ad-mobile" data="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=Собираю-на-книги&targets-hint=&default-sum=49&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&hint=%D0%94%D0%B5%D1%80%D0%B6%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D1%83%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D0%BE%20%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B0&successURL=&quickpay=shop&account=410015474057891" width="230" height="250">
 						</object>
 					</div>
 				</div><!-- } -->
@@ -375,7 +335,7 @@
 						</div>
 					</div>
 				</div><!-- } Правый сайдбар -->
-				<div class="malloc-center"  id="AD-payeer" target="_blank"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
 			</div><!--/ текст -->
 		</div><!--/ main -->
 		<!---->
@@ -385,31 +345,40 @@
 			<div class="malloc-threequarter">
 				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
 					<!-- Ссылки -->
-					<ul class="malloc-ul malloc-col"><b>Донат:</b>
-						<div class="malloc-padding-12">
-							<div id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">На книги</div>
-							<div id="Dream-footer-d" class="malloc-hover-red" style="border-radius:5px;">На мечту</div>
-							<div id="Question-footer-d" class="malloc-hover-red" style="border-radius:5px;">Звдать вопрос</div>
-						</div>
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">На книги</div>
+								<div id="Dream-footer-d" class="malloc-hover-red" style="border-radius:5px;">На мечту</div>
+								<div id="Question-footer-d" class="malloc-hover-red" style="border-radius:5px;">Звдать вопрос</div>
+							</div>
+						</li>
 					</ul>
 					<!-- Соцсети -->
-					<ul class="malloc-ul malloc-col"><b>Соцсети:</b>
-						<div class="malloc-padding-12">
-							<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
-							<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
-						</div>
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+							</div>
+						</li>
 					</ul>
 					<!-- Допольнительно -->
-					<ul class="malloc-ul malloc-col"><b>Дополнительно:</b>
-						<div class="malloc-padding-12">
-							<div id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
-							<div id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
-						</div>
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 				<!-- Copyright desktop-->
 				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
-					<h6 class="malloc-center" title="Все права защищены">&copy; malloc.ru, 2021</h6>
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
 				</div>
 			</div>
 		</footer>
@@ -419,38 +388,53 @@
 			<div class="malloc-threequarter">
 				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
 					<!-- Ссылки -->
-					<ul class="malloc-ul malloc-col"><b>Донат:</b>
-						<div class="malloc-padding-12">
-							<div id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">На книги</div>
-							<div id="Dream-footer-m" class="malloc-hover-red" style="border-radius:5px;">На мечту</div>
-							<div id="Question-footer-m" class="malloc-hover-red" style="border-radius:5px;">Звдать вопрос</div>
-						</div>
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">На книги</div>
+								<div id="Dream-footer-m" class="malloc-hover-red" style="border-radius:5px;">На мечту</div>
+								<div id="Question-footer-m" class="malloc-hover-red" style="border-radius:5px;">Звдать вопрос</div>
+							</div>
+						</li>
 					</ul>
 					<!-- Соцсети -->
-					<ul class="malloc-ul malloc-col"><b>Соцсети:</b>
-						<div class="malloc-padding-12">
-							<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
-							<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
-						</div>
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+							</div>
+						</li>
 					</ul>
 					<!-- Допольнительно -->
-					<ul class="malloc-ul malloc-col"><b>Дополнительно:</b>
-						<div class="malloc-padding-12">
-							<div id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
-							<div id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
-						</div>
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 				<!-- Copyright desktop-->
 				<div class="malloc-container malloc-theme-l5 malloc-card malloc-ad-desktop" style="margin-left:270px; border-radius:5px;">
-					<h6 class="malloc-center" title="Все права защищены">&copy; malloc.ru, 2021</h6>
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
 				</div>
 				<!-- Copyright -->
 				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
-					<h6 class="malloc-center" title="Все права защищены">&copy; malloc.ru, 2021</h6>
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
 				</div>
 			</div>
 		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">главная</a>
+			<a href="../stat'i-1.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">статьи</a>
+			<a href="../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">донат</a>
+		</nav>
 		<!--JScript -->
 		<script src="js/6_scripts.js"></script>
 		<script src="../js/news.js"></script>
