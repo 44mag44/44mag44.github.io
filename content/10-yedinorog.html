@@ -4,11 +4,11 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="Из статьи - Единорог вы узнаете как объединить несколько программ в одну программу. Пошаговая инструкция поможет сосредоточиться на деталях, а видео инструкция поможет увидеть всю картину целиком. Команды, предоставленные в статье, протестированы на Ubuntu. Подробнее..."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="Программирование, Информатика, Разработка, Linux, Ubuntu, Программа на Си и С++, Три в одном, Три богатыря"/>
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
 	<!-- Body -->
-	<body lang="ru-RU" class="malloc-post">
+	<body class="unselectable">
 		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
 		<div class="malloc-main malloc-auto" style="margin-left:150px"><!-- main{ -->
@@ -17,33 +17,35 @@
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
 					<h1 class="malloc-center malloc-theme-main malloc-card malloc-auto" style="border-radius:5px;">Единорог</h1>
 					<!-- Вступление -->
-					<p style="font-size: 14px" class="malloc-padding-small">
-						В этой статье я расскажу как объединять разные программы в единое целое.<br><br>
-						Для это я использую последние три статьи, которые похоже тематике:
-						<p class="malloc-padding">
-							1) <b><a id="a-1" class="malloc-hover-blue" style="border-radius:10px;">"Отжимания в отказ. Программа"</a></b><br>
-							2) <b><a id="a-2" class="malloc-hover-blue" style="border-radius:10px;">"Три золотых упражнения. Программа"</a></b><br>
-							3) <b><a id="a-3" class="malloc-hover-blue" style="border-radius:10px;">"Распределение максимального количествава повторений на подходы"<a></b>
-						</p>
-						И объединю их код в одну программу.<br><br>
+					<div class="malloc-padding">
+						В этой статье я расскажу как объединять разные программы в единое целое.<br>
+						Для это я использую последние три статьи, которые похоже тематике<br/>
+						Объединю их код в одну программу.<br><br>
+						<ul class="malloc-ul malloc-padding malloc-theme"  style="border-radius:10px;">
+							<li class="malloc-hover-blue"><a id="a-1"><b>"Отжимания в отказ. Программа"</b></a></li>
+							<li class="malloc-hover-blue"><a id="a-2"><b>"Три золотых упражнения. Программа"</b></a></li>
+							<li class="malloc-hover-blue"><a id="a-3"><b>"Распределение максимального количествава повторений на подходы"</b></a></li>
+						</ul><br>
 						В качестве языка программирования для статьи я выбрал - <b>С</b>. Программа также написана и на <b>С++</b>.<br>
 						Все действия протестированы и проверены на дистрибутиве Ubuntu.<br>
 						В статье есть видео, в которых всё показано в живую.<br><br>
-						Приятного чтения и просмотра!<br>
-					</p>
+						Приятного чтения и просмотра!
+					</div>
 					<div class="malloc-auto" style="margin-top:40px; width:80.99999%; height:80.99999%"><img class="malloc-image" src="pictures/10.jpg" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
 					<!-- Подзаголовок 1 -->
 					<div class="malloc-padding-small malloc-padding-16">
 						<h2 class="malloc-text-teal">Что будет делать программа</h2>
 						<ul class="malloc-ul">
-							Запустив программу мы увидим заголовок, меню.<br>
-							Пункты меню выбраем при помощи клавиш от 1 до 3.<br>
-							После нажатий "Enter", ниже появиться заголовок и меню выбранной программы.<br><br>
-							Вот и всё, что она будет делать. Приступим к сборке!
-							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-								Код программ из предыдущих статей:<br>
-								<b style="margin-right:30px">C</b> - <a id="c-1" class="malloc-hover-green" style="border-radius:10px;">"первая"<a>, <a id="c-2" class="malloc-hover-green" style="border-radius:10px;">"вторая"<a>, <a id="c-3" class="malloc-hover-green" style="border-radius:10px;">"третья"<a><br>
-							</p>	
+							<li>
+								Запустив программу мы увидим заголовок, меню.<br>
+								Пункты меню выбраем при помощи клавиш от 1 до 3.<br>
+								После нажатий "Enter", ниже появиться заголовок и меню выбранной программы.<br><br>
+								Вот и всё, что она будет делать. Приступим к сборке!
+								<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Код программ из предыдущих статей:<br>
+									<b style="margin-right:30px">C</b> - <a id="c-1" class="malloc-hover-green" style="border-radius:10px;">"первая"</a>, <a id="c-2" class="malloc-hover-green" style="border-radius:10px;">"вторая"</a>, <a id="c-3" class="malloc-hover-green" style="border-radius:10px;">"третья"</a><br>
+								</p>	
+							</li>
 						</ul>
 					</div>
 					<!-- Подзаголовок 2 -->
@@ -249,7 +251,7 @@
 								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("2.  Подтягивания\n");</code><br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("3.  Приседания\n\n");</code><br><br>
 								Нам нужна переменная в которую будем записывать номер пункта меню:<br>
-								<code class="malloc-text-teal malloc-border malloc-bar-item">int num;</code><br><br|>
+								<code class="malloc-text-teal malloc-border malloc-bar-item">int num;</code><br><br>
 								Пишем приглошения на выбор пункта меню:<br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Выбор: ");</code><br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">scanf("%d", &num);</code><br><br>
@@ -443,7 +445,7 @@
 					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
 						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/jAHtd9EELEI"></object>
 					</div>
-					<div alt="Video-mobile" class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
 						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/jAHtd9EELEI"></object>
 					</div>
 					<hr>
@@ -453,7 +455,7 @@
 						<ul class="malloc-ul">
 							<li>
 								В этой статье мы собрали несколько программ в одну и запустили её.<br>
-								Программы взяты из предыдущих статей, о котрых я говорил <a>в начале статьи<a>.<br>
+								Программы взяты из предыдущих статей, о котрых я говорил <a>в начале статьи</a>.<br>
 								Для создания программы использовал язык программирования "С".<br><br>
 								Скачать код можно тут: <b><a id="lang-C" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;">C</a></b>, <b><a id="lang-CPP" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;">C++</a></b><br><br>
 								Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.<br><br>
