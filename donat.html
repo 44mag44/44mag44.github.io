@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<title>Донат | Malloc.RU</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta charset="utf-8" />
 	<meta name="description" content="Страница донат, нужна для людей, желающим помочь сайту или автору материально!"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="keywords" content="Программирование, Информатика, Разработка, Донат"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link type="image/x-icon" rel="shortcut icon" href="pictures/favicon/favicon.ico">
@@ -14,16 +13,14 @@
 	<!-- Body -->
 	<body class="unselectable">
 		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
-		<!-- Overlay effect when opening sidebar on small screens -->
-		<div class="malloc-overlay malloc-hide-large" onclick="malloc_close()" style="cursor:pointer" title="закрыть боковое меню" id="myOverlay"></div>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
-		<div class="malloc-main malloc-auto" style="margin-left:220px"><!-- main{ -->
-			<div class="malloc-row malloc-padding-64"><!-- text{ -->
+		<div class="malloc-main" style="margin-left:220px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Донат -->
-				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-card-4 malloc-auto " style="border-radius:5px;">Донат</h1>
+				<div class="malloc-threequarter"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-card" style="border-radius:5px;">Донат</h1>
 					<!-- Обо мне -->
-					<p class="malloc-padding-small">
+					<p>
 						В самом начале, позвольте представиться. Меня зовут Гусев Пётр Сергеевич — программист, разработчик сайта, автор статей.<br>
 						Расскажу две истории, из которых вы узнаете немного обо мне и о пожертвовании.<br>
 						Первая о том, зачем <b>собираю на бумажные книги</b>, а вторая про мой <b>компьютер</b>.					
@@ -69,7 +66,7 @@
 				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
 					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
 							<div class="malloc-center">НОВОСТИ</div>
-							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px"  id="news"></div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" id="news"></div>
 					</div>
 					<div class="malloc-center malloc-padding-16">
 						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
@@ -161,10 +158,6 @@
 						</li>
 					</ul>
 				</div>
-				<!-- Copyright desktop-->
-				<div class="malloc-container malloc-theme-l5 malloc-card malloc-ad-desktop" style="margin-left:270px; border-radius:5px;">
-					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
-				</div>
 				<!-- Copyright -->
 				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
 					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
@@ -177,6 +170,8 @@
 			<a href="stat'i-1.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">статьи</a>
 			<a href="donat.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 14px;">донат</a>
 		</nav>
+		<!-- Overlay effect when opening sidebar on small screens -->
+		<div class="malloc-overlay malloc-hide-large" onclick="malloc_close()" style="cursor:pointer" title="закрыть боковое меню" id="myOverlay"></div>
 		<!-- Sidebar -->
 		<nav class="malloc-sidebar malloc-bar-block malloc-collapse malloc-large malloc-theme-d1 malloc-animate-left" id="mySidebar" style="border-radius:5px;"><a href="javascript:void(0)" onclick="malloc_close()" class="malloc-right malloc-medium malloc-padding-large malloc-hover-black malloc-hide-large" title="Закрыть"><i class="fa fa-remove"></i></a>
 			<!-- Помощь -->

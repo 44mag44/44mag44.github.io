@@ -1,6 +1,5 @@
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
-body{margin:0}
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+body{margin: 0}
 audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
 audio:not([controls]){display:none;height:0}[hidden],template{display:none}
 a{background-color:transparent}a:active,a:hover{outline-width:0}
@@ -13,12 +12,12 @@ fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 [type=checkbox],[type=radio]{padding:0}
 /* End extract */
 *{font-family: 'Roroto', sans-serif}
-html,body{font-size:14.2222px;line-height:1.5}html{overflow-x:hidden}
-h1{font-size:32px}h2{font-size:26px}h3{font-size:22px}h4{font-size:16.66666px}h5{font-size:14px}h6{font-size:12px}
+html,body{font-size:14px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:32px}h2{font-size:26px}h3{font-size:20px}h4{font-size:16px}h5{font-size:14px}h6{font-size:10px}
 .malloc-serif{font-family:serif;}.malloc-sans-serif{font-family:sans-serif;}.malloc-cursive{font-family:cursive;}.malloc-monospace{font-family:monospace;}
-h1,h2,h3,h4,h5,h6{font-weight:400;margin:10px 0}.malloc-wide{letter-spacing:4px}
-hr{border:0;border-top:1px solid #eee;margin:20px 0}
-.malloc-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+h1,h2,h3,h4,h5,h6{font-weight:400;}.malloc-wide{letter-spacing:4px}
+hr{border:0;border-top:1px solid #eee;}
+.malloc-image{max-width:100%;height:auto}
 .malloc-table,.malloc-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.malloc-table-all{border:1px solid #ccc}
 .malloc-table td,.malloc-table th,.malloc-table-all td,.malloc-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
 .malloc-table th:first-child,.malloc-table td:first-child,.malloc-table-all th:first-child,.malloc-table-all td:first-child{padding-left:16px}
@@ -45,14 +44,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .malloc-bar-block .malloc-dropdown-hover .malloc-button,.malloc-bar-block .malloc-dropdown-click .malloc-button{width:100%;text-align:left;padding:8px 6px}
 .malloc-main,#main{transition:margin-left .4s}
 .malloc-bar{width:100%;overflow:hidden}.malloc-center .malloc-bar{display:inline-block;width:auto}
-.malloc-bar .malloc-bar-item{padding:6px 12px;float:left;width:auto;border:none;display:block;outline:0}
+.malloc-bar .malloc-bar-item{padding:6px 12px}
 .malloc-bar .malloc-dropdown-hover,.malloc-bar .malloc-dropdown-click{position:static;float:left}
-.malloc-bar .malloc-button{white-space:normal}
-.malloc-bar-block .malloc-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
-.malloc-bar-block.malloc-center .malloc-bar-item{text-align:center}.malloc-block{display:block;width:100%}
+.malloc-bar-block .malloc-bar-item{display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.malloc-bar-block .malloc-center .malloc-bar-item{text-align:center}.malloc-block{display:block;width:100%}
 .malloc-responsive{display:block;overflow-x:auto}
-.malloc-container:after,.malloc-container:before,.malloc-panel:after,.malloc-panel:before,.malloc-row:after,.malloc-row:before,.malloc-row-padding:after,.malloc-row-padding:before,
-.malloc-cell-row:before,.malloc-cell-row:after,.malloc-clear:after,.malloc-clear:before,.malloc-bar:before,.malloc-bar:after{content:"";display:table;clear:both}
+.malloc-container:after,.malloc-container:before,.malloc-panel:after,.malloc-panel:before,.malloc-row:after,.malloc-row:before,.malloc-row-padding:after,.malloc-row-padding:before,.malloc-cell-row:before,.malloc-cell-row:after,.malloc-clear:after,.malloc-clear:before,.malloc-bar:before,.malloc-bar:after{content:"";display:table;clear:both}
 .malloc-col,.malloc-half,.malloc-third,.malloc-twothird,.malloc-threequarter,.malloc-quarter{float:left;width:100%}
 @media (min-width:601px){.malloc-col{width:18.66666%}.malloc-quarter{width:24.99999%}.malloc-third{width:33.33333%}.malloc-half{width:49.99999%}.malloc-twothird{width:66.66666%}.malloc-threequarter{width:74.99999%}}
 .malloc-rest{overflow:hidden}.malloc-stretch{margin-left:-16px;margin-right:-16px}
@@ -107,12 +104,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .malloc-margin{margin:16px!important}.malloc-margin-top{margin-top:16px!important}.malloc-margin-bottom{margin-bottom:16px!important}
 .malloc-margin-left{margin-left:16px!important}.malloc-margin-right{margin-right:16px!important}
 .malloc-padding-small{padding:4px 8px!important}.malloc-padding{padding:8px 16px!important}.malloc-padding-large{padding:12px 24px!important}
-.malloc-padding-12{padding-top:12px!important;padding-bottom:12px!important}.malloc-padding-16{padding-top:16px!important;padding-bottom:16px!important}.malloc-padding-24{padding-top:24px!important;padding-bottom:24px!important}
-.malloc-padding-32{padding-top:32px!important;padding-bottom:32px!important}.malloc-padding-48{padding-top:48px!important;padding-bottom:48px!important}
-.malloc-padding-64{padding-top:64px!important;padding-bottom:64px!important}
-.malloc-padding-top-64{padding-top:64px!important}.malloc-padding-top-48{padding-top:48px!important}
-.malloc-padding-top-32{padding-top:32px!important}.malloc-padding-top-24{padding-top:24px!important}
-.malloc-padding-top-16{padding-top:16px!important}.malloc-padding-top-12{padding-top:12px!important}
+.malloc-padding-12{padding-top:12px!important;padding-bottom:12px!important}.malloc-padding-16{padding-top:16px!important;padding-bottom:16px!important}.malloc-padding-24{padding-top:24px!important;padding-bottom:24px!important}.malloc-padding-32{padding-top:32px!important;padding-bottom:32px!important}.malloc-padding-48{padding-top:48px!important;padding-bottom:48px!important}.malloc-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.malloc-padding-top-64{padding-top:64px!important}.malloc-padding-top-48{padding-top:48px!important}.malloc-padding-top-32{padding-top:32px!important}.malloc-padding-top-24{padding-top:24px!important}.malloc-padding-top-16{padding-top:16px!important}.malloc-padding-top-12{padding-top:12px!important}
 .malloc-left{float:left!important}.malloc-right{float:right!important}
 .malloc-button:hover{color:#000!important;background-color:#ccc!important}
 .malloc-hover-none:hover{box-shadow:none!important}
