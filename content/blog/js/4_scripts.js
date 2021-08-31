@@ -1,21 +1,28 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* предыдущая статья */
+document.getElementById('article-3').onclick=function(){window.open('file:///home/mag/dev/lang/web/test/content/3-linux-rabota-s-katalogami-i-faylami-chast\'-pervaya.html', '_self');};
+/* Руководство */
+document.getElementById('Man').onclick=function(){window.open('https://www.gnu.org/software/coreutils/manual/coreutils.pdf', '_self');};
 /* Footer desktop*/
-document.getElementById('Donat-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
+document.getElementById('Book-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer-d').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-d').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
+document.getElementById('GitHub-footer-d').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
 document.getElementById('Topmail-footer-d').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-d').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+
 /* Footer mobile*/
-document.getElementById('Donat-footer-m').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
+document.getElementById('Book-footer-m').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-m').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
 document.getElementById('Question-footer-m').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
 document.getElementById('Telegram-footer-m').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-m').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
+document.getElementById('GitHub-footer-m').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
-/* Payeer AD*/
+/* Payeer AD */
 document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */

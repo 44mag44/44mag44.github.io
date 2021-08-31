@@ -1,10 +1,3 @@
-/* null */
-/* 	document.getElementById('#null').onclick=function(){window.open('null', '_blank');};
-*/
-/* link */
-document.getElementById('Book-text').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
-document.getElementById('Dream-text').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
-
 /* Footer desktop*/
 document.getElementById('Book-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
 document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
@@ -24,6 +17,8 @@ document.getElementById('Youtube-footer-m').onclick=function(){window.open('http
 document.getElementById('GitHub-footer-m').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
+/* Payeer AD*/
+document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/?partner=4184305', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");
@@ -41,6 +36,8 @@ function date()
 	return " " +day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()] + " " + d.getFullYear() + " ";
 }
 setInterval(function () {document.getElementById('mydate').innerHTML = date();}, 0);
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* time */		
 function zero_first_format(value)		
 {
@@ -59,15 +56,3 @@ function time()
 	return " "+hours+":"+minutes+":"+seconds+" ";
 };
 setInterval(function () {document.getElementById('mytime').innerHTML = time();});
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-// Rating Mail.ru counter
-var _tmr = window._tmr || (window._tmr = []);
-_tmr.push({id: "3211268", type: "pageView", start: (new Date()).getTime()});
-(function (d, w, id) {
-  if (d.getElementById(id)) return;
-  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-  ts.src = "https://top-fwz1.mail.ru/js/code.js";
-  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-})(document, window, "topmailru-code");
