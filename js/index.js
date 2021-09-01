@@ -88,4 +88,5 @@ _tmr.push({id: "3211268", type: "pageView", start: (new Date()).getTime()});
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Редирект - перенаправление на страницу malloc.ru/index.html */
-//location="https://malloc.ru";
+//	location.replace("https://malloc.ru");
+//	document.location.replace("https://malloc.ru");
