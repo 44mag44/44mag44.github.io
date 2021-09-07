@@ -1,4 +1,6 @@
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
 /* Статьи */
 document.getElementById('link-article-1').onclick=function(){window.open('content/blog/1-kak-obnovit\'-ubuntu-cherez-terminal.html', '_self');};
 document.getElementById('link-article-2').onclick=function(){window.open('content/blog/2-kak-otpravit\'-sushchestvuyushchiy-proekt-na-github.html', '_self');};
@@ -12,9 +14,7 @@ document.getElementById('link-article-9').onclick=function(){window.open('conten
 document.getElementById('link-article-10').onclick=function(){window.open('content/blog/10-yedinorog.html', '_self');};
 
 /* Footer desktop*/
-document.getElementById('Book-footer-d').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
-document.getElementById('Dream-footer-d').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
-document.getElementById('Question-footer-d').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
+document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-d').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
 document.getElementById('GitHub-footer-d').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
@@ -22,9 +22,7 @@ document.getElementById('Topmail-footer-d').onclick=function(){window.open('http
 document.getElementById('Payeer-footer-d').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 
 /* Footer mobile*/
-document.getElementById('Book-footer-m').onclick=function(){window.open('https://sobe.ru/na/qa', '_blank');};
-document.getElementById('Dream-footer-m').onclick=function(){window.open('https://sobe.ru/na/na_me4tu_noutbuk_vmsi', '_blank');};
-document.getElementById('Question-footer-m').onclick=function(){window.open('https://sobe.ru/na/vopros_q12x', '_blank');};
+document.getElementById('Donat-footer-m').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 document.getElementById('Telegram-footer-m').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube-footer-m').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
 document.getElementById('GitHub-footer-m').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
