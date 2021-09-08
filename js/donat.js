@@ -1,6 +1,3 @@
-/* Ссылка malloc.ru */
-document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
-
 /* link */
 document.getElementById('DonatBook-text').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 document.getElementById('DonatLaptop-text').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
