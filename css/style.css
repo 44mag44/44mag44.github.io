@@ -12,8 +12,9 @@ fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 [type=checkbox],[type=radio]{padding:0}
 /* End extract */
 *{font-family: 'Roroto', sans-serif}
-html,body{font-size:14px;line-height:1.5}html{overflow-x:hidden}
-h1{font-size:32px;line-height:2;}h2{font-size:24px;line-height:1.5}h3{font-size:20.8px;line-height:1.17}h4{font-size:16px;line-height:1}h5{font-size:12.8px;line-height:0.83}h6{font-size:11.2px;line-height:0.67}
+@media (min-width:992px) {html,body{font-size:14.5px;line-height:1.5}html{overflow-x:hidden}}
+@media (max-width:993px) {html,body{font-size:16px;line-height:1.5}html{overflow-x:hidden}}
+h1{font-size:34px;line-height:2;}h2{font-size:25px;line-height:1.5}h3{font-size:20.8px;line-height:1.17}h4{font-size:17px;line-height:1}h5{font-size:12.8px;line-height:0.83}h6{font-size:11.2px;line-height:0.67}
 .malloc-serif{font-family:serif;}.malloc-sans-serif{font-family:sans-serif;}.malloc-cursive{font-family:cursive;}.malloc-monospace{font-family:monospace;}
 h1,h2,h3,h4,h5,h6{font-weight:400;}.malloc-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;}
@@ -217,8 +218,8 @@ hr{border:0;border-top:1px solid #eee;}
 .malloc-hover-theme:hover {color:#fff !important; background-color:#000000 !important}
 .malloc-hover-border-theme:hover {border-color:#000000 !important}
 /* Подсветка ссылки */
-@media (min-width:992px){.malloc-cursor-link-none .malloc-cursor-link-none:hover{text-decoration: none;}}/* убрать ссылку при наведении курсора*/
-@media (min-width:992px){.malloc-cursor-link-underline:hover{text-decoration: underline; }}/* показать ссылку при наведении курсора*/
+@media (min-width:1px){.malloc-cursor-link-none .malloc-cursor-link-none:hover{text-decoration: none; overflow:hidden}}/* убрать ссылку при наведении курсора*/
+@media (min-width:1px){.malloc-cursor-link-underline:hover{text-decoration: underline; overflow:hidden}}/* показать ссылку при наведении курсора*/
 /* Адаптивная реклама */
 @media (max-width:992px){.malloc-ad-desktop {display: none}}/* Для стационаров, ноутбуков */
 @media (min-width:992px){.malloc-ad-mobile {display: none}}/* Для мобильных устройств, нетбуков */
@@ -233,3 +234,6 @@ textarea{font-size:14px; overflow:auto; max-width:75%;min-width:60%; min-height:
 -ms-user-select: none; /* Internet Explorer/Edge */
 user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
+/* shadow blog*/
+.malloc-shadow-article-cursor{padding:8px 16px; overflow:hidden; cursor:pointer; box-shadow: none}
+.malloc-shadow-article-cursor:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
