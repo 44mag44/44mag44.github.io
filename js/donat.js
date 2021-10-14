@@ -1,7 +1,3 @@
-/* link */
-document.getElementById('DonatBook-text').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
-document.getElementById('DonatLaptop-text').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
-document.getElementById('DonatDesktop-text').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
