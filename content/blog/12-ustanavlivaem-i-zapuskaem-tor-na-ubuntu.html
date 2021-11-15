@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title> Устанавливаем и запускаем TOR на Ubuntu | Malloc.RU</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Из статьи 'Устанавливаем и запускаем TOR на Ubuntu' вы узнаете где скачать тор, как его установить себе на компьютер, как поставить ананимайзер, напишем скрипт для запуска ананимайзера и тора. Пошаговая инструкция поможет сосредоточиться на деталях, а видео инструкция поможет увидеть всю картину целиком. Команды, предоставленные в статье, протестированы на Ubuntu. Подробнее..."/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
+	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4686334354505193" crossorigin="anonymous"></script>
+	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+	<!-- Body -->
+	<body>
+		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
+		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
+				<!-- Статья -->
+				<div class="malloc-threequarter malloc-padding"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Устанавливаем и запускаем TOR на Ubuntu</h1>
+					<!-- Вступление -->
+					<div class="malloc-padding">
+						Эта статья посвещена установке и запуску - <a href="https://ru.wikipedia.org/wiki/Tor" target="_blank">TOR</a>.<br>
+						Так же установим необходимые инструменты и сделаем минимальные настройки.<br>
+						Данная статья подайдет тем кто хочет просто запустить TOR и почувствовать себя закулисой.
+						<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+							Например, просмотр заблокированых сайтов роскомнадзором.
+						</p>
+						Все действия протестированы и проверены на дистрибутиве Ubuntu (15/XI/21).<br>
+						В статье есть <a href="#video">видео</a>, в которым вcё показано на практике.<br><br>
+						Приятного чтения и просмотра!
+					</div>
+					<div class="malloc-auto malloc-center" style="margin-top:40px; width:100%; height:100%"><img class="malloc-image" src="pictures/12.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 1 -->
+					<h2 class="malloc-text-teal">Установка TOR</h2>
+					<ul class="malloc-ul">
+						<li>
+							Cкачаем тор вот с этого сайта <a href="https://www.torproject.org/download/" target="_blank">англ. версия</a>, <a href="https://www.torproject.org/ru/download/" target="_blank">русс. версия</a>:<br>
+						</li>
+						<li>
+							Далее ищем куда скачался архив и распаковываем его в нужную нам папку, например у меня это 'Download/tor-browser-linux64-11.0_ru.tar.xz':<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd Download</code><br>
+						</li>
+						<li>
+							Распокуем скаченный архив 'tor-browser-linux64-11.0_ru.tar.xz':<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">tar -xf tor-browser-linux64-11.0_ru.tar.xz</code><br>					
+						</li>
+						<li>
+							Перемещаем то что распоковалось в нужную нам директорию для хранения.<br>
+							У меня TOR сохранен по следующему пути 'dev/tor-browser_ru':<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mv tor-browser_ru ~/dev/tor-browser_ru</code><br>	
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 2 -->
+					<h2 class="malloc-text-teal">Установим анонимайзер</h2>
+					<ul class="malloc-ul">
+						<li>
+							Скачиваем код с github:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">git clone https://github.com/ruped24/toriptables2</code><br>
+						</li>
+						<li>
+							Перемещаем файл 'toriptables2.py' в папку 'usr/local/bin'.<br>
+							На деле выглядит вот так:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo mv toriptables2/toriptables2.py /usr/local/bin/toriptables2.py</code><br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								"mv" - используется для перемещения каталогов/файлов
+							</p>		
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 3 -->
+					<h2 class="malloc-text-teal">Скрипт для запуска</h2>
+					<ul class="malloc-ul">
+						<li>
+							Сейчас мы напишем скрипт, который будет сначала запускать наш ананимайзер, а потом запускать TOR.<br>
+							Открываем новый терминал и создаем папку 'run' и заходим в неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir run && cd run</code><br>
+						</li>
+						<li>
+							Создаем и открываем файл 'tor':<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">touch tor.sh && gedit tor.sh</code><br>
+						</li>
+						<li>
+							В файле пишем следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo toriptables2.py -l</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd dev/tor-browser_ru</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./start-tor-browser.desktop</code><br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								<code class="malloc-text-teal malloc-border malloc-bar-item">sudo toriptables2.py -f</code> - эта команда остановит ананимайзер.	   
+							</p>
+						</li>
+						<li>
+							Теперь дадим нашему файлу права на исполнение:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">chmod +x tor.sh</code><br>							
+						</li>
+					</ul>
+					<div id="video"></div><br>
+					<hr>
+					<!-- Видео 1 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/UCnhsxvuv8s"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/UCnhsxvuv8s"></object>
+					</div>
+					<hr>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Заключение -->
+					<h2 class="malloc-text-teal">Заключение</h2>
+					<ul class="malloc-ul">
+						<li>
+							В этой статье я рассказал как скачать и настроить тор по минимуму.<br>
+							Как пользоваться ананимайзером.<br>
+							И написал простой скрипт для запуска ананимайзера и tor.<br><br>
+							Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.<br>
+						</li>
+					</ul>
+				</div><!-- } -->
+				<!-- Правый сайдбар { -->
+				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
+					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
+							<div class="malloc-center">НОВОСТИ</div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" rel="nofollow" id="news"></div>
+					</div>
+					<div class="malloc-center malloc-padding-16">
+						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
+							<div rel="nofollow" id="mytime" style="display:inline-block; margin-right: 5px" title="Время"></div>|
+							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
+						</div>
+					</div>
+				</div><!-- } Правый сайдбар -->
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>	
+			</div><!--/ текст -->
+		</div><!--/ main -->
+		<!---->
+		<!-- footer desktop-->	
+		<div class="malloc-padding-64 malloc-ad-desktop"></div>
+		<footer class="malloc-ad-desktop">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать на ...</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-d" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright desktop-->
+				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer mobile -->
+		<div class="malloc-padding-32 malloc-ad-mobile"></div>
+		<footer class="malloc-ad-mobile">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать на ...</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-m" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright -->
+				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Главная</a>
+			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Блог</a>
+			<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Донат</a>
+		</nav>
+		<!--JScript -->
+		<script src="js/12_scripts.js"></script>
+		<script src="../../js/news.js"></script>
+	</body>
+</html>

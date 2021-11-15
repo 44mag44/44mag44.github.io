@@ -1,17 +1,3 @@
-/* Статьи */
-document.getElementById('link-article-1').onclick=function(){window.open('content/blog/1-kak-obnovit\'-ubuntu-cherez-terminal.html', '_self');};
-document.getElementById('link-article-2').onclick=function(){window.open('content/blog/2-kak-otpravit\'-sushchestvuyushchiy-proekt-na-github.html', '_self');};
-document.getElementById('link-article-3').onclick=function(){window.open('content/blog/3-linux-rabota-s-katalogami-i-faylami-chast\'-pervaya.html', '_self');};
-document.getElementById('link-article-4').onclick=function(){window.open('content/blog/4-linux-rabota-s-katalogami-i-faylami-chast\'-vtoraya.html', '_self');};
-document.getElementById('link-article-5').onclick=function(){window.open('content/blog/5-hello-world-na-si.html', '_self');};
-document.getElementById('link-article-6').onclick=function(){window.open('content/blog/6-converter-valyut-na-si.html', '_self');};
-document.getElementById('link-article-7').onclick=function(){window.open('content/blog/7-otzhimaniya-v-otkaz-programma.html', '_self');};
-document.getElementById('link-article-8').onclick=function(){window.open('content/blog/8-tri-zolotykh-uprazhneniya-programma.html', '_self');};
-document.getElementById('link-article-9').onclick=function(){window.open('content/blog/9-raspredeleniye-maksimal\'nogo-kolichestva-povtoreniy-na-podkhody.html', '_self');};
-document.getElementById('link-article-10').onclick=function(){window.open('content/blog/10-yedinorog.html', '_self');};
-document.getElementById('link-article-11').onclick=function(){window.open('content/blog/11-hello-world-na-php.html', '_self');};
-document.getElementById('link-article-12').onclick=function(){window.open('content/blog/12-ustanavlivaem-i-zapuskaem-tor-na-ubuntu.html', '_self');};
-
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
@@ -27,7 +13,8 @@ document.getElementById('Youtube-footer-m').onclick=function(){window.open('http
 document.getElementById('GitHub-footer-m').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
 document.getElementById('Topmail-footer-m').onclick=function(){window.open('https://top.mail.ru/jump?from=3211268', '_blank');};
 document.getElementById('Payeer-footer-m').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
-
+/* Payeer AD */
+document.getElementById('AD-payeer').onclick=function(){window.open('https://payeer.com/04184305', '_blank');};
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* sidebar */
 var mySidebar = document.getElementById("mySidebar");
@@ -65,35 +52,3 @@ function time()
 	return " "+hours+":"+minutes+":"+seconds+" ";
 };
 setInterval(function () {document.getElementById('mytime').innerHTML = time();});
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* Rating Mail.ru counter */
-var _tmr = window._tmr || (window._tmr = []);
-_tmr.push({id: "3211268", type: "pageView", start: (new Date()).getTime()});
-(function (d, w, id) {
-  if (d.getElementById(id)) return;
-  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-  ts.src = "https://top-fwz1.mail.ru/js/code.js";
-  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-})(document, window, "topmailru-code");
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* JS Гармошка */
-var acc = document.getElementsByClassName("malloc-accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Переключение между добавлением и удалением "active" class, выделить кнопку, управляющую панелью */
-    this.classList.toggle("active");
-
-    /* Переключение между скрытием и отображением активной панели */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}

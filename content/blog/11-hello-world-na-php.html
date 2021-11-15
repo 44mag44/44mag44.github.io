@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title>Hello World на PHP | Malloc.RU</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Из этой статьи вы узнаете как создать программу на PHP печатающую фразу -Hello World! Пошаговая инструкция поможет сосредоточиться на деталях, а видео инструкция поможет увидеть всю картину целиком. Команды, предоставленные в статье, протестированы на Ubuntu. Подробнее..."/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
+	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4686334354505193" crossorigin="anonymous"></script>
+	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+	<!-- Body -->
+	<body class="unselectable">
+		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
+		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
+				<!-- Статья -->
+				<div class="malloc-threequarter malloc-padding"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Hello World на PHP</h1>
+					<!-- Вступление -->
+					<div class="malloc-padding">
+						Из этой статьи вы узнаете как написать программу, которая выводит сообщение "Hello, world" на языке программирования - PHP.<br>
+						Тема далеко не нова, но все же у многих возникают трудности при написании этой программы.<br><br>
+						Все действия протестированы и проверены на дистрибутиве Ubuntu. <br>
+						В статье есть видео, в которых всё показано в живую.<br>
+						Приятного чтения и просмотра!<br>
+					</div>
+					<div class="malloc-auto malloc-center" style="margin-top:40px; width:100%; height:100%"><img class="malloc-image" src="pictures/11.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 1 -->
+					<h2 class="malloc-text-teal">Подготовка</h2>
+					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li>
+							Открываем терминал:<br>
+							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li>
+							Создадим отдельный каталог (папку):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir prog</code><br>
+							Теперь зайдем в него:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd prog</code><br>
+							Мы создали пустой каталог и зашли в него.<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								"mkdir" - создать пустой каталог<br>
+								"cd" - используется для перемещения по каталогам
+							</p>			
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li>
+							В этой папке создадим файл "index.php":<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">touch index.php</code><br>
+							Убидимся, что файл создался:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								"touch" - создать файл<br>
+								"ls" - просмотр текущего каталога
+							</p>		
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li>
+							Теперь нужно открыть файл в любой текстовом редакторе.<br>
+							К примеру открою наш файл "index.php" в текстовом редакторе - gedit.
+						</li>
+						<li>
+							Нажимаем "Ctrl+Shift+T", для того, чтобы открыть новую вкаладку в терминале.<br>
+							Теперь вводим следующую команду:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gedit index.php & exit</code><br>
+							Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 2 -->
+					<h2 class="malloc-text-teal">Пишем код</h2>
+					<ul class="malloc-ul">
+						<li>
+							Пишите код строчка за строчкой:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">&lt;?php</code><br>
+							Далее пишем наше сообщение - Hello World:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">echo "Hello World";</code><br>
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 3 -->
+					<h2 class="malloc-text-teal">Запуск в терминале</h2>
+					<ul class="malloc-ul">
+						<li>
+							Чтобы все заработало нам понадобиться вот такая программа:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install php7.4-cli</code><br>
+							Если она у Вас уже есть, то идем дальше.
+						</li>
+						<li>
+							Переходим в наш терминал и там пишем следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">php -S 127.0.0.1:8000</code><br>
+							На экране появиться, что то вроде:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								[Sep Jan 1 12:44:11 2022] PHP 7.4.3 Development Server (http://127.0.0.1:8000) started
+							</p>
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 4 -->
+					<h2 class="malloc-text-teal">Смотрим результат в браузере</h2>
+					<ul class="malloc-ul">
+						<li>
+							Открываем любой браузер.<br>
+							Пишем в адресной строке следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">127.0.0.1:8000</code><br>
+							Нажмите "Enter"<br>
+							Если все сделано правильно то вы увидете надпись - <b>Hello World</b>
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Видео 2 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/YrTpZ6ojgf4"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/YrTpZ6ojgf4"></object>
+					</div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Заключение -->
+					<h2 class="malloc-text-teal">Заключение</h2>
+					<ul class="malloc-ul">
+						<li>
+							В данной статье была расмотрена программа выводящая сообщение "Hello, world" на языке программирования PHP.<br>
+							Мы создали файл, написали код, запустили программу php, просмотрели index.php в браузере.<br><br>	
+							Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
+						</li>
+					</ul>
+				</div><!-- } -->
+				<!-- Правый сайдбар { -->
+				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
+					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
+							<div class="malloc-center">НОВОСТИ</div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" rel="nofollow" id="news"></div>
+					</div>
+					<div class="malloc-center malloc-padding-16">
+						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
+							<div rel="nofollow" id="mytime" style="display:inline-block; margin-right: 5px" title="Время"></div>|
+							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
+						</div>
+					</div>
+				</div><!-- } Правый сайдбар -->
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+			</div><!--/ текст -->
+		</div><!--/ main -->
+		<!---->
+		<!-- footer desktop-->	
+		<div class="malloc-padding-64 malloc-ad-desktop"></div>
+		<footer class="malloc-ad-desktop">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать на ...</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-d" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright desktop-->
+				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer mobile -->
+		<div class="malloc-padding-32 malloc-ad-mobile"></div>
+		<footer class="malloc-ad-mobile">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать на ...</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-m" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright -->
+				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Главная</a>
+			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Блог</a>
+			<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Донат</a>
+		</nav>
+		<!--JScript -->
+		<script src="js/11_scripts.js"></script>
+		<script src="../../js/news.js"></script>
+	</body>
+</html>
