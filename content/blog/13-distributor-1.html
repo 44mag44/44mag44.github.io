@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title>Дистрибутор дохода I | Malloc.RU</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Решил написать своего домашнего распределителя дохода. Он разбивает доход на четыре части  (для меня это оптимально) и записывает все это в файл. В итоге получаем общий доход, полные суммы распределения и отдельные части распределения. Опишу как работает код и оставлю ссылку на него. Код назходиться на GitHub. В данной статье программа разбивает сумму лишь на один конверт, остальное будет в следующей статье. Подробнее..."/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
+	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+	<!-- Body -->
+	<body class="unselectable">
+		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
+		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
+				<!-- Статья -->
+				<div class="malloc-threequarter malloc-padding"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Дистрибутор дохода I</h1>
+					<!-- Вступление -->
+					<div class="malloc-padding">
+						В данной статье я расскажу и покажу как я написал программу <b>"Дистрибутор дохода"</b> или проще говоря - <b>распределение дохода по конвертам</b>.<br>
+						Программа писалась на языке программирования <b>С</b>.<br>
+						Написал все <b>при помощи терминала</b> и не использовал GUI.<br><br>
+						Данная статья предназначена для ознакомительных и практических целей. <br>
+						<b>Подайдет для начинающих и спецов</b>.<br><br>
+						Все действия протестированы и проверены на дистрибутиве <b>Ubuntu</b>.<br>
+						В статье есть <a href="#video">видео</a>, в которым вcё показано на практике.<br><br>
+						Приятного чтения и просмотра!						
+					</div>
+					<div class="malloc-auto malloc-center" style="margin-top:40px; width:100%; height:100%"><img class="malloc-image" src="pictures/13.jpg" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 1 -->
+					<h2 class="malloc-text-teal">Подготовка</h2>
+					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li>
+							Открываем терминал:<br>
+							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li>
+							Создадим отдельный каталог (папку):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir distributor</code><br>
+							Теперь зайдем в него:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd distributor</code><br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								"mkdir" - создать пустой каталог<br>
+								"cd" - используется для перемещения по каталогам
+							</p>			
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li>
+							В этой директории мы создадим две папки <b>source</b>, <b>header</b> и файл <b>make</b>, <b>main.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir source header && > make > main.c</code><br>
+							Убидимся, что все создалось:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code><br>
+							Если сложно разбраться в команде, то не спешите. Cоздайте директории и файл, так как вам будет удобнее всего.<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								">", "touch" - создать файл<br>
+								"ls" - просмотр текущего каталога
+							</p>		
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 2 -->
+					<h2 class="malloc-text-teal">Пишем код. Первые шаги</h2>
+					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li>
+							Пишите код строчка за строчкой!<br><br>
+							И так у нас все есть, чтобы писать более менее большие программы.<br>
+							Перемещайтесь по директориям(папкам), создавайте директории, редактируйте файлы так, как вам будет наиболее удобно.<br>
+							Начнем с малого и далее будем наполнять нашу программу до рабочего состояния.<br><br>
+							Заходим в папку <b>source</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source</code><br>
+							Создаем файл <b>menu.c</b>. В нем будет храниться меню выбора для нашей программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> menu.c</code><br>
+							Открываем файл любым удобным способом и пишем в нем код:<br/>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>	
+							Далее пишем функцию <b>menu</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int menu()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Приветствие:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\tДистрибутор\n");</code><br>
+							Далее запишем наши пункты меню:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\t0. Закрыть программу\n\n");</code><br>
+							Для выбора пункта меню используем switch.<br>
+							Создадим переменную <b>num</b>. Она нужна как раз для этого самого выбора: <br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">char num;</code><br>
+							Приглашение на ввод:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Выбирите пункт: ");</code><br>				
+							<code class="malloc-text-teal malloc-border malloc-bar-item">scanf("%c", &num);</code><br>					
+							Далее я сделал черту, которая отделяет пункты от основного меню:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("------------------------------------\n\n");</code><br>
+							Осталось написать <b>switch</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">switch(num)</code><br>
+							Открывающая скобка: <br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Тут пишем, что, если мы выбрали нуль, то появиться сообщение <b>EXIT</b> и программа завершиться:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">case '0':	printf("\nEXIT\n"); break;</code><br>
+							Если введено всё, что угодно, а не нуль, то напечать <b>ERROR</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">	default: printf("ERROR\n\n");</code><br>
+							Закрывающая скобка switch:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Далее вернем целое число:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>		
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li>
+							Переходим в директорию <b>header</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../header</code><br>
+							Создаем заголовочный файл <b>menu.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> menu.h</code><br>
+							Пишем в файл следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#ifndef _MENU_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#define _MENU_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int menu();</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
+							Мы создали заголовочник <b>menu.h</b>, который включим в файле <b>main.c</b>:
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li>
+							Переходим в директорию <b>distributor</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ..</code><br>
+							Открываем файл <b>main.c</b> и пишем в нем следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "header/menu.h"</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Вызываем функцию <b>menu()</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">menu();</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Мы создали заголовочник <b>menu.h</b>, который включим в файле <b>main.c</b>.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li>
+							Теперь отредактируем файл <b>make</b>:<br>
+							Пишем команду <b>all</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">all:</code><br>
+							Нажмаем <b>Enter</b>.<br>
+							Затем нажмите <b>TAB</b>.<br>
+							Далее пишим компилятор, параметры и файлы, которые нам нужны для сборки программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c source/menu.c</code>
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 3 -->
+					<h2 class="malloc-text-teal">Сборка и запуск программы</h2>
+					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Установка утилиты make</li>
+						<li>
+							Теперь мы собирем нашу программу при помощи <b>make</b><br>
+							Если у вас её нету, то скачайте её:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt update</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install make</code><br>
+							Если она у Вас уже есть, то идем дальше.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li>
+							Собираем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
+							На экране появиться, что то вроде:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								gcc -Wall -g main.c source/menu.c
+							</p>
+							Не возникло ошибок?<br>
+							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li>
+							Хорошо. Запускаем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>	
+							На экране вы увидете заголовок, меню из одного пункта и ожидание ввода.<br>
+							И на экране появиться еще одна строчка:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 0<br>
+								------------------------------------<br><br>
+								EXIT
+							</p>	
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 4 -->
+					<h2 class="malloc-text-teal">Добавляем в меню новый пункт</h2>
+					<ul class="malloc-ul">
+						<li>
+							Файлы <b>main.c</b>, <b>menu.h</b> можно закрыть. Они нам больше не понадобяться.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем директории first, txt</li>
+						<li>
+							Заходим в директорию <b>source</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source</code><br>
+							Создаем директорию <b>first</b> (пункт первый) и директорию <b>txt</b> (в ней будут храниться файлы с информацией):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir first txt</code><br>
+							Заходим в диреторию <b>first</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd first</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем файлы income.c</li>
+						<li>
+							Создаем файлы в папке <b>first</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">touch income.c distributor.c</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редатируем файл income.c</li>
+						<li>
+							Редактируем файл <b>income.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>	
+							Пишем функцию <b>income</b>, котрая содержит один параметр:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int income(int sum)</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменную тип <b>file</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *file;</code><br>
+							Указываем путь к файлу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *filename = "source/txt/income.txt";</code><br>
+							Пишем в конец файла:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "a";</code><br>
+							Теперь переменной <b>file</b> присваиваем данные, которые считаывает функция <b>fopen</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">file = fopen(filename, mode);</code><br>
+							Далее при помощи <b>fprintf</b> мы открываем файл на чтение в конец файла. Если файла нету, то он создаться в указанном месте:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fprintf(file, "%d ", sum);</code><br>
+							После того, как завершиться запись в файл закрываем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fclose(file);</code><br>
+							Возвращем <b>sum</b><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return sum;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переходим в директорию header и создаем файл income.h</li>
+						<li>
+							Теперь нам нужно создать заголовочник <b>income.h</b>.<br>
+							Переходим в директорию <b>header</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../header/</code><br>
+							Создаем файл <b>income.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> income.h</code><br>
+							Редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#ifndef _INCOME_H_</code><br>	
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#define _INCOME_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int income(int sum);</code><br>	
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
+							Теперь можем включать файл и воспользоваться функцией <b>income()</b><br>
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем файл distributor.c</li>
+						<li>
+							Идем в папку <b>first</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../source/first</code><br>	
+							Создаем тут файл <b>distributor.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> distributor.c</code><br>
+							Редактируем его.<br>
+							Включаем библиотеку <b>stdio.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>	
+							Включаем наш заголовочник <b>income.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../../header/income.h"</code><br>
+							Пишем функцию <b>distributor</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int distributor()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменную <b>sum</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int sum;</code><br>
+							Приглашаем на ввод суммы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Введите сумму:  ");</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">scanf("%d", &sum);</code><br>
+							И передаем наше число функции <b>income</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">income(sum);</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Cоздаем файл distributor.h</li>
+						<li>
+							Теперь нам нужно создать заголовочник <b>distributor.h</b>.<br>
+							Переходим в директорию <b>header</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../header/</code><br>
+							Создаем файл <b>distributor.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> distributor.h</code><br>
+							Редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#ifndef _DISTRIBUTOR_H_</code><br>	
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#define _DISTRIBUTOR_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int distributor();</code><br>	
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
+							Теперь можем включать заголовочник <b>distributor.h</b> в файле <b>menu.c</b> и пользоваться функцией <b>income()</b>.<br>
+							Вы можете закрыть файлы <b>income.c</b>, <b>income.h</b>. Они нам больше не нужны.
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл menu.c</li>
+						<li>
+							Намнужно включить в наш код заголовочник <b>distributor.h</b>:<br>
+							Находим строчку <b>#include &lt;stdio.h&gt;</b>. Под ней, на новой строке, пишем:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../header/distributor.h"</code><br>
+							Добавим новый пункт меню "<b>1. Внести сумму</b>".<br>
+							Между строками <b>printf("\tДистрибутор\n");</b> и <b>printf("\t0. Закрыть программу\n\n");</b> пишем:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\t1. Внести сумму\n");</code><br>
+							Задействуем нашу функцию <b>distributor()</b> в switch:<br>
+							Код расположите между <b>{</b> и <b>case '0':	printf("\nEXIT\n"); break;</b><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">case '1':	distributor(); break;</code><br>
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем файлы в файл make</li>
+						<li>
+							Редактируем <b>make</b><br>
+							Добавляем файлы <b>income.c</b>, <b>distributor.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">source/first/income.c source/first/distributor.c</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li>
+							Перейдите в директорию, в которой лежит файл <b>make</b>.<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								a.out  header\  main.c  make  source\
+							</p>	
+							Собираем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
+							На экране появиться, что то вроде:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								gcc -Wall -g main.c source/menu.c <b>source/first/income.c source/first/distributor.c</b>
+							</p>
+							Не возникло ошибок?<br>
+							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li>
+							Хорошо. Запускаем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+							На экране вы увидете заголовок, меню из двух пунктов и ожидание ввода.<br>
+							Выбираем пункт первый. Вводим любую сумму.<br>После нажатия "Enter".<br>
+							В папке <b>source/txt/</b> появиться файл <b>income.txt</b>. В нем будет, записана сумма, которую вы внесли.<br>
+							Теперь там храняться все суммы, которые будут введены в первом пункте.
+							И на экране появиться еще одна строчка:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									1. Внести сумму<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 1<br>
+								------------------------------------<br>
+								Сумма:  5000
+							</p>	
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 5 -->
+					<h2 class="malloc-text-teal">Добавим конверт на чёрный день</h2>
+					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Файл black_day.c</li>
+						<li>
+							Переходим в директорию <b>first</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source/first/</code><br>
+							Создаем файл <b>black_day.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> black_day.c</code><br>
+							Редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Создаем функцию <b>black_day</b> с параметром <b>sum</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day(int sum)</code><br>
+							Открывыющая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Содаем переменную, которая будет принимать процент от суммы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">	int money = 0;</code><br>
+							Формула. Мне нужно взять от суммы 5% (вы можете взять любой процент):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">money = sum*5/100;</code><br>
+							Выводим на экран, эти 5%, котрые уже записаны в переменной <b>money</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">	printf("Чёрный день:  %d\n", money);</code><br>
+							Возвращаем значение:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return money;</code><br>
+							Закрывыющая скобка:<br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Файл black_day.h</li>
+						<li>
+							Переходим в директорию <b>header</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../header/</code><br>
+							Создаем файл <b>black_day.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> black_day.h</code><br>
+							Редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#ifndef _BLACK_DAY_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#define _BLACK_DAY_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day(int sum);</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем заголовочник в distributor.c</li>
+						<li>
+							Переходим в директорию <b>first</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../source/first/</code><br>
+							Редактируем файл <b>distributor.c</b>.<br>
+							После строчки <b>#include "../../header/income.h"</b> пишем:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../../header/black_day.h"</code><br>
+							После строчки <b>income(sum)</b> пишем:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">black_day(sum);</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем distributor.c в файл make</li>
+						<li>
+							Находим файл <b>make</b>.<br>
+							Добавляем в конец файла <b>source/first/black_day.c</b>:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								... source/first/distributor.c <b>source/first/black_day.c</b>
+							</p>
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li>
+							Собираем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
+							На экране появиться, что то вроде:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								gcc -Wall -g main.c source/menu.c source/first/income.c source/first/distributor.c source/first/black_day.c
+							</p>
+							Не возникло ошибок?<br>
+							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li>
+							Запускаем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+							На экране вы увидете заголовок, меню из двух пунктов и ожидание ввода.<br>
+							Выбираем пункт первый. Вводим любую сумму.<br>После нажатия "Enter".<br>
+							В файл <b>income.txt</b> будет, записана сумма, которую вы внесли.<br>
+							И на экране появиться еще одна строчка:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									1. Внести сумму<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 1<br>
+								------------------------------------<br>
+								Сумма:  5000<br>
+								Чёрный день:  250
+							</p><br>
+							Теперь сделаем так, чтобы можно было записывать данные в файл.						
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Записываем в файл процент на чёрный день</li>
+						<li>
+							Находим файл <b>black_day.c</b> и редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source/first/</code><br>
+							Пишем между строками <b>printf("Чёрный день:  %d\n", money);</b> и <b>return money;</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *file;</code><br>
+							Указываем путь к файлу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *filename = "source/txt/black_day.txt";</code><br>
+							Пишем в конец файла:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "a";</code><br>
+							Теперь переменной <b>file</b> присваиваем данные, которые считаывает функция <b>fopen</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">file = fopen(filename, mode);</code><br>
+							Далее при помощи <b>fprintf</b> мы открываем файл на чтение в конец файла. Если файла нету, то он создаться в указанном месте:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fprintf(file, "%d ", sum);</code><br>
+							После того, как завершиться запись в файл закрываем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fclose(file);</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li>
+							Возвращаемся к файлу <b>make</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../</code><br>
+							Собираем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
+							Не возникло ошибок?<br>
+							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li>
+							Запускаем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+							Выбираем пункт первый. Вводим любую сумму.<br>После нажатия "Enter".<br>
+							В файл <b>income.txt</b> будет, записана сумма, которую вы внесли.<br>
+							В файл <b>black_day.txt</b> будет, записан процент от всей суммы:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									1. Внести сумму<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 1<br>
+								------------------------------------<br>
+								Сумма:  1500<br>
+								Чёрный день:  75
+							</p>
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div id="video"></div><br>
+					<hr>
+					<div style="margin-top:100px"></div>
+					<!-- Видео 1 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/kxHuJqtEZo4"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/kxHuJqtEZo4"></object>
+					</div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Заключение -->
+					<h2 class="malloc-text-teal">Заключение</h2>
+					<ul class="malloc-ul">
+						<li>
+							В заключении этой статьи хочу сказать, что программа не дописана и будет дополнена в следующей части.<br>
+							А в этом коде мы научили программу сохранять введенную информацию в файл и считать процент от суммы.<br><br>
+							Код можете скачать с <b><a id="lang-C" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;">github.com</a></b></a><br><br>
+							Статья получилась громозкой, но я думаю, что у вас не возникнет ни каких проблем.<br>
+							Надеюсь, статья была полезной и получилось найти ответы на свои вопросы.
+						</li>
+					</ul>
+				</div><!-- } -->
+				<!-- Правый сайдбар { -->
+				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
+					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
+							<div class="malloc-center">НОВОСТИ</div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" rel="nofollow" id="news"></div>
+					</div>
+					<div class="malloc-center malloc-padding-16">
+						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
+							<div rel="nofollow" id="mytime" style="display:inline-block; margin-right: 5px" title="Время"></div>|
+							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
+						</div>
+					</div>
+				</div><!-- } Правый сайдбар -->
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+			</div><!--/ текст -->
+		</div><!--/ main -->
+		<!---->
+		<!-- footer desktop-->	
+		<div class="malloc-padding-64 malloc-ad-desktop"></div>
+		<footer class="malloc-ad-desktop">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-d" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright desktop-->
+				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer mobile -->
+		<div class="malloc-padding-32 malloc-ad-mobile"></div>
+		<footer class="malloc-ad-mobile">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-m" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright -->
+				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Главная</a>
+			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Блог</a>
+			<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Донат</a>
+		</nav>
+		<!--JScript -->
+		<script src="js/13_scripts.js"></script>
+		<script src="../../js/news.js"></script>
+	</body>
+</html>

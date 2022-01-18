@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title>Дистрибутор дохода II | Malloc.RU</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Расмотрим написание второго пункта меню программы Дистрибутор. Статья является продолжением первой и поэтому все действия нужно совершать попорядку. В данной статья выведем таблицу, которая покажет общий доход, распределенный по категориям, отдельные суммы вложения. Использовал язык программирования С, дистрибутив Ubuntu, без GUI. Подробнее..."/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
+	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+	<!-- Body -->
+	<body class="unselectable">
+		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
+		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
+				<!-- Статья -->
+				<div class="malloc-threequarter malloc-padding"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Дистрибутор дохода II</h1>
+					<!-- Вступление -->
+					<div class="malloc-padding">
+						В данной статье я расскажу и покажу как я написал программу <b>"Дистрибутор дохода"</b> или проще говоря - <b>распределение дохода по конвертам</b>.<br>
+						Статья является второй чаcтью и продолжением <a id="article" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;"><b>первой</b></a>.<br>
+						Программа писалась на языке программирования <b>С</b>.<br>
+						Написал все <b>при помощи терминала</b> и не использовал GUI.<br><br>
+						Данная статья предназначена для ознакомительных и практических целей. <br>
+						<b>Подайдет для начинающих и спецов</b>.<br><br>
+						Все действия протестированы и проверены на дистрибутиве <b>Ubuntu</b>.<br>
+						В статье есть <a href="#video" class="malloc-hover-green" style="border-radius:5px;">видео</a>, в которым вcё показано на практике.<br><br>
+						Приятного чтения и просмотра!						
+					</div>
+					<div class="malloc-auto malloc-center" style="margin-top:40px; width:100%; height:100%"><img class="malloc-image" src="pictures/14.jpg" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 1 -->
+					<h2 class="malloc-text-teal">Сокращаем количество заголовочников</h2>
+					<ul class="malloc-ul">
+						<li>
+							Сейчас мы немного уменьшим количество файлов в каталоге <b>header</b>. Это нужно, чтобы проще искать нужный заголовочник.
+						</li>
+						<li>
+							Заходим в папку <b>header</b> и открываем три файла <b>black_day.h</b>,<b>distributor.h</b>,<b>income.h</b>.<br>
+							Теперь запишем в файл <b>distributor.h</b> название протатипа, который записан в файле <b>income.h</b>.<br>
+							Пишем ниже протатипа функции <b>distributor()</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int income(int sum);</code><br>
+							Теперь запишем в файл <b>distributor.h</b> название протатипа, который записан в файле <b>black_day.h</b>.<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day(int sum);</code><br>
+						</li>
+						<li>
+							Удаляем файлы <b>black_day.h</b>,<b>income.h</b>. Они нам больше не нужны:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">rm -rf black_day.h income.h</code><br>
+						</li>				
+					</ul>
+					<ul class="malloc-ul">
+						<li>
+							Осталось лишь заменить путь к нашему заголовочнику в файле <b>distributor.c</b>.<br>
+							Переходим в директорию <b>source</b>. Открываем файл <b>distributor.c</b>.<br>
+							Ищем строчки <b>#include "../../header/income.h"</b>, <b>#include "../../header/black_day.h"</b>. Удаляем их.<br>
+							Вместо них пишем:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../../header/distributor.h"</code><br>
+						</li>	
+						<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+							Пока не будем собирать проект. Я считаю, что в этом нету необходимости.<br>
+						</p>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 2 -->
+					<h2 class="malloc-text-teal">Добавляем в меню новый пункт</h2>
+					<ul class="malloc-ul">
+						<li>
+							Переходим в <b>source</b>. Открываем файл <b>menu.c</b><br>
+							Находим строчку <b>printf("\t1. Внести сумму\n");</b>.<br>
+							Пишем после неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\t2. Показать таблицу\n");</code><br>
+						</li>
+						<li>
+							Находим строчку <b>case '1':	distributor(); break;</b>.<br>
+							Пишем после неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">case '2':	table(); break;</code><br>
+							Функции <b>table()</b> ещё нет. В процессе мы создадим все необходимое, чтобы эта функция работала так как задуманно.<br>
+							Проще говоря, нажал на цифру два и вывелась таблица.
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 5 -->
+					<h2 class="malloc-text-teal">Директория и файлы для второго пункта меню</h2>
+					<ul class="malloc-ul">
+						<li>
+							В директории <b>source</b> создаем директорию <b>second</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir second</code><br>
+							Заходим в неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd second</code><br>
+							Создаем файлы <b>table.c</b>, <b>income.c</b>, <b>black_day.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">touch table.c income.c black_day.c</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл income.c</li>
+						<li>
+							Редактируем <b>income.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Создаем функцию <b>income_t()</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int income_t()</code><br>
+							Открывыющая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем две переменные, которые будут нужны для наших алгоритмов:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">	int num, sum;</code><br>
+							Теперь нам нужно прочитать информацию, которая храниться в файле <b>source/txt/income.txt</b>.<br>
+							Чтобы это сделать пишем следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *file;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *filename = "source/txt/income.txt";</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "r"</code><br><br>
+							Первый алгоритм, который высчитавает сумму всех чисел в файле выглядит так.<br>
+							Инициализируем переменные:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">num=0, sum=0;</code><br>
+							Вызываем функцию <b>fopen()</b>. Добавляем параметры и присваиваем эту функцию указателю <b>file</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">file = fopen(filename, mode);</code><br>
+							Пишем цикл <b>while</b>. Условие - читаем из файла и пишем в переменную (должно работать):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">while(fscanf(file, "%d", &num) == 1)</code><br>
+							Окрывыющая скобка while:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Всё, что попалось в переменную <b>num</b> суммируем в переменную <b>sum</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sum+=num;</code><br>
+							Закрывыющая скобка while:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Печатаем сообщение:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Весь заработок составляет: %d\n" , sum);</code><br><br>
+							Отступите пару строк.<br>
+							Следующий алгоритм выводит каждую часть дохода на экран.<br>
+							Инициализируем переменные:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">num=0, sum=0;</code><br>							
+							Открываем файл на чтение.<br>
+							Вызываем функцию <b>fopen()</b>. Добавляем параметры и присваиваем эту функцию указателю <b>file</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">file = fopen(filename, mode);</code><br>
+							Пишем цикл <b>while</b>. Условие - до тех пор пока не конец файл и не произошла ошибка файла (в файле):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">while (!feof(file) && !ferror(file))</code><br>
+							Открывыющая скобка while:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Считываем символы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">num=getc(file);</code><br>
+							Условие - если символ не конец строки, то печатаем символ:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">if(num != EOF)</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">putchar(num);</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Закрывыющая скобка while:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Возвращаем значение:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return sum;</code><br>
+							Закрывыющая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								На счет алгоритмов. Ничего другого придуамать не смог<br>
+							</p>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл black_day.c</li>
+						<li>
+							Копируем всё, что в файле <b>income.c</b> в файл <b>black_day.c</b>.<br>
+							В файле <b>black_day.c</b> изменим всего три строчки.<br><br>
+							Ищем строку <b>int income_t()</b> и меняем на:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day_t()</code><br>
+							Ищем строку <b>	const char *filename = "source/txt/income.txt";</b> и меняем на:<br>						
+							<code class="malloc-text-teal malloc-border malloc-bar-item">	const char *filename = "source/txt/black_day.txt";</code><br>
+							Ищем строку <b>printf("Весь заработок составляет: %d\n" , sum);</b> и меняем на:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Чёрный день: %d\n" , sum);</code><br>						
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл table.c</li>
+						<li>
+							Редактируем файл <b>table.h</b>.<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Включаем наш заголовочник <b>table.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../../header/table.h"</code><br>
+							Создаем функцию <b>table()</b> (не будем ни чего возвращать):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">void table()</code><br>
+							Открывыющая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Функция <b>income_t()</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">income_t();</code><br>
+							Делаем отступ (границу):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\n\n");</code><br>
+							Функция <b>black_day_t()</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">black_day_t();</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\n");</code><br>
+							Закрывыющая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем и редактируем файл table.h</li>
+						<li>
+							Переходим в директорию <b>header</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../header/</code><br>
+							Создаем файл <b>table.h</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> table.h</code><br>
+							Редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#ifndef _TABLE_H_</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#define _TABLE_H_</code><br>
+							Добавляем наши протатипы функций <b>income_t()</b>, <b>black_day_t()</b> и <b>table()</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int income_t();</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day_t();</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">void table();</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл menu.c</li>
+						<li>
+							Переходим в директорию <b>source</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../</code><br>
+							Редактируем файл <b>menu.h</b>.<br>
+							Ищем строчку <b>#include "../header/distributor.h"</b>.<br>
+							Пишем ниже неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../header/table.h"</code><br>
+						</li>
+					<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем income.c, black_day.c, table.c в файл make</li>
+					<ul class="malloc-ul">
+						<li>
+							Находим файл <b>make</b>. Редактируем его.<br>
+							Добавляем в конец файла:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">source/second/income.c source/second/black_day.c source/second/table.c</code><br>
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li>
+							Собираем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
+							На экране появиться, что то вроде:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								gcc -Wall -g main.c source/menu.c source/first/income.c source/first/distributor.c source/first/black_day.c source/second/income.c source/second/black_day.c source/second/table.c
+							</p>
+							Не возникло ошибок?<br>
+							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li>
+							Запускаем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+							На экране вы увидете заголовок, меню из трёх пунктов и ожидание ввода.<br>
+							Выбираем пункт первый. Вводим любую сумму. Введите ещё одну. Это для того, чтобы в файле имелось более двух чисел.
+							Пример моего ввода:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									1. Внести сумму<br>
+									2. Показать таблицу<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 1<br>
+								------------------------------------<br>
+								Сумма:  10000<br>
+								Чёрный день:  500
+							</p>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									1. Внести сумму<br>
+									2. Показать таблицу<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 1<br>
+								------------------------------------<br>
+								Сумма:  1070<br>
+								Чёрный день:  53
+							</p><br>
+						</li>	
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Вводим таблицу на экран</li>
+						<li>
+							Запускаем программу:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
+							Выбираем второй пункт. На экране появиться таблица.<br>
+							Пример моего ввода:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+									Дистрибутор<br>
+									1. Внести сумму<br>
+									2. Показать таблицу<br>
+									0. Закрыть программу<br><br>
+								Выбирите пункт: 2<br>
+								------------------------------------<br>
+								Весь заработок составляет: 73970<br>
+								10000 1070 500 53600 8800 <br><br>
+								Чёрный день: 3698<br>
+								500 53 25 2680 440 <br>
+							</p><br>
+						</li>	
+					</ul>
+					<!-- ОТСТУП -->
+					<div id="video"></div><br>
+					<hr>
+					<div style="margin-top:100px"></div>
+					<!-- Видео 1 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/https://youtu.be/Ocvwdb_mfeo"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/https://youtu.be/Ocvwdb_mfeo"></object>
+					</div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Заключение -->
+					<h2 class="malloc-text-teal">Заключение</h2>
+					<ul class="malloc-ul">
+						<li>
+							Вот и всё. Мы вывели информацию, которая храниться в файлых, в терминал. Для этого мы создали второй пункт в меню.<br>
+							Программа подсчитывает общую сумму и на "чёрный день". Конечно можно расширить этот список насколько потребуется.<br>
+							В видео вы можете посмотреть как я расширяю эту программу ещё на две важные потребности.<br><br>
+							На данный момент не обладаю хорошим оборудованием, чтобы написать приложение и выложить её в магазин на продажу.<br>
+							Конечно была бы создана подробная статья по всему, что делал и записаны видео.<br>
+							А пока я останавлюсь на данном этапе.<br><br>
+							Код можете скачать с <b><a id="lang-C" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;">github.com</a></b><br><br>
+							А вот задание всем - "Сделайте третий пункт в меню. После выбора этого меню удаляется последняя запись во всех документах."<br>
+							Дополнительно - "Сделайте 4 пункт меню. После его выбора вся таблица отсылается на вашу почту. (Возможно ли это?)"
+							Надеюсь, статья была полезной и получилось найти ответы на свои вопросы.
+						</li>
+					</ul>
+				</div><!-- } -->
+				<!-- Правый сайдбар { -->
+				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
+					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
+							<div class="malloc-center">НОВОСТИ</div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" rel="nofollow" id="news"></div>
+					</div>
+					<div class="malloc-center malloc-padding-16">
+						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
+							<div rel="nofollow" id="mytime" style="display:inline-block; margin-right: 5px" title="Время"></div>|
+							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
+						</div>
+					</div>
+				</div><!-- } Правый сайдбар -->
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+			</div><!--/ текст -->
+		</div><!--/ main -->
+		<!---->
+		<!-- footer desktop-->	
+		<div class="malloc-padding-64 malloc-ad-desktop"></div>
+		<footer class="malloc-ad-desktop">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-d" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright desktop-->
+				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer mobile -->
+		<div class="malloc-padding-32 malloc-ad-mobile"></div>
+		<footer class="malloc-ad-mobile">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-m" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright -->
+				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Главная</a>
+			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Блог</a>
+			<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Донат</a>
+		</nav>
+		<!--JScript -->
+		<script src="js/14_scripts.js"></script>
+		<script src="../../js/news.js"></script>
+	</body>
+</html>
