@@ -21,9 +21,9 @@
 					<div class="malloc-padding">
 						В данной статье я расскажу и покажу как я написал программу <b>"Дистрибутор дохода"</b> или проще говоря - <b>распределение дохода по конвертам</b>.<br>
 						Статья является второй чаcтью и продолжением <a id="article" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;"><b>первой</b></a>.<br>
-						Программа писалась на языке программирования <b>С</b>.<br>
-						Написал все <b>при помощи терминала</b> и не использовал GUI.<br><br>
-						Данная статья предназначена для ознакомительных и практических целей. <br>
+						Программа написана на языке программирования <b>С</b>.<br>
+						Создавалось все <b>при помощи терминала</b>, без GUI.<br><br>
+						Данная статья предназначена для ознакомительных и практических целей.<br>
 						<b>Подайдет для начинающих и спецов</b>.<br><br>
 						Все действия протестированы и проверены на дистрибутиве <b>Ubuntu</b>.<br>
 						В статье есть <a href="#video" class="malloc-hover-green" style="border-radius:5px;">видео</a>, в которым вcё показано на практике.<br><br>
@@ -44,11 +44,11 @@
 							Пишем ниже протатипа функции <b>distributor()</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int income(int sum);</code><br>
 							Теперь запишем в файл <b>distributor.h</b> название протатипа, который записан в файле <b>black_day.h</b>.<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day(int sum);</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day(int sum);</code>
 						</li>
 						<li>
 							Удаляем файлы <b>black_day.h</b>,<b>income.h</b>. Они нам больше не нужны:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">rm -rf black_day.h income.h</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">rm -rf black_day.h income.h</code>
 						</li>				
 					</ul>
 					<ul class="malloc-ul">
@@ -57,22 +57,22 @@
 							Переходим в директорию <b>source</b>. Открываем файл <b>distributor.c</b>.<br>
 							Ищем строчки <b>#include "../../header/income.h"</b>, <b>#include "../../header/black_day.h"</b>. Удаляем их.<br>
 							Вместо них пишем:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../../header/distributor.h"</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../../header/distributor.h"</code>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								Пока не будем собирать проект. Я считаю, что в этом нету необходимости.
+							</p>
 						</li>	
-						<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-							Пока не будем собирать проект. Я считаю, что в этом нету необходимости.<br>
-						</p>
 					</ul>
 					<!-- ОТСТУП -->
 					<div style="margin-top:100px"></div>
-					<!-- Подзаголовок 2 -->
+					<!-- Подзаголовок 1 -->
 					<h2 class="malloc-text-teal">Добавляем в меню новый пункт</h2>
 					<ul class="malloc-ul">
 						<li>
 							Переходим в <b>source</b>. Открываем файл <b>menu.c</b><br>
 							Находим строчку <b>printf("\t1. Внести сумму\n");</b>.<br>
 							Пишем после неё:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\t2. Показать таблицу\n");</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\t2. Показать таблицу\n");</code>
 						</li>
 						<li>
 							Находим строчку <b>case '1':	distributor(); break;</b>.<br>
@@ -84,7 +84,7 @@
 					</ul>
 					<!-- ОТСТУП -->
 					<div style="margin-top:100px"></div>
-					<!-- Подзаголовок 5 -->
+					<!-- Подзаголовок 2 -->
 					<h2 class="malloc-text-teal">Директория и файлы для второго пункта меню</h2>
 					<ul class="malloc-ul">
 						<li>
@@ -93,7 +93,7 @@
 							Заходим в неё:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd second</code><br>
 							Создаем файлы <b>table.c</b>, <b>income.c</b>, <b>black_day.c</b>:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">touch table.c income.c black_day.c</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">touch table.c income.c black_day.c</code>
 						</li>
 						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл income.c</li>
 						<li>
@@ -128,7 +128,7 @@
 							Отступите пару строк.<br>
 							Следующий алгоритм выводит каждую часть дохода на экран.<br>
 							Инициализируем переменные:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">num=0, sum=0;</code><br>							
+							<code class="malloc-text-teal malloc-border malloc-bar-item">num=0;</code><br>							
 							Открываем файл на чтение.<br>
 							Вызываем функцию <b>fopen()</b>. Добавляем параметры и присваиваем эту функцию указателю <b>file</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">file = fopen(filename, mode);</code><br>
@@ -146,11 +146,11 @@
 							Закрывыющая скобка while:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
 							Возвращаем значение:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">return sum;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
 							Закрывыющая скобка:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
 							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
-								На счет алгоритмов. Ничего другого придуамать не смог<br>
+								На счет алгоритмов. Ничего другого придуамать не смог
 							</p>
 						</li>
 						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл black_day.c</li>
@@ -162,7 +162,7 @@
 							Ищем строку <b>	const char *filename = "source/txt/income.txt";</b> и меняем на:<br>						
 							<code class="malloc-text-teal malloc-border malloc-bar-item">	const char *filename = "source/txt/black_day.txt";</code><br>
 							Ищем строку <b>printf("Весь заработок составляет: %d\n" , sum);</b> и меняем на:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Чёрный день: %d\n" , sum);</code><br>						
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Чёрный день: %d\n" , sum);</code>						
 						</li>
 						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл table.c</li>
 						<li>
@@ -182,7 +182,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">black_day_t();</code><br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("\n");</code><br>
 							Закрывыющая скобка:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
 						</li>
 						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем и редактируем файл table.h</li>
 						<li>
@@ -197,7 +197,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int income_t();</code><br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day_t();</code><br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">void table();</code><br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code>
 						</li>
 						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл menu.c</li>
 						<li>
@@ -206,14 +206,13 @@
 							Редактируем файл <b>menu.h</b>.<br>
 							Ищем строчку <b>#include "../header/distributor.h"</b>.<br>
 							Пишем ниже неё:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../header/table.h"</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../header/table.h"</code>
 						</li>
-					<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем income.c, black_day.c, table.c в файл make</li>
-					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем income.c, black_day.c, table.c в файл make</li>
 						<li>
 							Находим файл <b>make</b>. Редактируем его.<br>
 							Добавляем в конец файла:<br>
-							<code class="malloc-text-teal malloc-border malloc-bar-item">source/second/income.c source/second/black_day.c source/second/table.c</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">source/second/income.c source/second/black_day.c source/second/table.c</code>
 						</li>	
 						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
 						<li>
@@ -252,9 +251,9 @@
 								------------------------------------<br>
 								Сумма:  1070<br>
 								Чёрный день:  53
-							</p><br>
+							</p>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Вводим таблицу на экран</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Выводим таблицу на экран</li>
 						<li>
 							Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -270,8 +269,8 @@
 								Весь заработок составляет: 73970<br>
 								10000 1070 500 53600 8800 <br><br>
 								Чёрный день: 3698<br>
-								500 53 25 2680 440 <br>
-							</p><br>
+								500 53 25 2680 440
+							</p>
 						</li>	
 					</ul>
 					<!-- ОТСТУП -->
@@ -280,10 +279,10 @@
 					<div style="margin-top:100px"></div>
 					<!-- Видео 1 -->
 					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
-						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/https://youtu.be/Ocvwdb_mfeo"></object>
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/Ocvwdb_mfeo"></object>
 					</div>
 					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
-						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/https://youtu.be/Ocvwdb_mfeo"></object>
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/Ocvwdb_mfeo"></object>
 					</div>
 					<!-- ОТСТУП -->
 					<div style="margin-top:100px"></div>
@@ -293,13 +292,13 @@
 						<li>
 							Вот и всё. Мы вывели информацию, которая храниться в файлых, в терминал. Для этого мы создали второй пункт в меню.<br>
 							Программа подсчитывает общую сумму и на "чёрный день". Конечно можно расширить этот список насколько потребуется.<br>
-							В видео вы можете посмотреть как я расширяю эту программу ещё на две важные потребности.<br><br>
-							На данный момент не обладаю хорошим оборудованием, чтобы написать приложение и выложить её в магазин на продажу.<br>
-							Конечно была бы создана подробная статья по всему, что делал и записаны видео.<br>
-							А пока я останавлюсь на данном этапе.<br><br>
+							На видео вы можете посмотреть как я расширяю эту программу ещё на две важные потребности.<br><br>
+							В данный момент не обладаю хорошим оборудованием, чтобы написать приложение и выложить её на продажу. Конечно была бы создана подробная статья по всему, что делал и записаны видео. А пока я останавлюсь на данном этапе.<br><br>
 							Код можете скачать с <b><a id="lang-C" class="malloc-hover-blue" style="border-radius:5px; text-decoration:underline;">github.com</a></b><br><br>
-							А вот задание всем - "Сделайте третий пункт в меню. После выбора этого меню удаляется последняя запись во всех документах."<br>
-							Дополнительно - "Сделайте 4 пункт меню. После его выбора вся таблица отсылается на вашу почту. (Возможно ли это?)"
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								Задание всем - "Сделайте третий пункт в меню. После выбора, этого пунтка меню, удаляется последняя запись во всех документах."<br>
+								Дополнительно - "Сделайте 4 пункт меню. После выбора, этого пунтка меню, вся таблица отсылается на вашу почту. (Возможно ли это?)"
+							</p>
 							Надеюсь, статья была полезной и получилось найти ответы на свои вопросы.
 						</li>
 					</ul>

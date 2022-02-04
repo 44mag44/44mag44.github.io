@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title> Шаблоны файлов на Ubuntu | Malloc.RU</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Шаблоны используются каждый день в нашей жизни. Шаблоны поведения, эталоны, формы, нитки, дерево, код, библиотеки и т.д. В этой статьи я опишу как сделать простой шаблон и где это делается. Из моего видео вы узнаете какими шаблонами пользуюсь сам и чем они полезны. Подробнее..."/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
+	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+	<!-- Body -->
+	<body class="unselectable">
+		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
+		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
+				<!-- Статья -->
+				<div class="malloc-threequarter malloc-padding"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Шаблоны файлов на Ubuntu</h1>
+					<!-- Вступление -->
+					<div class="malloc-padding">		
+						Начну с того, что поговорю о слове <b>Шаблон</b>( англ. - <b>Template</b>).<br>
+						Я понимаю это слово так - "Некая форма, которая помогает сделать результат таким же, как до этого". Например всевозможные эталоны, трафареты, нитка, кусок дерева, повторяющиеся код и т.д.<br><br>
+						Мы создадим файлы, которые можно будет использовать повторно. А воспользоваться ими можно через правую кнопку мыши и выбрать нужный шаблон.<br>
+						Шаблоны позволяют быстро создать нужные файлы. То есть не нужно будет писать одно и тоже из раза в раз, например файл <b>main</b>, <b>make</b>.<br><br>
+						Данная статья предназначена для ознакомительных и практических целей, поэтому подайдет для начинающих и спецов.<br>
+						Все действия протестированы и проверены на дистрибутиве <b>Ubuntu</b>.<br>
+						В статье есть <a href="#video" class="malloc-hover-green" style="border-radius:5px;">видео</a>, в которым вcё показано на практике.<br>
+						Там рассказываю о своих шаблонах и как их использую.<br><br>
+						Приятного чтения и просмотра!						
+					</div>
+					<div class="malloc-auto malloc-center" style="margin-top:40px; width:100%; height:100%"><img class="malloc-image" src="pictures/15.png" alt="Screenshot" title="Screenshot-Терминал" style="border-radius:5px;"></div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 1 -->
+					<h2 class="malloc-text-teal">Создаем файл main.c и редактируем его</h2>
+					<ul class="malloc-ul">
+						<li>
+							Создаем файл <b>main.c</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> main.c</code><br>
+							Редактируем его:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gedit main.c & exit</code><br>
+						</li>
+						<li>
+							В файле пишем код, который выводит сообщение <b>Hello World!</b>.<br>
+							Пишите код строчка за строчкой.<br>
+							Подключаем стандартную библиотеку ввода-вывода:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Далее пишем функцию - main:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Теперь пишем приветствие с переводом на новую строку:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Hello, world\n");</code><br>
+							Вернем целое число:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>										
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 2 -->
+					<h2 class="malloc-text-teal">Перемещаем файл в директорию "Templates" | "Шаблоны"</h2>
+					<ul class="malloc-ul">
+						<li>
+							Теперь нам нужно переместить наш файл в папку <b>Шаблоны</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mv main.c Шаблоны/</code><br>
+							Если у вас всё по английски, то она называется <b>Templates</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mv main.c Templates/</code><br>
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 3 -->
+					<h2 class="malloc-text-teal">Тестируем</h2>
+					<ul class="malloc-ul">
+						<li>
+							Теперь мы можем создать наш файл <b>main.c</b>, используя правую кнопку мыши (ПКМ).<br>
+							После выбераем <b>New Document</b>. И там мы увидим <b>main.c</b>. Нажимаем на него. Файл создан и готов к использованию<br>.
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div id="video"></div><br>
+					<hr>
+					<div style="margin-top:100px"></div>
+					<!-- Видео 1 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/"></object>
+					</div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Заключение -->
+					<h2 class="malloc-text-teal">Заключение</h2>
+					<ul class="malloc-ul">
+						<li>
+							Вы можете создать множество файлов. Ограничений в этом плане нету.<br>
+							Самое главное, чтобы шаблоны использовались хотя бы раз. Иначе от них нету никого смысла.<br><br>
+
+							Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
+						</li>
+					</ul>
+				</div><!-- } -->
+				<!-- Правый сайдбар { -->
+				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
+					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
+							<div class="malloc-center">НОВОСТИ</div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" rel="nofollow" id="news"></div>
+					</div>
+					<div class="malloc-center malloc-padding-16">
+						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
+							<div rel="nofollow" id="mytime" style="display:inline-block; margin-right: 5px" title="Время"></div>|
+							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
+						</div>
+					</div>
+				</div><!-- } Правый сайдбар -->
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+			</div><!--/ текст -->
+		</div><!--/ main -->
+		<!---->
+		<!-- footer desktop-->	
+		<div class="malloc-padding-64 malloc-ad-desktop"></div>
+		<footer class="malloc-ad-desktop">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-d" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright desktop-->
+				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer mobile -->
+		<div class="malloc-padding-32 malloc-ad-mobile"></div>
+		<footer class="malloc-ad-mobile">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-m" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright -->
+				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Главная</a>
+			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Блог</a>
+			<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Донат</a>
+		</nav>
+		<!--JScript -->
+		<script src="js/15_scripts.js"></script>
+		<script src="../../js/news.js"></script>
+	</body>
+</html>

@@ -13,6 +13,7 @@ document.getElementById('link-article-11').onclick=function(){window.open('conte
 document.getElementById('link-article-12').onclick=function(){window.open('content/blog/12-ustanavlivaem-i-zapuskaem-tor-na-ubuntu.html', '_self');};
 document.getElementById('link-article-13').onclick=function(){window.open('content/blog/13-distributor-1.html', '_self');};
 document.getElementById('link-article-14').onclick=function(){window.open('content/blog/14-distributor-2.html', '_self');};
+document.getElementById('link-article-15').onclick=function(){window.open('content/blog/15-pattern-files-ubuntu.html', '_self');};
 
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
