@@ -9,6 +9,7 @@ sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
 code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
 button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
 fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+p{word-spacing: 0.15em;}
 [type=checkbox],[type=radio]{padding:0}
 /* End extract */
 *{font-family: 'Roroto', sans-serif}

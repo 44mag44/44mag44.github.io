@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<title>Файловый ввод-вывод в языке Си | Malloc.RU</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="В статье мы поговорим о файловом вводе-выводе в языке программирования Си. Для начала напишем программу, которая производит ввод-вывод в терминал. Создадим программу, которая записывает в файл, то что было введено в терминале. Создадим программу, которая считывает информацию из файла в терминал. Делее сделаем так, чтобы после каждого ввода в терминал число записывалось в файл и при этом сохраняла предыдущие числа. А напоследок возмём числа из файла и найдем среднее арифметическое, сумму, количество введенных чисел. Подробнее..."/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
+	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+	<!-- Body -->
+	<body class="unselectable">
+		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
+		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+			<div class="malloc-row malloc-padding-32"><!-- text{ -->
+				<!-- Статья -->
+				<div class="malloc-threequarter malloc-padding"><!-- { -->
+					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Файловый ввод-вывод в языке Си</h1>
+					<!-- Вступление -->
+					<div class="malloc-padding">
+						Все знают, что теория очень важная штука, поэтому я дам ссылку на общую информацию  - <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B2%D0%B2%D0%BE%D0%B4-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4_%D0%B2_%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5_%D0%A1%D0%B8" class="malloc-hover-grey" style="border-radius:5px; text-decoration:underline;" target="_blank"><b>файловый ввод-вывод</b></a>. Текущая тема, расширит кругозор и возможно возбудит новый интерес в изучении <b>информатики</b>. <br>
+						Скорее всего, весь потанциал этой обширной темы, не расскрою, но даже этот опыт поможет нам в изучении и применении более сложных вещей.<br><br>
+						И так, чтобы не писать много воды сразу перейду к тому, что будет в этой статье:<br>
+						<ol class="malloc-border malloc-border-green">
+							<li>Для начала <b>напишем программу</b>, которая производит <b>ввод-вывод в терминал</b>.</li>
+							<li>Создадим программу, которая <b>записывает</b> в файл, то что было введено в терминале.</li>
+							<li>Создадим программу, которая <b>считывает</b> информацию из файла в терминал.</li>
+							<li>Делее сделаем так, чтобы после каждого ввода в терминал число записывалось в файл и при этом <b>сохраняла предыдущие числа</b>.</li>
+							<li>А напоследок возмём числа из файла и <b>найдем среднее арифметическое</b>, <b>сумму</b>, <b>количество введенных чисел</b>.</li>
+						</ol><br> 
+						Данная статья предназначена для ознакомительных и практических целей, поэтому подайдет для начинающих и спецов</b>.<br>
+						Ипользуется язык программирования <b>С</b>.<br>
+						Все действия протестированы и проверены на дистрибутиве <b>Ubuntu</b>.<br>
+						В статье есть <a href="#video" class="malloc-hover-green" style="border-radius:5px;">видео</a>, в которым вcё показано на практике.<br><br>						
+						Приятного чтения и просмотра!
+					</div>
+					<div class="malloc-auto malloc-center" style="margin-top:40px; width:100%; height:100%"><img class="malloc-image" src="pictures/16.png" alt="Screenshot-Терминал" title="Screenshot-Терминал" style="border-radius:5px;"></div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 1 -->
+					<h2 class="malloc-text-teal">Подготовка</h2>
+					<ul class="malloc-ul">
+						<li>
+							Создаем директорию под названием <b>fio</b> (рус. "Файловый ввод-вывод"):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir fio</code><br>
+							Заходим в неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd fio</code><br>
+						</li>
+						<li>
+							Создаем файл "main.c":<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> main.c</code><br>
+						</li>	
+						<li>
+							Теперь нужно открыть файл в <b>любом текстовом редакторе</b>.<br>
+							К примеру открою наш файл "main.c" в текстовом редакторе - <b>gedit</b>.
+						</li>
+						<li>
+							Нажимаем <b>Ctrl+Shift+T</b>, для того, чтобы открыть новую вкаладку в терминале.<br>
+							Теперь вводим следующую команду:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gedit main.c & exit</code><br>
+							Откроется "текстовой редактор - gedit" и закроется одна вкладка в терминале.
+						</li>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 2 -->
+					<h2 class="malloc-text-teal">Ввод и вывод в терминал</h2>
+					<ul class="malloc-ul">
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Пишем код</li>
+						<li>
+							Сейчас напишем программу, которая ждет ввода "любого числа" и выводит его на экран.
+						</li>
+						<li>
+							Подключаем стандартную библиотеку ввода-вывода:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Далее пишем функцию - main:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменную <b>float</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">float num;</code><br>
+							Приглашаем на <b>ввод в терминал</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Введите число: " );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">scanf( "%f", &num );</code><br>
+							<b>Вывод в терминал</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Ваше число %f\n", num );</code><br>
+							Далее (по правилам) вернём целое число:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>										
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li>
+							Вводим в терминале следующее:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code>
+						</li>	
+						<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+							Введите число: 103.44<br>
+							> 103.44
+						</p><br>
+						<a id="github-1" class="malloc-hover-green" style="border-radius:5px; text-decoration:underline;" target="_blank">скачать код с github.com</a>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 3 -->
+					<h2 class="malloc-text-teal">Запись в файл </h2>
+					<ul class="malloc-ul">
+						Итак, предыдущая программа принимала на ввод и вывод в терминал число, но не сохраняла это число.<br>
+						Сделаем так, чтобы наше число сохранялось в файл.<br>
+						Файл будет находиться в другой директории.
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем директорию и файл</li>
+						<li>
+							Создадим директорию под названием <b>files</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir files</code><br>
+							Заходим в неё:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item"> cd files</code><br>
+							Создаем файл. Назовем его <b>записанное_число.txt</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> записанное_число.txt</code><br>
+							В него и будем записывать число.<br><br>
+							Переходим назад в директорию <b>fio</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ..</code><br>
+							Открываем файл <b>main.c</b> и переписываем его.
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Пишем код</li>
+						<li>
+							Подключаем стандартную библиотеку ввода-вывода:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Далее пишем функцию - main:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменную <b>float</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">float num;</code><br>
+							Переходим к <b>main.c</b>. В нем находим строчку <b>float num;</b>. Под ней пишем.<br>
+							Создаем <b>указатель</b> типа <b>FILE</b> под названием "write" (запись):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *write;</code><br>
+							Создаем константу на строку под названием <b>filename</b> (название файла).<br>
+							Прописываем путь к файлу. Это нужно, чтобы программа знала куда записывать (в нашм случае) число:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *filename = "files/записанное_число.txt";</code><br>
+							Создаем константу на строку под названием <b>mode</b> (режим). В данном случаем нужно выбрать режим записи:<br> 
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "w";</code><br><br>
+							Теперь мы можем <b>открыть файл на запись</b>, но для начала мы <b>проверим, есть ли такой файл</b> или нет:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">if( ( write = fopen( filename, mode ) ) == NULL )</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Если его нету, файл защищён от записи или другие несоответствия, то печатаем сообщение и выходим из программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "\nЧто то пошло не так =(\n" );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 1;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Приглашаем на <b>ввод в терминал</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Введите число: " );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">scanf( "%f", &num );</code><br>
+							Когда программа дойдет до этой строки она <b>запишет число в файл</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fprintf( write, "%f", num );</code><br>
+							<b>Закрываем файл</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fclose( write );</code><br>
+							Печатаем сообщение о проделанных действиях:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return printf( "Записано в \"%s\" число %f \n",  filename, num );</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li>
+							Вводим в терминале:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code>
+						<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+							Введите число: <b>128.0101010111</b><br>
+							Записано в <b>"files/записанное_число.txt"</b> число <b>128.010101</b>
+						</p>
+						<li>
+							Число записано в файл не полностью, так как <b>точность float теряется после шестого знака</b>.
+						</li>
+						<br>
+						<a id="github-2" class="malloc-hover-green" style="border-radius:5px; text-decoration:underline;" target="_blank">скачать код с github.com</a>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 4 -->
+					<h2 class="malloc-text-teal">Чтение из файла</h2>
+					<ul class="malloc-ul">
+						<li>
+							Напишем программу, каторая считывает информацию из файла и выводит его на экран.<br>
+							Мы ввели вещественное число и записали его в файл. Теперь выведем записанное число в терминал.<br><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переписываем файл main.c</li>
+						<li>
+							Подключаем стандартную библиотеку ввода-вывода:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Далее пишем функцию - main:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменную <b>float</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">float num;</code><br><br>
+							Создаем <b>указатель</b> типа <b>FILE</b> под названием "read" (читать):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *read;</code><br>
+							Создаем константу на строку под названием <b>filename</b> (название файла). Прописываем путь к файлу, из которого нужно прочитать число:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *filename = "files/записанное_число.txt";</code><br>
+							Создаем константу на строку под названием <b>mode</b> (режим). В данном случаем нужно выбрать режим чтения:<br> 
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "r";</code><br><br>
+							Теперь мы можем открыть файл на чтение, но для начала мы проверим, есть ли такой файл или нет.<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">if( ( read = fopen( filename, mode ) ) == NULL )</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Если его нету, файл защищён от чтения или другие несоответствия, то печатаем сообщение и выходим из программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "\nЧто то пошло не так =(\n" );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 1;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Для чтения из файла нам нужна функция <b>fscanf</b>. Когда программа дойдет до этой строки она считает число из файла:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fscanf( read, "%f", &num );</code><br>
+							Печатаем сообщение о проделанных действиях:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return printf( "Считано из \"%s\" число %f\n",  filename, num );</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li>
+							Вводим в терминале:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
+								Считано из <b>"files/записанное_число.txt"</b> число <b>128.010101</b>
+							</p>
+						</li>	
+						<br>
+						<a id="github-3" class="malloc-hover-green" style="border-radius:5px; text-decoration:underline;" target="_blank">скачать код с github.com</a>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 5 -->
+					<h2 class="malloc-text-teal">Запись с добавлением данных в файл</h2>
+					<ul class="malloc-ul">
+						Чтобы добавить в наш файл ещё одно число, нужно воспользоваться режимом <b>a</b>.<br>
+						Этот режим открывает файл на запись и записывает новую информацию на то место, где был предыдущий конец файла.<br>
+						<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px;">
+							Например:<br>
+							Последний ввод был -> 321. Вывод в терминал будет такой -> 321.<br>
+							Вводим ещё число -> 256. Вывод в терминал будет такой -> 321256
+						</p><br>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создадим файл для сохранения чисел</li>
+						<li>
+							Переходим в директорию <b>files</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd files/</code><br>
+							Создаем файл для хранения и записи чисел. Назовем его <b>база_данных.txt</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">> база_данных.txt</code><br>
+							Перемещаемся назад в корень программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../</code><br>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переписываем файл main.c</li>
+						<li>
+							Подключаем стандартную библиотеку ввода-вывода:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Далее пишем функцию - main( ):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main( )</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменную <b>float</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">float num;</code><br>
+							Переходим к <b>main.c</b>. В нем находим строчку <b>float num;</b>. Под ней пишем.<br>
+							Создаем <b>указатель</b> типа <b>FILE</b> под названием "add" (добавить):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *add;</code><br>
+							Создаем константу на строку под названием <b>filename</b> (название файла).<br>
+							Прописываем путь к файлу. Это нужно, чтобы программа знала куда записывать (в нашм случае) числа:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *filename = "files/база_данных.txt";</code><br>
+							Создаем константу на строку под названием <b>mode</b> (режим). В данном случаем нужно выбрать режим добавить:<br> 
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "a";</code><br><br>
+							Теперь мы можем <b>открыть файл на запись</b>, но для начала мы <b>проверим, есть ли такой файл</b> или нет:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">if( ( add = fopen( filename, mode ) ) == NULL )</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Если его нету, файл защищён от записи или другие несоответствия, то печатаем сообщение и выходим из программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "\nЧто то пошло не так =(\n" );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 1;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
+							Чтобы совершать <b>ввод множества чисел в терминал</b> нужен <b>цикл</b>.<br>
+							Я буду использовать бесконечный цикл <b>for</b><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">for ( ; ; )</code><br>
+							Начало цикла for:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Приглашаем на <b>ввод в терминал</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Введите число: " );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">scanf( "%f", &num );</code><br><br>
+							Теперь запишем условие, которое позволит выйти из цикла.<br>
+							У меня условие такое - <b>Если вводимое число равно нулю, то выйти из цикла</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">if( num == 0 );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">break;</code><br>
+							<b>Записываем все</b> введенные числа в файл, <b>кроме нуля</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fprintf( add, "%0.2f  ", num );</code><br>
+							Конец цикла for:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br><br>
+							<b>Закрываем файл</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">fclose( add );</code><br>
+							Печатаем сообщение о сохранении в файл:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return printf( "\nСохранено в - %s\n\n", filename );</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
+						</li>
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li>
+							Вводим в терминале:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px;">
+								Введите число: 455.642<br>
+								Введите число: 64.01<br>
+								Введите число: 3.14<br>
+								Введите число: 256<br>
+								Введите число: 0.75<br>
+								Введите число: 100<br>
+								Введите число: 0<br><br>
+								Сохранено в - files/база_данных.txt
+							</p>
+						</li>	
+						<li>
+							Теперь можно посмотреть, что и как сохранилось в файле <b>база_данных.txt</b>:<br>	
+							<code class="malloc-text-teal malloc-border malloc-bar-item">less files/база_данных.txt</code>
+							У меня в файле следующие числа:<br>
+							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px; word-spacing: 1.0em;">
+								455.64   64.01   3.14   256.00   0.75   100.00
+							</p>
+						</li>
+						<br>
+						<a id="github-4" class="malloc-hover-green" style="border-radius:5px; text-decoration:underline;" target="_blank">скачать код с github.com</a>
+					</ul>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Подзаголовок 6 -->
+					<h2 class="malloc-text-teal">Используем данные в файле для своих целей</h2>
+					<ul class="malloc-ul">
+						Данные, находящиеся в файле, можно использовать поразному. Всё зависит от поставленных целей.<br>
+						Например, я найду количество, сумму, среднее арифметическое чисел находящиеся в файле.<br>
+						Результат выведем в терминал, а в видео покажу запись результата в файл(ы).
+						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переписываем файл main.c</li>
+						<li>
+							Подключаем стандартную библиотеку ввода-вывода:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
+							Далее пишем функцию - main( ):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int main( )</code><br>
+							Открывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Создаем переменные - <b>num</b>, <b>sum</b>, <b>count</b>, <b>average</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">float num, sum;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">int count;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">float average;</code><br><br>
+							Инициализируем переменные <b>сумма</b>, <b>среднее ариыметическое</b>, <b>счетчик</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sum = 0.0, average = 0.0, count = 0;</code><br><br>
+							Создаем <b>указатель</b> типа <b>FILE</b> под названием "read" (читать):<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">FILE *read;</code><br>
+							Создаем константу на строку под названием <b>filename</b> (название файла). Прописываем путь к файлу, из которого нужно прочитать числа:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *bd = "files/база_данных.txt";</code><br>
+							Создаем константу на строку под названием <b>mode</b> (режим). В данном случаем нужно выбрать режим чтения:<br> 
+							<code class="malloc-text-teal malloc-border malloc-bar-item">const char *mode = "r";</code><br><br>
+							Теперь мы можем открыть файл на чтение, но для начала мы проверим, есть ли такой файл или нет.<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">if( ( read = fopen( bd, mode ) ) == NULL )</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Если его нету, файл защищён от чтения или другие несоответствия, то печатаем сообщение и выходим из программы:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "\nЧто то пошло не так =(\n" );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 1;</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br><br>
+							Чтобы пробежаться по файлу от начала до конца нужен <b>цикл</b>. Используем цикл <b>for</b>.<br>
+							Условие такое - <b>Считываем из файла, до тех пор пока, не встретим конец файла</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">for( ; fscanf( read, "%f", &num ) != EOF; )</code><br>
+							Начало for:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">{</code><br>
+							Пока не конец файла, складываем sum с num и присваиваем весь результат sum. В итоге <b>получаем сумму</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">sum = sum + num;</code><br>
+							Посчитаем количество итераций. Количество итераций это и есть <b>количество чисел</b> в файле:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">count++;</code><br>
+							Конец for:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br><br>
+							Указываем <b>файл, из которого взяли числа</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Считано из \"%s\": \n",  bd );</code><br>
+							Печатаем <b> количество чисел</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Количество чисел = %d\n",  count );	</code><br>
+							Печатаем <b>сумма чисел</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Сумма чисел = %0.2f\n",  sum );</code><br>
+							Печатаем <b>среднее арифметическое</b>:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">printf( "Среднее арифметическое = %0.2f\n\n",  average );</code><br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">return 0;</code><br>
+							Закрывающая скобка:<br>
+							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
+						</li>
+						<br>
+						<a id="github-5" class="malloc-hover-green" style="border-radius:5px; text-decoration:underline;" target="_blank">скачать код с github.com</a>
+					</ul>
+					<!-- ОТСТУП -->
+					<div id="video"></div><br>
+					<hr>
+					<div style="margin-top:100px"></div>
+					<!-- Видео 1 -->
+					<div class="malloc-ad-desktop malloc-center"><!-- для ПК -->
+						<object style="width:560px; height:315px;" data="https://www.youtube.com/embed/a4VuQH29nxQ"></object>
+					</div>
+					<div class="malloc-ad-mobile malloc-center"><!-- для мобильников -->
+						<object style="width:250px; height:180px;" data="https://www.youtube.com/embed/a4VuQH29nxQ"></object>
+					</div>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
+					<!-- Заключение -->
+					<h2 class="malloc-text-teal">Заключение</h2>
+					<ul class="malloc-ul">
+						<li>
+							В этой статье рассказано о том, как делать ввод-вывод одного числа и последовательности чисел (используя циклы).<br><br>
+							Были рассмотрены режимы: <b>w</b>, <b>r</b> и <b>a</b>.<br>
+							<b>w</b> - запись в файл. При следующей записи в файл старая запись будет удалена, а новая добавлена в начало файла.<br>
+							<b>r</b> - чтение информации из файла.<br>
+							<b>a</b> - запись в файл с возможностью добавление информации в конец файла (старая запись не удаляется).<br><br>
+							Мы изъяли информацию из файла и провели следующие вычесления: <b>количество чисел в файле</b>, <b>сумма чисел</b> и нашли их <b>среднее арифметическое</b>.<br><br>
+							Надеюсь, статья была полезной и у вас получилось найти ответы на свои вопросы.
+						</li>
+					</ul>
+				</div><!-- } -->
+				<!-- Правый сайдбар { -->
+				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
+					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
+							<div class="malloc-center">НОВОСТИ</div>
+							<div class="malloc-container malloc-theme-l1 malloc-padding-large" style="font-size: 14px" rel="nofollow" id="news"></div>
+					</div>
+					<div class="malloc-center malloc-padding-16">
+						<div style="display:inline-block; font-size:12px; border-radius:5px;" class="malloc-padding-small malloc-theme-clock">
+							<div rel="nofollow" id="mytime" style="display:inline-block; margin-right: 5px" title="Время"></div>|
+							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
+						</div>
+					</div>
+				</div><!-- } Правый сайдбар -->
+				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+			</div><!--/ текст -->
+		</div><!--/ main -->
+		<!---->
+		<!-- footer desktop-->	
+		<div class="malloc-padding-64 malloc-ad-desktop"></div>
+		<footer class="malloc-ad-desktop">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:270px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-d" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-d" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-d" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-d" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-d" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright desktop-->
+				<div class="malloc-container malloc-theme-l5 malloc-card" style="margin-left:270px; border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer mobile -->
+		<div class="malloc-padding-32 malloc-ad-mobile"></div>
+		<footer class="malloc-ad-mobile">
+			<div class="malloc-threequarter">
+				<div class="malloc-container malloc-theme-l4 malloc-padding-large" style="font-size:12px; margin-left:1px; border-radius:5px;">
+					<!-- Ссылки -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Донат:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Пожертвовать</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Соцсети -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Соцсети:
+							<div class="malloc-padding-12">
+								<div id="Telegram-footer-m" class="malloc-hover-green" style="border-radius:5px;">Телеграм</div>
+								<div id="Youtube-footer-m" class="malloc-hover-green" style="border-radius:5px;">Youtube</div>
+								<div id="GitHub-footer-m" class="malloc-hover-green" style="border-radius:5px;">GitHub</div>
+							</div>
+						</li>
+					</ul>
+					<!-- Допольнительно -->
+					<ul class="malloc-ul malloc-col">
+						<li>
+							Дополнительно:
+							<div class="malloc-padding-12">
+								<div rel="nofollow"  id="Topmail-footer-m" class="malloc-hover-white" style="border-radius:5px;">Рейтинг сайта</div>
+								<div rel="nofollow"  id="Payeer-footer-m" class="malloc-hover-white" style="border-radius:5px;">Payeer</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Copyright -->
+				<div class="malloc-container malloc-theme-l2 malloc-card-4 malloc-ad-mobile" style="border-radius:5px;">
+					<div class="malloc-center" style="font-size:12px;" title="Все права защищены">&copy; malloc.ru, 2021-2022</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Navbar -->
+		<nav class="malloc-top malloc-bar malloc-theme malloc-left-align malloc-large malloc-card">
+			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Главная</a>
+			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Блог</a>
+			<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 14px;">Донат</a>
+		</nav>
+		<!--JScript -->
+		<script src="js/16_scripts.js"></script>
+		<script src="../../js/news.js"></script>
+	</body>
+</html>
