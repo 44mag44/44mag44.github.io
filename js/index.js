@@ -10,7 +10,7 @@ document.getElementById('Youtube').onclick=function(){window.open('https://www.y
 document.getElementById('GitHub').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
 
 /* Донат */
-document.getElementById('Donat').onclick=function(){window.open('donat.html', '_self');};
+document.getElementById('Charity').onclick=function(){window.open('сharity.html', '_self');};
 
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};

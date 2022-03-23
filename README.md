@@ -14,12 +14,12 @@
 			--		8-tri-zolotykh-uprazhneniya-programma
 			--		9-raspredeleniye-maksimal'nogo-kolichestva-povtoreniy-na-podkhody
 			--		10-yedinorog
-			--		11-???
-			--		12-???
-			--		13-???
-			--		14-???
-			--		15-???
-			--		16-???
+			--		11-hello-world-na-php
+			--		12-ustanavlivaem-i-zapuskaem-tor-na-ubuntu
+			--		13-distributor-1
+			--		14-distributor-2
+			--		15-pattern-files-ubuntu
+			--		16-failovyi-vvod-vyvod-v-yazyke-si
 			--		17-???
 			--		18-???
 			--		19-???
