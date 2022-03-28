@@ -1,3 +1,6 @@
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
 /* Links GitHub*/
 document.getElementById('github-1').onclick=function(){window.open('https://github.com/code-malloc/fioLangC/blob/main/main-1.c', '_blank');};
 document.getElementById('github-2').onclick=function(){window.open('https://github.com/code-malloc/fioLangC/blob/main/main-2.c', '_blank');};

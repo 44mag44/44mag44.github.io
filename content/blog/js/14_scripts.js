@@ -1,3 +1,7 @@
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
+/* ссылка на статью */
 document.getElementById('article').onclick=function(){window.open('13-distributor-1.html', '_blank');};
 
 /* GitHub /*/

@@ -4,24 +4,32 @@
 	<meta charset="utf-8" />
 	<meta name="description" content="Блог посвящан теории и практике программирования. Программист делиться опытом и показывает все на примерах, которые подкреплены видео инструкцией. Подробнее..."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link type="image/x-icon" rel="shortcut icon" href="pictures/favicon/favicon.ico">
 	<link type="image/png" sizes="16x16" rel="icon" href="pictures/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+
 	<!-- Body -->
 	<body class="unselectable">
 		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Logo -->
+		<div style="width:100%; height :100%; margin-top:100px" id="malloc.ru" class="malloc-center"><img class="malloc-image" src="pictures/logo/logo.png" alt="Логотип"></div>
+		<!-- Overlay effect when opening sidebar on small screens -->
+		<div class="malloc-overlay malloc-hide-large" onclick="malloc_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 		<!-- Main content: shift it to the right by 220 pixels when the sidebar is visible -->
-		<div class="malloc-main" style="margin-left:150px"><!-- main{ -->
+		<div class="malloc-main" style="margin-left:120px"><!-- main{ -->
 			<div class="malloc-row malloc-padding-32"><!-- { -->
 				<!-- Список статей -->
 				<div class="malloc-threequarter malloc-padding"><!--{-->
-					<h1 class="malloc-center malloc-theme malloc-padding" style="border-radius:5px;">Блог</h1>
+					<br>
+					<!-- о блоге -->
 					<div class="malloc-padding">
-						Блог сайта Malloc.RU посвящан программированию и информатике.<br>
-						Программист делиться опытом и показывает все на примерах, которые подкреплены видео инструкцией.
+							Блог посвящен программированию и информатике.<br>
+							Программист делиться опытом и показывает все на примерах, которые подкреплены видео инструкцией.
 					</div>
+					<!-- отступ -->
+					<div style="margin-top:75px"></div>	
 					<!--16-->
 					<div class="malloc-padding-small" id="link-article-16">
 						<div class="malloc-text-blue malloc-padding-large malloc-border malloc-border-blue malloc-cursor-link-underline malloc-ripple malloc-shadow-article-cursor" style="border-radius:5px;" title="Cтатья-16">
@@ -219,6 +227,7 @@
 						</div>
 					</div>
 				</div><!--}-->
+
 				<!-- Правый сайдбар { -->
 				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
 					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
@@ -234,6 +243,7 @@
 				</div><!-- } Правый сайдбар -->
 			</div><!-- } -->
 		</div><!-- } main -->
+
 		<!---->
 		<!-- footer desktop-->	
 		<div class="malloc-padding-64 malloc-ad-desktop"></div>
@@ -319,12 +329,30 @@
 				</div>
 			</div>
 		</footer>
-		<!-- Topbar -->
-		<nav class="malloc-top malloc-bar malloc-theme-main malloc-left-align malloc-large">
-			<a href="index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
-			<a href="blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
-			<a href="сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
-		</nav>
+
+		<!-- topbar desktop-->
+		<div class="malloc-ad-desktop">
+			<nav class="malloc-top malloc-bar malloc-theme-main malloc-left-align malloc-large">
+				<a href="index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
+				<a href="blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
+				<a href="social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
+				<a href="сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+			</nav>
+		</div>
+		<!-- topbar mobile-->
+		<div class="malloc-ad-mobile">
+			<div class="malloc-top malloc-bar malloc-theme malloc-top malloc-left-align malloc-large malloc-card-4">
+				<div class="malloc-bar-item malloc-theme-l1 malloc-center" >Блог</div>
+				<a class="malloc-bar-item malloc-button malloc-right malloc-hide-large malloc-hover-white malloc-large malloc-theme-l1" href="javascript:void(0)" onclick="malloc_open()"><i class="fa fa-bars"></i></a>
+			</div> 
+			<nav class="malloc-sidebar malloc-bar-block malloc-collapse malloc-large malloc-theme-l1" id="mySidebar"><a href="javascript:void(0)" onclick="malloc_close()" class="malloc-right malloc-xlarge malloc-padding-large malloc-hover-black malloc-hide-large" title="Закрыть"><i class="fa fa-remove"></i></a>
+				<a href="index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
+				<a href="blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
+				<a href="social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
+				<a href="сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+			</nav>
+		</div>
+
 		<!--JScript -->	
 		<script src="js/blog.js"></script>
 		<script src="js/news.js"></script>

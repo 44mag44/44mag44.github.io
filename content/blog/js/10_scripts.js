@@ -1,3 +1,6 @@
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 document.getElementById('a-1').onclick=function(){window.open('7-otzhimaniya-v-otkaz-programma.html', '_blank');};
 document.getElementById('a-2').onclick=function(){window.open('8-tri-zolotykh-uprazhneniya-programma.html', '_blank');};

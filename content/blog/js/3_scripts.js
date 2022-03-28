@@ -1,3 +1,6 @@
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
 document.getElementById('Telegram-footer-d').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};

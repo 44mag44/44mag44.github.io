@@ -7,17 +7,23 @@
 	<link rel="stylesheet" href="../../css/style.css">
 	<link type="image/x-icon" rel="shortcut icon" href="../../pictures/favicon/favicon.ico">
 	<link type="image/png" sizes="16x16" rel="icon" href="../../pictures/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4686334354505193" crossorigin="anonymous"></script>
 	<script>document.oncontextmenu = cmenu; function cmenu(){ return false; }</script>
+
 	<!-- Body -->
 	<body class="unselectable">
 		<noscript><img src="https://top-fwz1.mail.ru/counter?id=3211268;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"></noscript>
+		<!-- Logo -->
+		<div style="width:100%; height :100%; margin-top:100px" id="malloc.ru" class="malloc-center"><img class="malloc-image" src="../../pictures/logo/logo.png" alt="Логотип"></div>
+		<!-- Overlay effect when opening sidebar on small screens -->
+		<div class="malloc-overlay malloc-hide-large" onclick="malloc_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 		<!-- Main content: shift it to the right by 210-275 pixels when the sidebar is visible -->
-		<div class="malloc-main" style="margin-left:160px"><!-- main{ -->
+		<div class="malloc-main" style="margin-left:100px"><!-- main{ -->
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif" style="border-radius:5px;">Hello World на PHP</h1>
+					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Hello World на PHP</h1>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						Из этой статьи вы узнаете как написать программу, которая выводит сообщение "Hello, world" на языке программирования - PHP.<br>
@@ -137,7 +143,8 @@
 						</li>
 					</ul>
 				</div><!-- } -->
-				<!-- Правый сайдбар { -->
+
+				<!-- Правый сайдбар -->
 				<div class="malloc-quarter malloc-text-gray malloc-padding-16 malloc-card" title="Новости"  style="margin-top:90px">
 					<div class="malloc-container malloc-text-grey" style="border-radius:5px;">
 							<div class="malloc-center">НОВОСТИ</div>
@@ -149,10 +156,14 @@
 							<div rel="nofollow" id="mydate" style="display:inline-block; margin-left: 1px" title="Дата"></div>
 						</div>
 					</div>
-				</div><!-- } Правый сайдбар -->
-				<div class="malloc-center"  id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+				</div>
+
+				<!-- реклама -->
+				<div class="malloc-center" id="AD-payeer"><img src="https://payeer.com/style/images/banner/240x400-1.jpg" alt="Payeer" style="border-radius:5px; margin-top:50px"></div>
+
 			</div><!--/ текст -->
 		</div><!--/ main -->
+
 		<!---->
 		<!-- footer desktop-->	
 		<div class="malloc-padding-64 malloc-ad-desktop"></div>
@@ -238,12 +249,28 @@
 				</div>
 			</div>
 		</footer>
-		<!-- Topbar -->
-		<nav class="malloc-top malloc-bar malloc-theme-main malloc-left-align malloc-large">
-			<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
-			<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Блог</a>
-			<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
-		</nav>
+
+		<!-- topbar desktop-->
+		<div class="malloc-ad-desktop">
+			<nav class="malloc-top malloc-bar malloc-theme-main malloc-left-align malloc-large">
+				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
+				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
+				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
+				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+			</nav>
+		</div>
+		<!-- topbar mobile-->
+		<div class="malloc-ad-mobile">
+			<div class="malloc-top malloc-bar malloc-theme malloc-top malloc-left-align malloc-large malloc-card-4"><a class="malloc-bar-item malloc-button malloc-right malloc-hide-large malloc-hover-white malloc-large malloc-theme-l1" href="javascript:void(0)" onclick="malloc_open()"><i class="fa fa-bars"></i></a>
+			</div> 
+			<nav class="malloc-sidebar malloc-bar-block malloc-collapse malloc-large malloc-theme-l1" id="mySidebar"><a href="javascript:void(0)" onclick="malloc_close()" class="malloc-right malloc-xlarge malloc-padding-large malloc-hover-black malloc-hide-large" title="Закрыть"><i class="fa fa-remove"></i></a>
+				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
+				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
+				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
+				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+			</nav>
+		</div>
+
 		<!--JScript -->
 		<script src="js/11_scripts.js"></script>
 		<script src="../../js/news.js"></script>

@@ -28,12 +28,17 @@ h1{font-size:32px}h2{font-size:26px}h3{font-size:20px}h4{font-size:16.666666px}h
 .malloc-serif{font-family:serif}.malloc-sans-serif{font-family:sans-serif}.malloc-cursive{font-family:cursive}.malloc-monospace{font-family:monospace}
 h1,h2,h3,h4,h5,h6{font-weight:400;margin:10px 0}.malloc-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;}
-.malloc-image{max-width:100%;height:auto}
+.malloc-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 .malloc-table,.malloc-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.malloc-table-all{border:1px solid #ccc}
+.malloc-bordered tr,.malloc-table-all tr{border-bottom:1px solid #ddd}.malloc-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.malloc-table-all tr:nth-child(odd){background-color:#fff}.malloc-table-all tr:nth-child(even){background-color:#f1f1f1}
+.malloc-hoverable tbody tr:hover,.malloc-ul.malloc-hoverable li:hover{background-color:#ccc}.malloc-centered tr th,.malloc-centered tr td{text-align:center}
 .malloc-table td,.malloc-table th,.malloc-table-all td,.malloc-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
 .malloc-table th:first-child,.malloc-table td:first-child,.malloc-table-all th:first-child,.malloc-table-all td:first-child{padding-left:16px}
 .malloc-btn,.malloc-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
 .malloc-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.malloc-btn,.malloc-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.malloc-disabled,.malloc-btn:disabled,.malloc-button:disabled{cursor:not-allowed;opacity:0.3}.malloc-disabled *,:disabled *{pointer-events:none}
 .malloc-btn.malloc-disabled:hover,.malloc-btn:disabled:hover{box-shadow:none}
 .malloc-badge,.malloc-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.malloc-badge{border-radius:50%}
 .malloc-ul{list-style-type:none;padding:0;margin:0}.malloc-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.malloc-ul li:last-child{border-bottom:none}
@@ -56,6 +61,20 @@ hr{border:0;border-top:1px solid #eee;}
 .malloc-bar{width:100%;overflow:hidden}.malloc-center .malloc-bar{display:inline-block;width:auto}
 .malloc-bar .malloc-bar-item{padding:6px 12px}
 .malloc-bar .malloc-dropdown-hover,.malloc-bar .malloc-dropdown-click{position:static;float:left}
+.malloc-dropdown-click,.malloc-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+.malloc-dropdown-hover:hover .malloc-dropdown-content{display:block}
+.malloc-dropdown-hover:first-child,.malloc-dropdown-click:hover{background-color:#ccc;color:#000}
+.malloc-dropbtn{background-color: #4CAF50; color: white; padding: 16px; font-size: 16px; border: none; cursor: pointer;}/* Стилизация выпадающей кнопки */
+.malloc-dropdown{position: relative; display: inline-block;}/* Контейнер <div> - необходимо разместить выпадающий контент */
+.malloc-dropdown-content{display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;}/* Выпадающий контент (скрыт по умолчанию) */
+.malloc-dropdown-content a{color: black; padding: 12px 16px; text-decoration: none; display: block;}/* Ссылки внутри выпадающего */
+.malloc-dropdown-content a:hover{background-color: #f1f1f1}/* Изменить цвет выпадающих ссылок при наведении */
+.malloc-dropdown:hover .malloc-dropdown-content{display: block;}/* Показать выпадающее меню при наведении */
+.malloc-dropdown:hover .malloc-dropbtn{background-color: #3e8e41;}/* Изменить цвет фона кнопки выпадающего списка, когда отображается содержимое выпадающего списка. */
+.malloc-dropdown-hover:hover > .malloc-button:first-child,.malloc-dropdown-click:hover > .malloc-button:first-child{background-color:#ccc;color:#000}
+.malloc-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.malloc-check,.malloc-radio{width:24px;height:24px;position:relative;top:6px}
+.malloc-sidebar{height:inherit;width:220px;background-color:#fff;position:fixed!important;z-index:3;overflow:auto;bottom:0;top:39px;}
 .malloc-bar-block .malloc-bar-item{display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
 .malloc-bar-block .malloc-center .malloc-bar-item{text-align:center}.malloc-block{display:block;width:100%}
 .malloc-responsive{display:block;overflow-x:auto}
@@ -75,26 +94,34 @@ hr{border:0;border-top:1px solid #eee;}
 @media (max-width:768px){.malloc-modal-content{width:500px}.malloc-modal{padding-top:50px}}
 @media (min-width:993px){.malloc-modal-content{width:900px}.malloc-hide-large{display:none!important}.malloc-collapse{display:block!important}}
 @media (max-width:992px) and (min-width:601px){.malloc-hide-medium{display:none!important}}
-@media (max-width:992px){.malloc-collapse{display:none}.malloc-main{margin-left:0!important;margin-right:0!important}.malloc-auto{max-width:100%}}
+@media (max-width:992px){ .malloc-collapse{display:none}.malloc-main{margin-left:0!important;margin-right:0!important}.malloc-auto{max-width:100%}}
 .malloc-top,.malloc-bottom{position:fixed;width:100%;z-index:1}.malloc-top{top:0}.malloc-bottom{bottom:0}
+.malloc-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
 .malloc-display-topleft{position:absolute;left:0;top:0}.malloc-display-topright{position:absolute;right:0;top:0}
 .malloc-display-bottomleft{position:absolute;left:0;bottom:0}.malloc-display-bottomright{position:absolute;right:0;bottom:0}
+.malloc-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.malloc-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.malloc-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
+.malloc-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.malloc-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
 .malloc-display-container:hover .malloc-display-hover{display:block}.malloc-display-container:hover span.malloc-display-hover{display:inline-block}.malloc-display-hover{display:none}
 .malloc-display-position{position:absolute}
 .malloc-circle{border-radius:50%}
 .malloc-round-small{border-radius:2px}.malloc-round,.malloc-round-medium{border-radius:4px}.malloc-round-large{border-radius:8px}.malloc-round-xlarge{border-radius:16px}.malloc-round-xxlarge{border-radius:32px}
 .malloc-row-padding,.malloc-row-padding>.malloc-half,.malloc-row-padding>.malloc-third,.malloc-row-padding>.malloc-twothird,.malloc-row-padding>.malloc-threequarter,.malloc-row-padding>.malloc-twoquarter>.malloc-quarter,.malloc-row-padding>.malloc-col{padding:0 8px}
 .malloc-container,.malloc-panel{padding:0.01em 12px}.malloc-panel{margin-top:16px;margin-bottom:16px}
+.malloc-code,.malloc-codespan{font-family:Consolas,"courier new";font-size:16px}
+.malloc-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
 .malloc-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
 .malloc-card,.malloc-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
 .malloc-card-4,.malloc-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
 .malloc-spin{animation:malloc-spin 2s infinite linear}@keyframes malloc-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
 .malloc-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 .malloc-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
-.malloc-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;} to{top:0;}}
-.malloc-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;} to{left:0;}}
-.malloc-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;} to{right:0;}}
-.malloc-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;} to{bottom:0;}}
+.malloc-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.malloc-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.malloc-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.malloc-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
 .malloc-animate-zoom{animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 .malloc-animate-input{transition:width 0.4s ease-in-out}.malloc-animate-input:focus{width:100%!important}
 .malloc-opacity,.malloc-hover-opacity:hover{opacity:0.60}.malloc-opacity-off,.malloc-hover-opacity-off:hover{opacity:1}
@@ -102,7 +129,7 @@ hr{border:0;border-top:1px solid #eee;}
 .malloc-greyscale-max,.malloc-grayscale-max,.malloc-hover-greyscale:hover,.malloc-hover-grayscale:hover{filter:grayscale(100%)}
 .malloc-greyscale,.malloc-grayscale{filter:grayscale(75%)}.malloc-greyscale-min,.malloc-grayscale-min{filter:grayscale(50%)}
 .malloc-sepia{filter:sepia(75%)}.malloc-sepia-max,.malloc-hover-sepia:hover{filter:sepia(100%)}.malloc-sepia-min{filter:sepia(50%)}
-.malloc-tiny{font-size:10px!important}.malloc-small{font-size:12px!important}.malloc-medium{font-size:14px!important}.malloc-large{font-size:18px!important}
+.malloc-tiny{font-size:10px!important}.malloc-small{font-size:12px!important}.malloc-medium{font-size:15px!important}.malloc-large{font-size:18px!important}
 .malloc-xlarge{font-size:24px!important}.malloc-xxlarge{font-size:36px!important}.malloc-xxxlarge{font-size:48px!important}.malloc-jumbo{font-size:64px!important}
 .malloc-left-align{text-align:left!important}.malloc-right-align{text-align:right!important}.malloc-justify{text-align:justify!important}.malloc-center{text-align:center!important}
 .malloc-border-0{border:0!important}.malloc-border{border:1px solid #ccc!important}
@@ -114,10 +141,15 @@ hr{border:0;border-top:1px solid #eee;}
 .malloc-margin{margin:16px!important}.malloc-margin-top{margin-top:16px!important}.malloc-margin-bottom{margin-bottom:16px!important}
 .malloc-margin-left{margin-left:16px!important}.malloc-margin-right{margin-right:16px!important}
 .malloc-padding-small{padding:4px 8px!important}.malloc-padding{padding:8px 16px!important}.malloc-padding-large{padding:12px 24px!important}
-.malloc-padding-12{padding-top:12px!important;padding-bottom:12px!important}.malloc-padding-16{padding-top:16px!important;padding-bottom:16px!important}.malloc-padding-24{padding-top:24px!important;padding-bottom:24px!important}.malloc-padding-32{padding-top:32px!important;padding-bottom:32px!important}.malloc-padding-48{padding-top:48px!important;padding-bottom:48px!important}.malloc-padding-64{padding-top:64px!important;padding-bottom:64px!important}
-.malloc-padding-top-64{padding-top:64px!important}.malloc-padding-top-48{padding-top:48px!important}.malloc-padding-top-32{padding-top:32px!important}.malloc-padding-top-24{padding-top:24px!important}.malloc-padding-top-16{padding-top:16px!important}.malloc-padding-top-12{padding-top:12px!important}
+.malloc-padding-12{padding-top:12px!important;padding-bottom:12px!important}.malloc-padding-16{padding-top:16px!important;padding-bottom:16px!important}.malloc-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.malloc-padding-32{padding-top:32px!important;padding-bottom:32px!important}.malloc-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.malloc-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.malloc-padding-top-64{padding-top:64px!important}.malloc-padding-top-48{padding-top:48px!important}
+.malloc-padding-top-32{padding-top:32px!important}.malloc-padding-top-24{padding-top:24px!important}
+.malloc-padding-top-16{padding-top:16px!important}.malloc-padding-top-12{padding-top:12px!important}
 .malloc-left{float:left!important}.malloc-right{float:right!important}
 .malloc-button:hover{color:#000!important;background-color:#ccc!important}
+.malloc-transparent,.malloc-hover-none:hover{background-color:transparent!important}
 .malloc-hover-none:hover{box-shadow:none!important}
 
 /* Colors */
@@ -244,6 +276,9 @@ textarea{font-size:14px; overflow:auto; max-width:75%;min-width:60%; min-height:
 -ms-user-select: none; /* Internet Explorer/Edge */
 user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
+
 /* shadow blog*/
 .malloc-shadow-article-cursor{padding:8px 16px; overflow:hidden; cursor:pointer; box-shadow: none}
 .malloc-shadow-article-cursor:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+
+

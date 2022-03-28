@@ -1,3 +1,6 @@
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
 /* Статьи */
 document.getElementById('link-article-1').onclick=function(){window.open('content/blog/1-kak-obnovit\'-ubuntu-cherez-terminal.html', '_self');};
 document.getElementById('link-article-2').onclick=function(){window.open('content/blog/2-kak-otpravit\'-sushchestvuyushchiy-proekt-na-github.html', '_self');};

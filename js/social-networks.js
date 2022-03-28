@@ -1,12 +1,12 @@
 /* Ссылка malloc.ru */
 document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
 
-/* Статьи */
-document.getElementById('Blog').onclick=function(){window.open('blog.html', '_self');};
-/* Cоцсети */
-document.getElementById('Social-networks').onclick=function(){window.open('social-networks.html', '_self');};
-/* Донат */
-document.getElementById('Charity').onclick=function(){window.open('сharity.html', '_self');};
+/* Cоцсети 
+document.getElementById('Telegram').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
+document.getElementById('Youtube').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
+document.getElementById('GitHub').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
+*/
+
 
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};
@@ -81,9 +81,3 @@ _tmr.push({id: "3211268", type: "pageView", start: (new Date()).getTime()});
 /* Редирект - перенаправление на страницу malloc.ru/index.html */
 //	location.replace("https://malloc.ru");
 //	document.location.replace("https://malloc.ru");
-
-/* sidebar */
-var mySidebar = document.getElementById("mySidebar");
-var overlayBg = document.getElementById("myOverlay");
-function malloc_open() {if (mySidebar.style.display === 'block') {mySidebar.style.display = 'none';overlayBg.style.display = "none";} else {mySidebar.style.display = 'block';overlayBg.style.display = "block";}}
-function malloc_close() {mySidebar.style.display = "none";overlayBg.style.display = "none";}

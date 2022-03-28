@@ -1,3 +1,6 @@
+/* Ссылка malloc.ru */
+document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
+
 /* предыдущая статья */
 document.getElementById('article-3').onclick=function(){window.open('file:///home/mag/dev/lang/web/test/content/3-linux-rabota-s-katalogami-i-faylami-chast\'-pervaya.html', '_self');};
 /* Руководство */
