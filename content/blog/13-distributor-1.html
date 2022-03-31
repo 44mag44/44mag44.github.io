@@ -22,7 +22,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Дистрибутор дохода I</h1>
+					<h1 class="malloc-text-blue">Дистрибутор дохода I</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						В данной статье я расскажу и покажу как я написал программу <b>"Дистрибутор дохода"</b> или проще говоря - <b>распределение дохода по конвертам</b>.<br>
@@ -40,12 +42,12 @@
 					<!-- Подзаголовок 1 -->
 					<h2 class="malloc-text-teal">Подготовка</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Открываем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Создадим отдельный каталог (папку):<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir distributor</code><br>
@@ -56,7 +58,7 @@
 								"cd" - используется для перемещения по каталогам
 							</p>			
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							В этой директории мы создадим две папки <b>source</b>, <b>header</b> и файл <b>make</b>, <b>main.c</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir source header && > make > main.c</code><br>
@@ -74,7 +76,7 @@
 					<!-- Подзаголовок 2 -->
 					<h2 class="malloc-text-teal">Пишем код. Первые шаги</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Пишите код строчка за строчкой!<br><br>
 							И так у нас все есть, чтобы писать более менее большие программы.<br>
@@ -117,7 +119,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>		
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Переходим в директорию <b>header</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../header</code><br>
@@ -130,7 +132,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
 							Мы создали заголовочник <b>menu.h</b>, который включим в файле <b>main.c</b>:
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							Переходим в директорию <b>distributor</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ..</code><br>
@@ -146,7 +148,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
 							Мы создали заголовочник <b>menu.h</b>, который включим в файле <b>main.c</b>.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Теперь отредактируем файл <b>make</b>:<br>
 							Пишем команду <b>all</b>:<br>
@@ -162,7 +164,7 @@
 					<!-- Подзаголовок 3 -->
 					<h2 class="malloc-text-teal">Сборка и запуск программы</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Установка утилиты make</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Установка утилиты make</li>
 						<li>
 							Теперь мы собирем нашу программу при помощи <b>make</b><br>
 							Если у вас её нету, то скачайте её:<br>
@@ -170,7 +172,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install make</code><br>
 							Если она у Вас уже есть, то идем дальше.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Сборка</li>
 						<li>
 							Собираем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
@@ -181,7 +183,7 @@
 							Не возникло ошибок?<br>
 							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Запуск</li>
 						<li>
 							Хорошо. Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>	
@@ -204,7 +206,7 @@
 						<li>
 							Файлы <b>main.c</b>, <b>menu.h</b> можно закрыть. Они нам больше не понадобяться.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем директории first, txt</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Создаем директории first, txt</li>
 						<li>
 							Заходим в директорию <b>source</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source</code><br>
@@ -213,12 +215,12 @@
 							Заходим в диреторию <b>first</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd first</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем файлы income.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Создаем файлы income.c</li>
 						<li>
 							Создаем файлы в папке <b>first</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">touch income.c distributor.c</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редатируем файл income.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Редатируем файл income.c</li>
 						<li>
 							Редактируем файл <b>income.c</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>	
@@ -243,7 +245,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переходим в директорию header и создаем файл income.h</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Переходим в директорию header и создаем файл income.h</li>
 						<li>
 							Теперь нам нужно создать заголовочник <b>income.h</b>.<br>
 							Переходим в директорию <b>header</b>:<br>
@@ -257,7 +259,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
 							Теперь можем включать файл и воспользоваться функцией <b>income()</b><br>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем файл distributor.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Создаем файл distributor.c</li>
 						<li>
 							Идем в папку <b>first</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../source/first</code><br>	
@@ -283,7 +285,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Cоздаем файл distributor.h</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Cоздаем файл distributor.h</li>
 						<li>
 							Теперь нам нужно создать заголовочник <b>distributor.h</b>.<br>
 							Переходим в директорию <b>header</b>:<br>
@@ -298,7 +300,7 @@
 							Теперь можем включать заголовочник <b>distributor.h</b> в файле <b>menu.c</b> и пользоваться функцией <b>income()</b>.<br>
 							Вы можете закрыть файлы <b>income.c</b>, <b>income.h</b>. Они нам больше не нужны.
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл menu.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Редактируем файл menu.c</li>
 						<li>
 							Намнужно включить в наш код заголовочник <b>distributor.h</b>:<br>
 							Находим строчку <b>#include &lt;stdio.h&gt;</b>. Под ней, на новой строке, пишем:<br>
@@ -310,13 +312,13 @@
 							Код расположите между <b>{</b> и <b>case '0':	printf("\nEXIT\n"); break;</b><br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">case '1':	distributor(); break;</code><br>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем файлы в файл make</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Добавляем файлы в файл make</li>
 						<li>
 							Редактируем <b>make</b><br>
 							Добавляем файлы <b>income.c</b>, <b>distributor.c</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">source/first/income.c source/first/distributor.c</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Сборка</li>
 						<li>
 							Перейдите в директорию, в которой лежит файл <b>make</b>.<br>
 							<p class="malloc-padding-small malloc-border malloc-theme-l5" style="font-size:14px">
@@ -331,7 +333,7 @@
 							Не возникло ошибок?<br>
 							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Запуск</li>
 						<li>
 							Хорошо. Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -355,7 +357,7 @@
 					<!-- Подзаголовок 5 -->
 					<h2 class="malloc-text-teal">Добавим конверт на чёрный день</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Файл black_day.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Файл black_day.c</li>
 						<li>
 							Переходим в директорию <b>first</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source/first/</code><br>
@@ -377,7 +379,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">return money;</code><br>
 							Закрывыющая скобка:<br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Файл black_day.h</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Файл black_day.h</li>
 						<li>
 							Переходим в директорию <b>header</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../header/</code><br>
@@ -389,7 +391,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int black_day(int sum);</code><br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем заголовочник в distributor.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Добавляем заголовочник в distributor.c</li>
 						<li>
 							Переходим в директорию <b>first</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../source/first/</code><br>
@@ -399,7 +401,7 @@
 							После строчки <b>income(sum)</b> пишем:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">black_day(sum);</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем distributor.c в файл make</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Добавляем distributor.c в файл make</li>
 						<li>
 							Находим файл <b>make</b>.<br>
 							Добавляем в конец файла <b>source/first/black_day.c</b>:<br>
@@ -407,7 +409,7 @@
 								... source/first/distributor.c <b>source/first/black_day.c</b>
 							</p>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Сборка</li>
 						<li>
 							Собираем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
@@ -418,7 +420,7 @@
 							Не возникло ошибок?<br>
 							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Запуск</li>
 						<li>
 							Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -437,7 +439,7 @@
 							</p><br>
 							Теперь сделаем так, чтобы можно было записывать данные в файл.						
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Записываем в файл процент на чёрный день</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Записываем в файл процент на чёрный день</li>
 						<li>
 							Находим файл <b>black_day.c</b> и редактируем его:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd source/first/</code><br>
@@ -454,7 +456,7 @@
 							После того, как завершиться запись в файл закрываем его:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">fclose(file);</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Сборка</li>
 						<li>
 							Возвращаемся к файлу <b>make</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../</code><br>
@@ -463,7 +465,7 @@
 							Не возникло ошибок?<br>
 							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Запуск</li>
 						<li>
 							Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -619,7 +621,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -630,7 +632,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 

@@ -23,7 +23,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Как обновить Ubuntu через терминал</h1>
+					<h1 class="malloc-text-blue">Как обновить Ubuntu через терминал</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						Обновление операционной системы показано через терминал. Используются команды update, а потом upgrade. В итоге делаем исполняемый файл, в котором будут храниться все наши команды.<br><br>
@@ -37,13 +39,13 @@
 					<!-- Подзаголовок 1 -->
 					<h2 class="malloc-text-teal">Обновляемся: update, upgrade</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 0</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 0</li>
 						<li>
 							Для начала откроем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (англ. - Open in Terminal).<br>
 							Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							В терминале пишем это:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt update</code><br>
@@ -54,7 +56,7 @@
 							"apt update" - обновить список доступных пакетов .
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Загружаем обновления на компьютер:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt upgrade -y</code><br>
@@ -73,13 +75,13 @@
 					А теперь немного упростим себе задачу. Сделаем так, что бы все команды, которые были описаны выше, выполнялись за одну команду. 	Этот способ сэкономит нам немного времени и немного расширит наш кругозор.<br>
 					Мы создадим исполняемый файл "sysup.sh".&#42;
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 0</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 0</li>
 						<li>
 							Для начала откроем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br>
 							Теперь в открывшемся окне Терминала, записываем команды для обновления операционной системы. Они подробно описаны ниже.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Создадим директорию (папку) - system_update:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir system_update</code><br>
@@ -88,7 +90,7 @@
 								"mkdir" - это команда для создания новых директорий (каталогов).						
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Теперь, зайдем в папку и создадим там файл:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd system_update && touch sysup.sh</code><br>
@@ -98,7 +100,7 @@
 		 						"touch" - создание пустого файла.
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							Запишем в наш файл команды, которые нужны для обновления системы:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">echo 'sudo apt update && sudo apt upgrade -y' > sysup.sh</code><br>
@@ -107,7 +109,7 @@
 								"echo" - в данном случае используется для записи строки в файл sysup.sh
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Теперь дадим нашему файлу "sysup.sh" права на исполнение:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">chmod +x sysup.sh</code><br>
@@ -115,7 +117,7 @@
 								"chmod +x" - позволяет задать параметры запуска файла на исполнение.
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 5</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 5</li>
 						<li>
 							Все готово, теперь мы можем запустить файл и он выполнить сразу две команды за раз:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./sysup.sh</code>
@@ -173,9 +175,9 @@
 					<!-- Ссылки -->
 					<ul class="malloc-ul malloc-quarter">
 						<li>
-							Благотворительность:
+							Донат:
 							<div class="malloc-padding-12">
-								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Благотворительность</div>
+								<div rel="nofollow"  id="Donat-footer-d" class="malloc-hover-red" style="border-radius:5px;">Донат</div>
 							</div>
 						</li>
 					</ul>
@@ -215,9 +217,9 @@
 					<!-- Ссылки -->
 					<ul class="malloc-ul malloc-col">
 						<li>
-							Благотворительность:
+							Донат:
 							<div class="malloc-padding-12">
-								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Благотворительность</div>
+								<div rel="nofollow"  id="Donat-footer-m" class="malloc-hover-red" style="border-radius:5px;">Донат</div>
 							</div>
 						</li>
 					</ul>
@@ -256,7 +258,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -267,7 +269,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 

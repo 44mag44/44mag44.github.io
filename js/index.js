@@ -6,7 +6,7 @@ document.getElementById('Blog').onclick=function(){window.open('blog.html', '_se
 /* Cоцсети */
 document.getElementById('Social-networks').onclick=function(){window.open('social-networks.html', '_self');};
 /* Донат */
-document.getElementById('Charity').onclick=function(){window.open('сharity.html', '_self');};
+document.getElementById('Charity').onclick=function(){window.open('donat.html', '_self');};
 
 /* Footer desktop*/
 document.getElementById('Donat-footer-d').onclick=function(){window.open('https://www.donationalerts.com/c/malloc', '_blank');};

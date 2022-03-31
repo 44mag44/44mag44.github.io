@@ -22,7 +22,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-padding malloc-padding-16" style="border-radius:5px;">Файловый ввод-вывод в языке Си</h1>
+					<h1 class="malloc-text-blue">Файловый ввод-вывод в языке Си</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						Все знают, что теория очень важная штука, поэтому я дам ссылку на общую информацию  - <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B2%D0%B2%D0%BE%D0%B4-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4_%D0%B2_%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5_%D0%A1%D0%B8" class="malloc-hover-grey" style="border-radius:5px; text-decoration:underline;" target="_blank"><b>файловый ввод-вывод</b></a>. Текущая тема, расширит кругозор и возможно возбудит новый интерес в изучении <b>информатики</b>. <br>
@@ -73,7 +75,7 @@
 					<!-- Подзаголовок 2 -->
 					<h2 class="malloc-text-teal">Ввод и вывод в терминал</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Пишем код</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Пишем код</li>
 						<li>
 							Сейчас напишем программу, которая ждет ввода "любого числа" и выводит его на экран.
 						</li>
@@ -96,7 +98,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>										
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Компиляция и запуск</li>
 						<li>
 							Вводим в терминале следующее:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
@@ -116,7 +118,7 @@
 						Итак, предыдущая программа принимала на ввод и вывод в терминал число, но не сохраняла это число.<br>
 						Сделаем так, чтобы наше число сохранялось в файл.<br>
 						Файл будет находиться в другой директории.
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем директорию и файл</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Создаем директорию и файл</li>
 						<li>
 							Создадим директорию под названием <b>files</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir files</code><br>
@@ -129,7 +131,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ..</code><br>
 							Открываем файл <b>main.c</b> и переписываем его.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Пишем код</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Пишем код</li>
 						<li>
 							Подключаем стандартную библиотеку ввода-вывода:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -166,7 +168,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Компиляция и запуск</li>
 						<li>
 							Вводим в терминале:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
@@ -190,7 +192,7 @@
 							Напишем программу, каторая считывает информацию из файла и выводит его на экран.<br>
 							Мы ввели вещественное число и записали его в файл. Теперь выведем записанное число в терминал.<br><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переписываем файл main.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Переписываем файл main.c</li>
 						<li>
 							Подключаем стандартную библиотеку ввода-вывода:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -220,7 +222,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Компиляция и запуск</li>
 						<li>
 							Вводим в терминале:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
@@ -244,7 +246,7 @@
 							Последний ввод был -> 321. Вывод в терминал будет такой -> 321.<br>
 							Вводим ещё число -> 256. Вывод в терминал будет такой -> 321256
 						</p><br>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создадим файл для сохранения чисел</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Создадим файл для сохранения чисел</li>
 						<li>
 							Переходим в директорию <b>files</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd files/</code><br>
@@ -253,7 +255,7 @@
 							Перемещаемся назад в корень программы:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переписываем файл main.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Переписываем файл main.c</li>
 						<li>
 							Подключаем стандартную библиотеку ввода-вывода:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -301,7 +303,7 @@
 							Закрывающая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Компиляция и запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Компиляция и запуск</li>
 						<li>
 							Вводим в терминале:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
@@ -336,7 +338,7 @@
 						Данные, находящиеся в файле, можно использовать поразному. Всё зависит от поставленных целей.<br>
 						Например, я найду количество, сумму, среднее арифметическое чисел находящиеся в файле.<br>
 						Результат выведем в терминал, а в видео покажу запись результата в файл(ы).
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Переписываем файл main.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Переписываем файл main.c</li>
 						<li>
 							Подключаем стандартную библиотеку ввода-вывода:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -529,7 +531,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -540,7 +542,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 

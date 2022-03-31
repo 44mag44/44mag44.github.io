@@ -23,7 +23,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Как отправить существующий проект на GitHub</h1>
+					<h1 class="malloc-text-blue">Как отправить существующий проект на GitHub</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						Создаем локальный репозиторий git и отправляем его на удаленный репозиторий GitHub.<br>
@@ -59,7 +61,7 @@
 					<!-- Подзаголовок 1 -->
 					<h2 class="malloc-text-teal">Создаем локальный и удаленный репозитории</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 0</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 0</li>
 						<li>
 							Открываем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br>
@@ -88,7 +90,7 @@
 								"echo" - в данном случае используется для создания и записи строки в файл README.md
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Теперь создадим локальный репозиторий .git:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">git init</code>
@@ -101,11 +103,11 @@
 							Метка о внесенных изменениях:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">git commit -m "first commit"</code>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Заходим в свой аккаунт на <a id="GitHub" class="malloc-hover-black" style="text-decoration:underline;">GitHub</a> и создаем новый репозиторий: Test
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							Возвращаемся в терминал.<br>
 							Добавляем адрес удаленного репозитория:<br>
@@ -148,7 +150,7 @@
 					Теперь сделаем так, что бы они выпольнялись за одну команду. 
 					<hr>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 0</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 0</li>
 						<li>
 							Для начала откроем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал"(англ. - Open in Terminal).<br>
@@ -162,7 +164,7 @@
 							Теперь, зайдем в папку "Push":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd Push</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Создадим и запишем в файл "git-push.sh" команды, которые нужны для push:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">echo 'git add * && git commit -m " - " && git push -u origin master' > git-push.sh</code><br>
@@ -178,7 +180,7 @@
 								"chmod +x" - позволяет задать параметры запуска файла на исполнение.<br>
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Выходим из директории "Push" и переходим в директорию "Repo":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../Repo</code><br>
@@ -187,13 +189,13 @@
 							Созданим любой файл и запишем в него например "Hello, World!":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">echo 'Hello, World!' > File</code><br>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 							<li>
 								Теперь загрузим файл на GitHub.<br>
 								Для этого нужно зайти в папку "Push" и запустить скрипт "git-push.sh":<br>
 								<code class="malloc-text-teal malloc-border malloc-bar-item">./../Push/git-push.sh</code><br>
 							</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Возвращаемся в браузер и обновляем страничку(перезагрузить F5).<br>
 							Если появился файл "File" с надписью "Hello, World!", то все было сделано верно.<br>
@@ -336,7 +338,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -347,7 +349,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 

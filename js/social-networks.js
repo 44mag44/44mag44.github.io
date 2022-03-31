@@ -1,11 +1,11 @@
 /* Ссылка malloc.ru */
 document.getElementById('malloc.ru').onclick=function(){window.open('https://malloc.ru', '_self');};
 
-/* Cоцсети 
+/* Cоцсети */
 document.getElementById('Telegram').onclick=function(){window.open('https://msngr.link/tg/malloc_ru', '_blank');};
 document.getElementById('Youtube').onclick=function(){window.open('https://www.youtube.com/channel/UCIAboMgPOBcFR9Y5GoUdoTw', '_blank');};
 document.getElementById('GitHub').onclick=function(){window.open('https://github.com/code-malloc', '_blank');};
-*/
+
 
 
 /* Footer desktop*/

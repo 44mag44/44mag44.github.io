@@ -22,7 +22,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Дистрибутор дохода II</h1>
+					<h1 class="malloc-text-blue">Дистрибутор дохода II</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						В данной статье я расскажу и покажу как я написал программу <b>"Дистрибутор дохода"</b> или проще говоря - <b>распределение дохода по конвертам</b>.<br>
@@ -101,7 +103,7 @@
 							Создаем файлы <b>table.c</b>, <b>income.c</b>, <b>black_day.c</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">touch table.c income.c black_day.c</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл income.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Редактируем файл income.c</li>
 						<li>
 							Редактируем <b>income.c</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -159,7 +161,7 @@
 								На счет алгоритмов. Ничего другого придуамать не смог
 							</p>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл black_day.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Редактируем файл black_day.c</li>
 						<li>
 							Копируем всё, что в файле <b>income.c</b> в файл <b>black_day.c</b>.<br>
 							В файле <b>black_day.c</b> изменим всего три строчки.<br><br>
@@ -170,7 +172,7 @@
 							Ищем строку <b>printf("Весь заработок составляет: %d\n" , sum);</b> и меняем на:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">printf("Чёрный день: %d\n" , sum);</code>						
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл table.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Редактируем файл table.c</li>
 						<li>
 							Редактируем файл <b>table.h</b>.<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
@@ -190,7 +192,7 @@
 							Закрывыющая скобка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">}</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Создаем и редактируем файл table.h</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Создаем и редактируем файл table.h</li>
 						<li>
 							Переходим в директорию <b>header</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../../header/</code><br>
@@ -205,7 +207,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">void table();</code><br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#endif</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Редактируем файл menu.c</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Редактируем файл menu.c</li>
 						<li>
 							Переходим в директорию <b>source</b>:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">cd ../</code><br>
@@ -214,13 +216,13 @@
 							Пишем ниже неё:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include "../header/table.h"</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Добавляем income.c, black_day.c, table.c в файл make</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Добавляем income.c, black_day.c, table.c в файл make</li>
 						<li>
 							Находим файл <b>make</b>. Редактируем его.<br>
 							Добавляем в конец файла:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">source/second/income.c source/second/black_day.c source/second/table.c</code>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Сборка</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Сборка</li>
 						<li>
 							Собираем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">make -f make</code><br>
@@ -231,7 +233,7 @@
 							Не возникло ошибок?<br>
 							Если они есть, то ищите и исправляйте баги, после возвращайтесь сюда.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Запуск</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Запуск</li>
 						<li>
 							Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -259,7 +261,7 @@
 								Чёрный день:  53
 							</p>
 						</li>	
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Выводим таблицу на экран</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Выводим таблицу на экран</li>
 						<li>
 							Запускаем программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -422,7 +424,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -433,7 +435,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 

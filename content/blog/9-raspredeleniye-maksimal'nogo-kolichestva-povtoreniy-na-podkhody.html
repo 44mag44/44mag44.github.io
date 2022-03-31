@@ -23,7 +23,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Распределение максимального количества повторений на подходы</h1>
+					<h1 class="malloc-text-blue">Распределение максимального количества повторений на подходы</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						Из этой статьи вы узнаете как создать программу, которая распределит максимальное количество повторений на подходы.<br><br>
@@ -54,12 +56,12 @@
 					<!-- Подзаголовок 2 -->
 					<h2 class="malloc-text-teal">Подготовка для Си</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Открываем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
 							</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Создадим отдельный каталог (папку):<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir c-prog</code><br>
@@ -71,7 +73,7 @@
 		 						"cd" - используется для перемещения по каталогам
 							</p>									
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							В этой папке создадим файл "main.c":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">touch main.c</code><br>
@@ -82,7 +84,7 @@
 		 						"ls" - просмотр текущего каталога
 							</p>		
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Теперь нужно открыть файл в любой текстовом редакторе.<br>
 							К примеру открою наш файл "main.c" в текстовом редакторе - gedit.
@@ -103,42 +105,42 @@
 							Подключаем стандартную библиотеку ввода-вывода:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - два подхода</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - два подхода</li>
 						<li>
 							Далее пишем функцию "два подхода":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int twoSet(int max)</code><br>
 							Пишем формулу из условия для "двух подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.80; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - три подхода</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - три подхода</li>
 						<li>
 							Далее пишем функцию "три подхода":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int threeSet(int max)</code><br>
 							Пишем формулу из условия для "трёх подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.65; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - четыре подхода</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - четыре подхода</li>
 						<li>
 							Далее пишем функцию "четыре подхода":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int fourSet(int max)</code><br>
 							Пишем формулу из условия для "четырех подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.50; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - пять подходов</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - пять подходов</li>
 						<li>
 							Далее пишем функцию "пять подходов":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int fiveSet(int max)</code><br>
 							Пишем формулу из условия для "пяти подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.35; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - шесть подходов</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - шесть подходов</li>
 						<li>
 							Далее пишем функцию "шесть подходов":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int sixSet(int max)</code><br>
 							Пишем формулу из условия для "шести подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.20; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция main</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция main</li>
 						<li>
 							Отступаем вниз пару строк и пишем функцию main:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
@@ -178,7 +180,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install gcc</code><br>
 							Если он у вас уже есть, то хорошо, идем дальше.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Компиляция:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc main.c</code><br>
@@ -186,7 +188,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code><br>
 							В каталоге дожны лежать "a.out" и "main.c". 
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Теперь посмотрим на результат:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -216,12 +218,12 @@
 					<!-- Подзаголовок 5 -->
 					<h2 class="malloc-text-teal">Подготовка для Си++</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Открываем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Создадим отдельный каталог (папку):<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir cpp-prog</code><br>
@@ -233,7 +235,7 @@
 								"cd" - используется для перемещения по каталогам
 							</p>									
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							В этой папке создадим файл "main.cpp":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">touch main.cpp</code><br>
@@ -244,7 +246,7 @@
 		 						"ls" - просмотр текущего каталога
 							</p>		
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Теперь нужно открыть файл в любой текстовом редакторе.<br>
 							К примеру открою наш файл "main.cpp" в текстовом редакторе - gedit.
@@ -267,42 +269,42 @@
 							Подключаем пространство имен "std":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">using namespace std;</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - два подхода</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - два подхода</li>
 						<li>
 							Далее пишем функцию "два подхода":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int twoSet(int max)</code><br>
 							Пишем формулу из условия для "двух подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.80; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - три подхода</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - три подхода</li>
 						<li>
 							Далее пишем функцию "три подхода":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int threeSet(int max)</code><br>
 							Пишем формулу из условия для "трёх подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.65; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - четыре подхода</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - четыре подхода</li>
 						<li>
 							Далее пишем функцию "четыре подхода":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int fourSet(int max)</code><br>
 							Пишем формулу из условия для "четырех подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.50; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - пять подходов</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - пять подходов</li>
 						<li>
 							Далее пишем функцию "пять подходов":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int fiveSet(int max)</code><br>
 							Пишем формулу из условия для "пяти подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.35; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция - шесть подходов</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция - шесть подходов</li>
 						<li>
 							Далее пишем функцию "шесть подходов":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int sixSet(int max)</code><br>
 							Пишем формулу из условия для "шести подходов" и сразу возвращаем результат переменной:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">{ return max*=0.20; }</code>
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Функция main</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Функция main</li>
 						<li>
 							Отступаем вниз пару строк и пишем функцию main:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">int main()</code><br>
@@ -353,7 +355,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install g++</code><br/>
 							Если он у вас уже есть, то хорошо, идем дальше.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Компиляция:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">g++ main.cpp</code><br>
@@ -361,7 +363,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code><br>
 							В каталоге дожны лежать "a.out" и "main.cpp". 
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Теперь посмотрим на результат:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -517,7 +519,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -528,7 +530,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 

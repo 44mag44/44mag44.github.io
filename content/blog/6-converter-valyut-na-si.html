@@ -23,7 +23,9 @@
 			<div class="malloc-row malloc-padding-32"><!-- text{ -->
 				<!-- Статья -->
 				<div class="malloc-threequarter malloc-padding"><!-- { -->
-					<h1 class="malloc-center malloc-theme malloc-serif malloc-padding-16" style="border-radius:5px;">Конвертер валют на си</h1>
+					<h1 class="malloc-text-blue">Конвертер валют на си</h1>
+					<!-- ОТСТУП -->
+					<div style="margin-top:100px"></div>
 					<!-- Вступление -->
 					<div class="malloc-padding">
 						В этой статье мы напишем программу "Конвертер валют".<br>
@@ -44,12 +46,12 @@
 						<li>
 							Для начала нам нужно создать каталог для нашей программы, а так же файл main.c для записи в него алгоритма.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Открываем терминал:<br>
 							"Ctrl+Alt+T" или "ПКМ, открыть Терминал" (по англ. - Open in Terminal).
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Создадим отдельный каталог (папку):<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">mkdir converter</code><br>
@@ -61,7 +63,7 @@
 		 						"cd" - используется для перемещения по каталогам
 							</p>									
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							В этой папке создадим файл "main.c":<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">touch main.c</code><br>
@@ -72,7 +74,7 @@
 								"ls" - просмотр текущего каталога
 							</p>		
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Теперь нужно открыть файл в любой текстовом редакторе.<br>
 							К примеру открою наш файл "main.c" в текстовом редакторе - gedit.<br><br>
@@ -128,7 +130,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">sudo apt install gcc</code><br>
 							Если он у вас уже есть, то хорошо, идем дальше.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Собирем нашу программу:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">gcc -Wall -g main.c</code><br>
@@ -136,7 +138,7 @@
 							<code class="malloc-text-teal malloc-border malloc-bar-item">ls</code><br>
 							В каталоге дожны лежать "a.out" и "main.c". 
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							Теперь посмотрим на результат:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">./a.out</code><br>
@@ -205,7 +207,7 @@
 					<!-- Подзаголовок 6 -->
 					<h2 class="malloc-text-teal">Конвертер валют</h2>
 					<ul class="malloc-ul">
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 1</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 1</li>
 						<li>
 							Для начала переименуем наши функции.<br>
 							Ту, что закомментирована, назовем <b>ith_rub_v_usd</b>.<br>
@@ -213,17 +215,17 @@
 							Вместо <b>int main()</b> пишем <b>int ith_rub_v_usd()</b>.<br>
 							Вторую переименовываем в <b>int ith_usd_v_rub()</b>.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 2</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 2</li>
 						<li>
 							После первой функции, которая закомментирована, написана строчка:<br>
 							<code class="malloc-text-teal malloc-border malloc-bar-item">#include &lt;stdio.h&gt;</code><br>
 							Удаляем её.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 3</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 3</li>
 						<li>
 							Удаляем знаки <b>/*</b> и <b>*/</b>.
 						</li>
-						<li class="malloc-text-blue" style="font-size: 15px; margin-top: 20px">Шаг 4</li>
+						<li class="malloc-text-blue" style="font-size: 17px; margin-top: 20px">Шаг 4</li>
 						<li>
 							Теперь нужно сделать так, чтобы можно было вызывать эти функции по отдельности в одной программе.
 						</li>							
@@ -434,7 +436,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 		<!-- topbar mobile-->
@@ -445,7 +447,7 @@
 				<a href="../../index.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Главная</a>
 				<a href="../../blog.html" class="malloc-bar-item malloc-button malloc-hover-white malloc-theme-l1" style="font-size: 15px;">Блог</a>
 				<a href="../../social-networks.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Соцсети</a>
-				<a href="../../сharity.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Благотворительность</a>
+				<a href="../../donat.html" class="malloc-bar-item malloc-button malloc-hover-white" style="font-size: 15px;">Донат</a>
 			</nav>
 		</div>
 
